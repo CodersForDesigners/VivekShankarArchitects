@@ -1,6 +1,6 @@
 
 <!-- Contact Section -->
-<section class="contact-section">
+<section class="contact-section block-space-top-bottom">
 	<div class="container">
 		<div class="row">
 			<div class="columns small-12">
@@ -32,6 +32,13 @@
 
 					<br>
 					<button type="submit" name="form_contact_submit">
+						send
+					</button>
+
+					<br>
+					<br>
+					<br>
+					<button class="button fill-teal" type="submit" name="form_contact_submit">
 						send
 					</button>
 

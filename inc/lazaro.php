@@ -24,17 +24,19 @@
 
 .lazaro-disclaimer {
 
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
+	/*display: -webkit-box;*/
+	/*display: -ms-flexbox;*/
+	/*display: flex;*/
 
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+	/*-webkit-box-align: center;*/
+	/*-ms-flex-align: center;*/
+	/*align-items: center;*/
 
 	width: 100%;
 	height: auto;
 	min-height: 100vh;
+
+	padding: 80px 0;
 
 	position: fixed;
 	top: 0;
