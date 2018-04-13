@@ -1,0 +1,26 @@
+/*
+ * Header Section
+ */
+
+
+.header-section {}
+
+.header-section .header {
+	padding: 20px 0;
+}
+
+.header-section .header .logo {
+	color: inherit;
+	font-size: 0;
+	text-decoration: none;
+}
+
+.header-section .header .logo img {
+	display: block;
+	width: 38px;
+}
+
+
+@media( min-width: 640px )  {}
+@media( min-width: 1040px ) {}
+@media( min-width: 1380px ) {}

@@ -46,7 +46,7 @@
 <div id="page-wrapper" data-page="<?php echo $viewName ?>"><!-- Page Wrapper -->
 
 	<!-- Header Section -->
-	<section class="header-section">
+	<section class="header-section fill-off-dark">
 		<div class="container">
 			<div class="header row">
 				<div class="columns small-3">
@@ -56,6 +56,8 @@
 				</div>
 				<div class="text-right columns small-9">
 					<div class="navigation inline">
+						<a class="button js_nav_button <?php echo ( $viewName == "home" ? "active" : "" ) ?>" data-page-id="home" href="/home">home</a>
+						<a class="button js_nav_button <?php echo ( $viewName == "project" ? "active" : "" ) ?>" data-page-id="project" href="/project">project</a>
 						<a class="button js_nav_button <?php echo ( $viewName == "pageone" ? "active" : "" ) ?>" data-page-id="pageone" href="/pageone">page-1</a>
 						<a class="button js_nav_button <?php echo ( $viewName == "pagetwo" ? "active" : "" ) ?>" data-page-id="pagetwo" href="/pagetwo">page-2</a>
 						<a class="button js_nav_button <?php echo ( $viewName == "contact" ? "active" : "" ) ?>" data-page-id="contact" href="/contact">contact</a>
@@ -74,6 +76,268 @@
 	</div> <!-- END : Page Content -->
 
 
+	<!-- Practice Section -->
+	<section class="practice-section fill-off-dark block-space-top-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="h1 strong text-uppercase columns small-10 small-offset-1">
+					The Practice
+				</div>
+				<div class="columns small-10 small-offset-1 large-2">
+					<div class="label text-neutral">Est.</div>
+					<div class="p">2004</div>
+				</div>
+				<div class="columns small-10 small-offset-1 medium-6 large-5 large-offset-0">
+					<div class="p">Architecture that is Global yet Local.</div>
+					<div class="p">Building and operating an international architectural firm in India is possible. In fact we have done it.  Every project we execute follows global standards across Research, Design and Execution. The benefit? Our team has local knowledge in construction techniques, cultural constraints and legal by-laws.</div>
+				</div>
+				<div class="columns small-10 small-offset-1 medium-3 large-2">
+					<a href="">Expertise</a>
+					<a href="">Origin Story</a>
+					<a href="">Process</a>
+				</div>
+			</div>
+		</div>
+	</section><!-- END : Practice Section -->
+
+	<!-- Expertise Section -->
+	<section class="expertise-section fill-light block-space-top-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="h2 strong text-uppercase columns small-10 small-offset-1">
+					Expertise
+				</div>
+			</div>
+			<div class="point row">
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="h4 strong">Global DNA</div>
+					<div class="p strong em text-teal hide-for-mobile">“ Vivek trained and worked with the internationally renowned architect Zaha Hadid. ”</div>
+				</div>
+				<div class="columns small-10 small-offset-1 large-5">
+					<div class="p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. He spent 8 years under Zaha, working on award winning projects in Tokyo, Munich, Singapore, Rome and London.</div>
+				</div>
+			</div>
+			<div class="point row">
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="h4 strong">Process Driven Global Standards</div>
+					<div class="p strong em text-teal hide-for-mobile">“ Vivek returned to India and setup his practice to exacting global standards. ”</div>
+				</div>
+				<div class="columns small-10 small-offset-1 large-5">
+					<div class="p">With this foundational exposure, Vivek returned to India and setup his practice to exacting global standards. Today the firm operates under the umbrella of these global standards that enable bespoke Design Strategies for each project and client.</div>
+				</div>
+			</div>
+			<div class="point row">
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="h4 strong">Local Context Advantage</div>
+					<div class="p strong em text-teal hide-for-mobile">“  Indian leaniage ensures we do not run into operational delays and cost overruns. ” </div>
+				</div>
+				<div class="columns small-10 small-offset-1 large-5">
+					<div class="p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns that International Architects most often suffer when they operate in India.</div>
+				</div>
+			</div>
+			<div class="point row">
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="h4 strong">Integrated Research, Design and Execution Process</div>
+					<div class="p strong em text-teal hide-for-mobile">“ We carefully integrate our Research Team with our Design and Execution teams. ”</div>
+				</div>
+				<div class="columns small-10 small-offset-1 large-5">
+					<div class="p">Innovation is not realistic in a pure implementation environment. We have deliberately created the optimal conditions for innovation; we carefully integrate our Research Team with our Design and Execution teams with a proprietary triple layer process. The result is research driven bespoke strategy.</div>
+				</div>
+			</div>
+			<div class="point row">
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="h4 strong">Innovation that leads to Sustainability</div>
+					<div class="p strong em text-teal hide-for-mobile">“ Innovation is not possible without a bespoke strategy for every project. ”</div>
+				</div>
+				<div class="columns small-10 small-offset-1 large-5">
+					<div class="p">The way that we approach a project is highly personalised. Innovation is not possible without a bespoke strategy for every project. Sustainability can only be achieved if Innovation has a stable Design is typically undertaken by a small, close-knit team of individuals, yet this team is able to draw on the wide range of skills that only a practice of our size can offer.</div>
+				</div>
+			</div>
+			<div class="point row">
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="h4 strong">Last Mile Design Management </div>
+					<div class="p strong em text-teal hide-for-mobile">“ Vivek’s driving principle is the last mile craftsmanship ”</div>
+				</div>
+				<div class="columns small-10 small-offset-1 large-5">
+					<div class="p">The repeating tragedy is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- END : Expertise Section -->
+
+	<!-- History Section -->
+	<section class="history-section fill-off-dark block-space-top-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="h2 text-uppercase strong columns small-10 small-offset-1">
+					Origin Story 
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-10 small-offset-1 large-5">
+					<div class="p">Vivek V.Shankar graduated with a bachelor’s degree in Architecture from BMS College of Engineering in Bangalore in 1998. Vivek took a Masters’ degree (M.Arch) in Architecture and Urbanism from the prestigious AA School of Architecture in London. I</div>
+					<br>
+					<div class="p">Upon completion of his Masters’ degree, Vivek was employed at the office of Zaha Hadid in London.</div>
+					<br>
+					<div class="p">Zaha Hadid is a world renowned architect based in London and recipient of the Pritzker Prize for Architecture. Vivek’s design language is influenced by the work experience gained with ZahaHadid and also the design processes that were experimented during the Masters’ program at the Architectural Association, London. Vivek was part of the design team for the following projects at the office of Zaha Hadid in London.</div>
+					<br>
+					<p>
+						<ol>
+							<li class="p">Guggenheim Museum, Tokyo</li>
+							<li class="p">BMW Event and Delivery Center, Munich</li>
+							<li class="p">Ordrupgaard Museum, Denmark</li>
+							<li class="p">Center for Contemporary arts, Rome</li>
+							<li class="p">Interiors for Mandarina Duck, London</li>
+						</ol>
+					</p>
+					<br>
+					<div class="p">Vivek has his architectural practice based out of Bangalore and is keen on establishing an affiliation with the latest Trends in design and the changing face of design in Indian Metros. The practice consciously strives to induct a process ruled by geometric strategies and material compositions that result in a subversion of the conventional mode of perceiving a structure or space.</div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 large-4">
+					<img class="block" src="http://via.placeholder.com/650x500">
+					<br>
+					<div class="p">The projects are currently being designed by the office demand a high level of design ingenuity and resolution. This is achieved by the skilled team of young architects who are trained to adopt the latest in software technology for preparing high quality presentations and technical drawings.</div>
+					<br>
+					<div class="p">Vivek has been a member of the visiting faculty at leading architecture schools in South India.</div>
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-10 small-offset-1 large-5">
+					<img class="block" src="http://via.placeholder.com/1280x720?text=YouTube">
+				</div>
+			</div>
+		</div>
+	</section><!-- END : History Section -->
+
+	<!-- Process Section -->
+	<section class="process-section fill-light block-space-top-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="h2 strong text-uppercase columns small-10 small-offset-1">
+					Process
+				</div>
+			</div>
+			<div class="row">
+				<div class="h4 text-uppercase columns small-10 small-offset-1">
+					Research
+				</div>
+				<div class="hide-for-mobile columns small-10 small-offset-1 large-5">
+					<div class="p">We see the relevance of research not just as the first vital step of the design process that lays down a set of parameters but as the thought generator infused with a high degree of intellectual content that influences the design process.</div>
+					<br>
+					<div class="p">The research phase involves probing into the engineering, material, occupational and programmatic aspects that are relevant to the project being designed.</div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="p strong em text-teal">- The thought generator infused with a high degree of intellectual content that influences the design process.</div>
+					<br>
+					<div class="p strong em text-teal">- Probing into the engineering, material, occupational and programmatic aspects.</div>
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="h4 text-uppercase columns small-10 small-offset-1">
+					Design
+				</div>
+				<div class="hide-for-mobile columns small-10 small-offset-1 large-5">
+					<div class="p">The inferences drawn from the research enable the formulation of a design agenda that comprises the amalgamation of the site characteristics, climate and budget with the design intent. The client brief is re-imagined and rewritten by us in order to maintain the rigor of the research.</div>
+					<br>
+					<div class="p">The design phase largely involves the innovative intervention on the site which is realized through a set of conditions be it structural, geometric explorations, climate responsive measures, generated with software capable of simulating the conditions and perceptions. The production of drawings required for execution is produced after gaining absolute clarity on the technical and material aspects of the design. The 3D renders prepared at various stages of the design development enable a holistic reading of the engineering and design aspects.</div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="p strong em text-teal">- The amalgamation of the site characteristics, climate & budget with the design intent.</div>
+					<br>
+					<div class="p strong em text-teal">- The design phase largely involves the innovative intervention.</div>
+					<br>
+					<div class="p strong em text-teal">- The production of drawings required for execution.</div>
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="h4 text-uppercase columns small-10 small-offset-1">
+					Execution
+				</div>
+				<div class="hide-for-mobile columns small-10 small-offset-1 large-5">
+					<div class="p">This phase witnesses the translation of the drawing content to a physical manifestation of a structural core of steel and concrete and subsequently the resemblance to the 3D render starts to interestingly emerge until the completion of the project.</div>
+					<br>
+					<div class="p">We assign a lot of importance to the adherence of instructions mentioned in the drawing along with a high degree of quality control ensured by Project Management and Site Engineers trained to deliver the exacting standards set by Vivek Shankar Architects.  </div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 large-4">
+					<div class="p strong em text-teal">- Translation of the drawing content to a physical manifestation.</div>
+					<br>
+					<div class="p strong em text-teal">- A high degree of quality control ensured by Project Management and Site Engineers trained to deliver.</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</section><!-- END : Process Section -->
+
+	<!-- Services Section -->
+	<section class="services-section fill-off-dark block-space-top-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="h2 strong text-uppercase columns small-10 small-offset-1">
+					Services
+				</div>
+				<div class="columns small-10 small-offset-1 medium-5 medium-offset-1">
+					<div class="h4">Architecture</div>
+					<br>
+					<div class="p">The heart and soul of what we provide. Our comprehensive architectural services include conceptual and schematic design, design development and construction documentation, assisting with contractor bidding and/or negotiating and construction contract administration. Architecture embodies all we touch. And we are a combination of artists and tacticians, imagining, coordinating and creating some of the world’s most iconic places.</div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 medium-5 medium-offset-0">
+					<div class="h4">Planning & Development</div>
+					<br>
+					<div class="p">We combine global reach with a tremendous local touch. Our commitment to our communities allows us to effectively navigate local regulatory approval processes from platting subdivisions to zoning and permitting. We also handle issues of site analysis, access, circulation, parking, urban design, local development guidelines and place-making. It’s the entire picture. Always.</div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 medium-5 medium-offset-1">
+					<div class="h4">Structural Engineering</div>
+					<br>
+					<div class="p">We stretch the design boundaries daily, but always with a practical guide. Our highly experienced in-house team of structural engineers consistently communicates with the architectural team to ensure structural considerations are incorporated into designs from day one. This close cooperation translates into buildings that simply work.</div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 medium-5 medium-offset-0">
+					<div class="h4">Interior Design</div>
+					<br>
+					<div class="p">Our award-winning interior design group, one of the largest in the nation, offers creative and intelligent responses to your goals and requirements. We know how to listen and infuse your organization’s personality into a space.</div>
+					<br>
+				</div>
+				<div class="columns small-10 small-offset-1 medium-5 medium-offset-1">
+					<div class="h4">Sustainable Design</div>
+					<br>
+					<div class="p">Sustainability is infused into all that we touch. We build energy simulation models early in our process to help inform decisions made in our design studios. Our approach is collaborative and integrated, focused on conserving resources, achieving energy independence, reducing greenhouse gas emissions and effectively improving your bottom line.</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</section><!-- END : Services Section -->
+
+	<!-- Contact Section -->
+	<section class="contact-section fill-light block-space-top-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="columns small-10 small-offset-1">
+					Contact
+					Get in touch
+					+91 80 4132 8203
+					Email
+					Location
+					google maps
+					Follow us
+					facebook
+					linkedin
+					instagram
+					youtube
+				</div>
+			</div>
+		</div>
+	</section><!-- END : Contact Section -->
+
+
 	<!-- Lazaro Signature -->
 	<?php lazaro_signature(); ?>
 	<!-- END : Lazaro Signature -->
@@ -84,6 +348,58 @@
 
 
 
+
+
+
+
+<!-- ☰ Super Navigator  ☰ -->
+
+<!-- Menu Section -->
+<section class="menu-section">
+	Menu Button
+</section><!-- END : Menu Section -->
+
+<!-- Navigation Section -->
+<section class="navigation-section">
+	Navigation List:
+
+		[home-icon] Home
+		<!-- -- Project --  -->
+			Welcome
+			Intro
+			Benefits
+			Showcase
+			Facts
+			Other Projects
+		<!-- -- END : Project --  -->
+		<!-- -- Home --  -->
+			Welcome
+			Projects
+				Residential [ Apartments, Villas, Row Houses ]
+					Project : 1
+					Project : 2
+					Project : 3
+				Industrial [ Factories ]
+					Project : 4
+				Commercial [ Retail, Office Buildings, Mall ]
+					Project : 5
+				Institutions [ Schools, Colleges ]
+					Project : 6
+				Hospitality [ Restaurants, Hotels ]
+					Project : 7
+				Homes [ Custom Villas, Interiors ]
+					Project : 8
+				Conceptual [ Unbuilt Projects ]
+					Project : 9
+		<!-- -- END : Home --  -->
+		Practice
+		Expertise
+		History
+		Process
+		Services
+		Contact
+
+</section><!-- END : Navigation Section -->
 
 
 

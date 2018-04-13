@@ -2,7 +2,7 @@
 <?php
 
 // set default params
-$defaultView = "pageone";
+$defaultView = "home";
 $resourceNotFoundView = "404";
 
 $resourceNotFoundViewPath = "pages/" . $resourceNotFoundView . ".php";

@@ -92,6 +92,7 @@ hr {
 }
 
 strong, .strong { font-weight: 600; }
+em, .em { font-style: italic; }
 
 
 
@@ -106,7 +107,6 @@ h1, h2, h3, h4,
 .h1, .h2, .h3, .h4 {
 	font-family: 'proxima-nova', 'Arial Black', Arial, sans-serif;
 	line-height: 1.25;
-	text-transform: uppercase;
 }
 
 h1, .h1 { font-size: 3.0rem; }

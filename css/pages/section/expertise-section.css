@@ -1,0 +1,15 @@
+/*
+ * Expertise Section
+ */
+
+.expertise-section .point {
+	margin-bottom: 20px;
+}
+
+@media( min-width: 640px )  {}
+@media( min-width: 1040px ) {}
+@media( min-width: 1380px ) {
+	.expertise-section .point {
+		margin-bottom: 40px;
+	}
+}

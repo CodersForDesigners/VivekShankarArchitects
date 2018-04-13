@@ -1,0 +1,37 @@
+/*
+ * Project Listing Section
+ */
+
+.project-listing-section {
+	text-align: center;
+}
+.project-listing-section .project-type {}
+
+.project-listing-section .project-type:nth-child(2n) {
+	background-color: rgba(0,0,0,0.2);
+}
+.project-listing-section .project-type:nth-child(2n+1) {
+	background-color: rgba(0,0,0,0.4);
+}
+
+@media( min-width: 640px )  {}
+
+@media( min-width: 800px )  {
+	.project-listing-section {
+		text-align: left;
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.project-listing-section .project-type {
+		display: inline-block;
+		writing-mode: vertical-rl; 
+		text-orientation: sideways;
+		transform: rotate(180deg);
+		flex-grow: 1;
+		padding: 10px;
+	}
+}
+
+@media( min-width: 1040px ) {}
+@media( min-width: 1380px ) {}
