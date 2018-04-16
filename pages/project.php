@@ -239,11 +239,11 @@ $(document).ready(function(){
 </section><!-- END : Facts Section -->
 
 <!-- Other Project Section -->
-<section class="other-project-section fill-light block-space-top">
+<section class="other-project-section fill-light">
 	<div class="container">
 		<div class="row">
 			<div class="title h3 text-uppercase text-center text-teal columns small-10 small-offset-1">
-				Other Projects
+				Other &lt;Industrial&gt; Projects
 			</div>
 		</div>
 	</div>
