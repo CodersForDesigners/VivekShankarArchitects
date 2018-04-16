@@ -1,0 +1,65 @@
+/*
+ * Benefits Section
+ */
+
+.benefits-section .point {
+	margin-top: 30px;
+}
+
+.benefits-section .point .description {
+	position: relative;
+	margin-top: 10px;
+}
+
+.benefits-section .point .description span {
+	position: relative;
+}
+
+.benefits-section .point .description span:before {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: 2px;
+	left: -20px;
+	width: 12px;
+	height: 12px;
+	background-size: contain;
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-image: url('/media/bullet-dot.svg');
+}
+
+@media( min-width: 640px )  {
+	.benefits-section .point .description span:before {
+		top: 3px;
+		left: -32px;
+		width: 12px;
+		height: 12px;
+	}
+}
+
+@media( min-width: 1040px ) {
+	.benefits-section .point {
+		margin-top: 70px;
+	}
+	
+	.benefits-section .point .description {
+		margin-top: 0;
+	}
+
+	.benefits-section .point .description span:before {
+		top: 2px;
+		left: -32px;
+		width: 16px;
+		height: 16px;
+	}
+}
+	
+@media( min-width: 1380px ) {
+	.benefits-section .point .description span:before {
+		top: 5px;
+		left: -32px;
+		width: 16px;
+		height: 16px;
+	}
+}

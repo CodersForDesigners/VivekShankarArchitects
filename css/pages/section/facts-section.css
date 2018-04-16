@@ -1,0 +1,34 @@
+/*
+ * Facts Section
+ */
+
+.facts-section .point {
+	margin-top: 30px;
+}
+
+.facts-section .point .description {
+	position: relative;
+	margin-top: 10px;
+}
+
+.facts-section .point .description .p {
+	margin-top: 10px;
+}
+
+.facts-section .point .description .p:first-child {
+	margin-top: 0;
+}
+
+@media( min-width: 640px )  {}
+
+@media( min-width: 1040px ) {
+	.facts-section .point {
+		margin-top: 70px;
+	}
+	
+	.facts-section .point .description {
+		margin-top: 0;
+	}
+}
+	
+@media( min-width: 1380px ) {}

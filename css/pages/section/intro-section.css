@@ -1,0 +1,70 @@
+/*
+ * Intro Section
+ */
+
+.intro-section {}
+
+.intro-section .name {
+	display: inline-block;
+	color: var(--teal);
+	background: -moz-linear-gradient(left, var(--blue) 0%, var(--teal) 50%, var(--green) 100%);
+	background: -webkit-linear-gradient(left, var(--blue) 0%,var(--teal) 50%,var(--green) 100%);
+	background: linear-gradient(to right, var(--blue) 0%,var(--teal) 50%,var(--green) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.intro-section .meta {
+	margin-top: 30px;
+}
+
+.intro-section .description {
+	margin-top: 30px;
+}
+
+.intro-section .description .p {
+	margin-top: 10px;
+}
+
+.intro-section .description .p:first-child {
+	margin-top: 0;
+}
+
+.intro-section .quick-links {
+	margin-top: 30px;
+}
+
+.intro-section .quick-links .button-link {
+	margin-left: 5px;
+}
+
+.intro-section .quick-links .button-link:first-child {
+	margin-left: 0;
+}
+
+@media( min-width: 640px )  {
+	.intro-section .quick-links {
+		margin-top: -152px;
+		text-align: right
+	}
+
+	.intro-section .quick-links .button-link {
+		margin-left: 0;
+		margin-bottom: 6px;
+	}
+}
+
+@media( min-width: 1040px ) {
+	.intro-section .meta {
+		margin-top: 70px;
+	}
+
+	.intro-section .description {
+		margin-top: 70px;
+	}
+
+	.intro-section .quick-links {
+		margin-top: 70px;
+	}
+}
+@media( min-width: 1380px ) {}

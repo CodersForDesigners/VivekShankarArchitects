@@ -1,0 +1,94 @@
+/*
+ * Other Project Section
+ */
+
+.other-project-section {}
+
+.other-project-section .title {}
+
+.other-project-section .other-project-list {
+	margin-top: 30px;
+	position: relative;
+	text-align: center;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.other-project-section .other-project-list .other-project {
+	position: relative;
+	padding: 8.5% 0;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.other-project-section .other-project-list .other-project:nth-child(2n) {
+	background-color: rgba(0,0,0,0.2);
+}
+.other-project-section .other-project-list .other-project:nth-child(2n+1) {
+	background-color: rgba(0,0,0,0.4);
+}
+
+.other-project-section .other-project-list .other-project .name {
+	letter-spacing: 0.05rem;
+}
+
+.other-project-section .other-project-list .other-project .place {
+	margin-top: 5px;
+}
+
+@media( min-width: 640px )  {}
+
+@media( min-width: 800px )  {
+	.other-project-section .other-project-list {
+		text-align: left;
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.other-project-section .other-project-list .other-project {
+		display: inline-block;
+		writing-mode: vertical-rl; 
+		text-orientation: sideways;
+		transform: rotate(180deg);
+		flex-grow: 1;
+		padding: 15px;
+		transition: flex-grow .4s .2s ease-out;
+		cursor: pointer;
+		height: 300px;
+	}
+
+	.other-project-section .other-project-list .other-project:hover {
+		flex-grow: 4;
+	}
+
+	.other-project-section .other-project-list .other-project:focus {
+		outline: none;
+	}
+}
+
+@media( min-width: 1040px ) {
+	.other-project-section .other-project-list .other-project {
+		height: 360px;
+		padding: 20px;
+	}
+}
+@media( min-width: 1380px ) {
+	.other-project-section .other-project-list .other-project {
+		height: 420px;
+		padding: 30px;
+	}
+}
+@media( min-width: 1680px ) {
+	.other-project-section .other-project-list .other-project {
+		height: 480px;
+		padding: 40px;
+	}
+}
+@media( min-width: 1940px ) {
+	.other-project-section .other-project-list .other-project {
+		height: 540px;
+		padding: 50px;
+	}
+}

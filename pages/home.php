@@ -10,13 +10,13 @@
 <section class="landing-section fill-teal gradient-blue-green block-space-bottom">
 	<div class="slick-home-landing">
 		<div class="slide">
-			<img src="http://via.placeholder.com/1920x1080?text=1">
+			<img class="block" src="http://via.placeholder.com/1920x1080?text=1">
 		</div>
 		<div class="slide">
-			<img src="http://via.placeholder.com/1920x1080?text=2">
+			<img class="block" src="http://via.placeholder.com/1920x1080?text=2">
 		</div>
 		<div class="slide">
-			<img src="http://via.placeholder.com/1920x1080?text=3">
+			<img class="block" src="http://via.placeholder.com/1920x1080?text=3">
 		</div>
 	</div>
 </section><!-- END : Landing Section -->

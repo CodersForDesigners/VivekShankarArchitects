@@ -8,7 +8,7 @@
 	/*
 	 * Versioning Assets to invalidate the browser cache
 	 */
-	$ver = '?v=20180327';
+	$ver = '?v=20180416';
 
 	// get info on the request
 	$view = require "server/pageless.php";
@@ -92,9 +92,9 @@
 					<div class="p strong em text-teal">Architecture that is Global yet Local.</div>
 				</div>
 				<div class="quick-links columns small-10 small-offset-1 medium-2 large-2 xlarge-1 xlarge-offset-2">
-					<a class="button-link" href="#">Expertise</a>
-					<a class="button-link" href="#">Origin Story</a>
-					<a class="button-link" href="#">Process</a>
+					<a class="button-link" tabindex="-1" href="#">Expertise</a>
+					<a class="button-link" tabindex="-1" href="#">Origin Story</a>
+					<a class="button-link" tabindex="-1" href="#">Process</a>
 				</div>
 			</div>
 		</div>
