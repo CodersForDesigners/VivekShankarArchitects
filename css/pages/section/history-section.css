@@ -1,0 +1,41 @@
+/*
+ * History Section
+ */
+
+.history-section {}
+
+.history-section .description {
+	margin-top: 30px;
+}
+
+.history-section .description .p {
+	margin-bottom: 10px;
+}
+
+.history-section .description .photograph {
+	margin-bottom: 10px;
+}
+
+.history-section .film {
+	margin-top: 30px;
+}
+
+@media( min-width: 640px )  {	
+	.history-section .description .p {
+		margin-bottom: 20px;
+	}
+
+	.history-section .description .photograph {
+		margin-bottom: 20px;
+	}
+}
+@media( min-width: 1040px ) {
+	.history-section .description {
+		margin-top: 70px;
+	}
+
+	.history-section .film {
+		margin-top: 70px;
+	}
+}
+@media( min-width: 1380px ) {}

@@ -185,9 +185,10 @@
 	<!-- Stylesheet -->
 	<?php require __DIR__ . '/../style.php'; ?>
 	<!-- jQuery 3 -->
-	<script type="text/javascript" src="plugins/jquery/jquery-3.0.0.min.js<?php echo $ver ?>"></script>
+	<script type="text/javascript" src="/plugins/jquery/jquery-3.0.0.min.js<?php echo $ver ?>"></script>
 	<!-- Slick Carousel -->
-	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css<?php echo $ver ?>"/>
-	<link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css<?php echo $ver ?>"/>
+	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick.css<?php echo $ver ?>"/>
+	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick-theme.css<?php echo $ver ?>"/>
+	<script type="text/javascript" src="/plugins/slick/slick.min.js<?php echo $ver ?>"></script>
 
 <?php } ?>

@@ -7,9 +7,29 @@
 ?>
 
 <!-- Landing Section -->
-<section class="landing-section fill-teal block-space-top-bottom">
-	Project Landing Image
+<section class="landing-section fill-teal gradient-blue-green block-space-bottom">
+	<div class="slick-home-landing">
+		<div class="slide">
+			<img src="http://via.placeholder.com/1920x1080?text=1">
+		</div>
+		<div class="slide">
+			<img src="http://via.placeholder.com/1920x1080?text=2">
+		</div>
+		<div class="slide">
+			<img src="http://via.placeholder.com/1920x1080?text=3">
+		</div>
+	</div>
 </section><!-- END : Landing Section -->
+<script type="text/javascript">
+$(document).ready(function(){
+
+	/*
+	 *	Slick Home Landing
+	 */
+
+	$('.slick-home-landing').slick();
+});
+</script>
 
 <!-- Intro Section -->
 <section class="intro-section fill-off-dark block-space-top-bottom">
@@ -42,10 +62,10 @@
 				<div class="label text-neutral">Lighting Engineer</div>
 				<div class="p">Claude Engle</div>
 			</div>
-			<div class="columns small-10 small-offset-1 medium-6 large-4 large-offset-0">
+			<div class="columns small-10 small-offset-1 medium-7 large-4 large-offset-0">
 				The factory has two levels of manufacturing and had to meet all the technical norms of an industrial building. A long canopy on its’ west side connects the new facility with the old one and aesthetically breaks away from the usual canopies seen in industrial facilities.
 			</div>
-			<div class="columns small-10 small-offset-1 medium-3 large-2 large-offset-0">
+			<div class="columns small-10 small-offset-1 medium-2 large-2 large-offset-0">
 				<a href="">Benefits</a>
 				<a href="">Showcase</a>
 				<a href="">Fact File</a>

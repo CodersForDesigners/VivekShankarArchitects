@@ -1,0 +1,60 @@
+/*
+ * Practice Section
+ */
+
+.practice-section {}
+
+.practice-section .meta {
+	margin-top: 30px;
+}
+
+.practice-section .description {
+	margin-top: 10px;
+}
+
+.practice-section .description .p {
+	margin-top: 10px;
+}
+
+.practice-section .description .p:first-child {
+	margin-top: 0;
+}
+
+.practice-section .quick-links {
+	margin-top: 30px;
+}
+
+.practice-section .quick-links .button-link {
+	margin-left: 5px;
+}
+
+.practice-section .quick-links .button-link:first-child {
+	margin-left: 0;
+}
+
+@media( min-width: 640px )  {
+	.practice-section .quick-links {
+		margin-top: -32px;
+		text-align: right
+	}
+
+	.practice-section .quick-links .button-link {
+		margin-left: 0;
+		margin-bottom: 6px;
+	}
+}
+
+@media( min-width: 1040px ) {
+	.practice-section .meta {
+		margin-top: 70px;
+	}
+
+	.practice-section .description {
+		margin-top: 70px;
+	}
+
+	.practice-section .quick-links {
+		margin-top: 70px;
+	}
+}
+@media( min-width: 1380px ) {}

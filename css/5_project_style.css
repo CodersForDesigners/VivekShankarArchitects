@@ -39,7 +39,7 @@
  *	#FFFFFF : light
  *	#E5E5E4 : off-light
  *	#99A3A6 : neutral
- *	#E5E5E4 : off-neutral
+ *	#C6C6C6 : off-neutral
  *	#292A29 : dark
  *	#3D3F3D : off-dark
  *	#1D2225 : black
@@ -57,7 +57,7 @@
 	--light : #FFFFFF;
 	--off-light : #E5E5E4;
 	--neutral : #99A3A6;
-	--off-neutral : #E5E5E4;
+	--off-neutral : #C6C6C6;
 	--dark : #292A29;
 	--off-dark : #3D3F3D;
 	--black : #1D2225;
@@ -113,7 +113,7 @@ h1, .h1 { font-size: 3.0rem; }
 h2, .h2 { font-size: 2.4rem; }
 h3, .h3 { font-size: 2.0rem; }
 h4, .h4 { font-size: 1.6rem; }
-p, .p 	{ font-size: 1.2rem; }
+p, .p 	{ font-size: 1.2rem; line-height: 1.375; }
 small, .small { font-size: 0.8rem; }
 label, .label { font-size: 1.0rem; text-transform: uppercase; }
 
@@ -122,7 +122,7 @@ label, .label { font-size: 1.0rem; text-transform: uppercase; }
 	h2, .h2 { font-size: 3.2rem; }
 	h3, .h3 { font-size: 2.4rem; }
 	h4, .h4 { font-size: 1.8rem; }
-	p, .p 	{ font-size: 1.4rem; }
+	p, .p 	{ font-size: 1.4rem; line-height: 1.5; }
 	small, .small { font-size: 1.0rem; }
 	label, .label { font-size: 1.2rem; }
 }
@@ -132,7 +132,7 @@ label, .label { font-size: 1.0rem; text-transform: uppercase; }
 	h2, .h2 { font-size: 4.0rem; }
 	h3, .h3 { font-size: 2.8rem; }
 	h4, .h4 { font-size: 2.0rem; }
-	p, .p 	{ font-size: 1.4rem; }
+	p, .p 	{ font-size: 1.4rem; line-height: 1.5; }
 	small, .small { font-size: 1.0rem; }
 	label, .label { font-size: 1.2rem; }
 }
@@ -142,7 +142,7 @@ label, .label { font-size: 1.0rem; text-transform: uppercase; }
 	h2, .h2 { font-size: 4.6rem; }
 	h3, .h3 { font-size: 3.2rem; }
 	h4, .h4 { font-size: 2.4rem; }
-	p, .p 	{ font-size: 1.6rem; }
+	p, .p 	{ font-size: 1.6rem; line-height: 1.75; }
 	small, .small { font-size: 1.2rem; }
 	label, .label { font-size: 1.4rem; }
 }
@@ -203,6 +203,20 @@ button:focus,
 	line-height: 42px;
 }
 
+.button-link {
+	display: inline-block;
+	padding: 0 7px;
+	height: 25px;
+	font-size: 1rem;
+	line-height: 23px;
+	text-transform: uppercase;
+	color: var(--teal);
+	background-color: var(--dark);
+	border: 1px solid rgba(180,180,180,0.1);
+	border-radius: 4px;
+	text-decoration: none;
+}
+
 @media( min-width: 640px )  {
 	input[type="submit"],
 	input[type="reset"],
@@ -218,6 +232,13 @@ button:focus,
 		height: 48px;
 		line-height: 48px;
 	}
+
+	.button-link {
+		height: 30px;
+		font-size: 1.2rem;
+		line-height: 28px;
+	}
+
 }
 
 
@@ -335,6 +356,7 @@ select:focus {
 
 
 
+
 /*
  *
  *	Text Color
@@ -364,6 +386,23 @@ select:focus {
 .text-red {
 	color: var(--red); }
 
+
+
+
+
+/*
+ *
+ *	Gradient
+ *
+ */
+
+.gradient-blue-green {
+	background: var(--teal);
+	background: -moz-linear-gradient(left, var(--blue) 0%, var(--teal) 50%, var(--green) 100%);
+	background: -webkit-linear-gradient(left, var(--blue) 0%,var(--teal) 50%,var(--green) 100%);
+	background: linear-gradient(to right, var(--blue) 0%,var(--teal) 50%,var(--green) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--blue)', endColorstr='var(--green)',GradientType=1 );
+}
 
 
 
