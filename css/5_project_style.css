@@ -323,7 +323,7 @@ select:focus {
 	color: var(--dark);
 	background-color: var(--light); }
 .fill-off-light {
-	color: var(--dark);
+	color: var(--neutral);
 	background-color: var(--off-light); }
 .fill-neutral {
 	color: var(--light);

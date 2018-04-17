@@ -178,7 +178,6 @@
 	- -->
 
 	<!-- Fonts -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Concert+One|Roboto:400,400i,700" rel="stylesheet"> -->
 	<link rel="stylesheet" href="https://use.typekit.net/pbu8glg.css">
 	<!-- Icons -->
 	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->

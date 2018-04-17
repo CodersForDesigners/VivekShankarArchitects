@@ -8,7 +8,7 @@
 	/*
 	 * Versioning Assets to invalidate the browser cache
 	 */
-	$ver = '?v=20180416';
+	$ver = '?v=201804162';
 
 	// get info on the request
 	$view = require "server/pageless.php";
@@ -49,20 +49,21 @@
 	<section class="header-section fill-off-dark">
 		<div class="container">
 			<div class="header row">
-				<div class="columns small-3">
+				<div class="columns small-5 small-offset-1 medium-offset-0 large-3">
 					<a class="logo" href="/">
-						<img src="media/logo.svg<?php echo $ver ?>">
+						<img class="show-for-mobile block" src="/media/logo-vsa-medium-dark.svg<?php echo $ver ?>">
+						<img class="hide-for-mobile block" src="/media/logo-vsa-large-dark.svg<?php echo $ver ?>">
 					</a>
 				</div>
-				<div class="text-right columns small-9">
+				<!-- <div class="text-right columns small-9">
 					<div class="navigation inline">
-						<a class="button js_nav_button <?php echo ( $viewName == "home" ? "active" : "" ) ?>" data-page-id="home" href="/home">home</a>
-						<a class="button js_nav_button <?php echo ( $viewName == "project" ? "active" : "" ) ?>" data-page-id="project" href="/project">project</a>
-						<a class="button js_nav_button <?php echo ( $viewName == "pageone" ? "active" : "" ) ?>" data-page-id="pageone" href="/pageone">page-1</a>
-						<a class="button js_nav_button <?php echo ( $viewName == "pagetwo" ? "active" : "" ) ?>" data-page-id="pagetwo" href="/pagetwo">page-2</a>
-						<a class="button js_nav_button <?php echo ( $viewName == "contact" ? "active" : "" ) ?>" data-page-id="contact" href="/contact">contact</a>
+						<a class="button js_nav_button <?php /*echo ( $viewName == "home" ? "active" : "" )*/ ?>" data-page-id="home" href="/home">home</a>
+						<a class="button js_nav_button <?php /*echo ( $viewName == "project" ? "active" : "" )*/ ?>" data-page-id="project" href="/project">project</a>
+						<a class="button js_nav_button <?php /*echo ( $viewName == "pageone" ? "active" : "" )*/ ?>" data-page-id="pageone" href="/pageone">page-1</a>
+						<a class="button js_nav_button <?php /*echo ( $viewName == "pagetwo" ? "active" : "" )*/ ?>" data-page-id="pagetwo" href="/pagetwo">page-2</a>
+						<a class="button js_nav_button <?php /*echo ( $viewName == "contact" ? "active" : "" )*/ ?>" data-page-id="contact" href="/contact">contact</a>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section> <!-- END : Header Section -->
@@ -214,8 +215,8 @@
 					<span class="underline fill-teal"></span>
 				</div>
 				<div class="logo columns small-10 small-offset-1 large-9 xlarge-8">
-					<img class="show-for-mobile block" src="/media/logo-vsa-large.svg<?php echo $ver ?>">
-					<img class="hide-for-mobile block" src="/media/logo-vsa-xlarge.svg<?php echo $ver ?>">
+					<img class="show-for-mobile block" src="/media/logo-vsa-large-light.svg<?php echo $ver ?>">
+					<img class="hide-for-mobile block" src="/media/logo-vsa-xlarge-light.svg<?php echo $ver ?>">
 				</div>
 			</div>
 		</div>
@@ -299,17 +300,54 @@
 		<div class="container">
 			<div class="row">
 				<div class="columns small-10 small-offset-1">
-					Contact
-					Get in touch
-					+91 80 4132 8203
-					Email
-					Location
-					google maps
-					Follow us
-					facebook
-					linkedin
-					instagram
-					youtube
+					<div class="title h1 strong text-uppercase">
+						Contact
+					</div>
+				</div>
+				<div class="get-in-touch columns small-10 small-offset-1 large-4">
+					<div class="heading h4 strong text-uppercase text-teal">
+						Get in touch
+					</div>
+					<a class="call button fill-teal" href="tel:+918041328203" target="_blank">
+						<img src="media/icon-call.svg<?php echo $ver ?>">
+						<span>+91 80 4132 8203</span>
+					</a>
+					<a class="email button fill-off-light" href="#" target="_blank">
+						<img src="media/icon-email.svg<?php echo $ver ?>">
+						<span>Email</span>
+					</a>
+				</div>
+				<div class="location columns small-10 small-offset-1 medium-3 large-2">
+					<div class="heading h4 strong text-uppercase text-teal">
+						Location
+					</div>
+					<div class="address p text-neutral">
+						#203 ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.
+					</div>
+					<a class="button-link fill-teal" href="">Google Maps</a>
+				</div>
+				<div class="follow-us columns small-10 small-offset-1 medium-6 large-3">
+					<div class="heading h4 strong text-uppercase text-teal">
+						Follow us
+					</div>
+					<div class="social-icons">
+						<a class="icon" href="">
+							<span>Facebook</span>
+							<img src="media/icon-facebook.svg<?php echo $ver ?>">
+						</a>
+						<a class="icon" href="">
+							<span>LinkedIn</span>
+							<img src="media/icon-linkedin.svg<?php echo $ver ?>">
+						</a>
+						<a class="icon" href="">
+							<span>Instagram</span>
+							<img src="media/icon-instagram.svg<?php echo $ver ?>">
+						</a>
+						<a class="icon" href="">
+							<span>YouTube</span>
+							<img src="media/icon-youtube.svg<?php echo $ver ?>">
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -332,52 +370,61 @@
 
 <!-- ☰ Super Navigator  ☰ -->
 
-<!-- Menu Section -->
-<section class="menu-section">
-	Menu Button
-</section><!-- END : Menu Section -->
+<!-- Menu -->
+<section class="menu" tabindex="-1">
+	<div class="menu-container container">
+		<div class="menu-toggle inline">
+			<span class="menu-label h4 text-uppercase">&nbsp;</span>
+			<span class="menu-icon">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</div>
+		<div class="menu-toggle-close"></div>
+	</div>
+</section>
+<!-- END : Menu -->
 
-<!-- Navigation Section -->
-<section class="navigation-section">
-	Navigation List:
+<!-- Navigation -->
+<section class="navigation">
+	<div class="nav-container container text-right">
+		<div class="inline nav-list fill-dark text-left">
+			<div class="title h1 strong text-off-dark">Menu</div>
+			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Home</a><br>
+			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">Welcome</a><br>
 
-		[home-icon] Home
-		<!-- -- Project --  -->
-			Welcome
-			Intro
-			Benefits
-			Showcase
-			Facts
-			Other Projects
-		<!-- -- END : Project --  -->
-		<!-- -- Home --  -->
-			Welcome
-			Projects
-				Residential [ Apartments, Villas, Row Houses ]
-					Project : 1
-					Project : 2
-					Project : 3
-				Industrial [ Factories ]
-					Project : 4
-				Commercial [ Retail, Office Buildings, Mall ]
-					Project : 5
-				Institutions [ Schools, Colleges ]
-					Project : 6
-				Hospitality [ Restaurants, Hotels ]
-					Project : 7
-				Homes [ Custom Villas, Interiors ]
-					Project : 8
-				Conceptual [ Unbuilt Projects ]
-					Project : 9
-		<!-- -- END : Home --  -->
-		Practice
-		Expertise
-		History
-		Process
-		Services
-		Contact
+			<a tab-index="-1" class="link dropdown inline h3 strong text-teal text-uppercase">Projects</a><br>
+			<!-- for each taxonomy { -->
+			<div>
+				<a tab-index="-1" class="link dropdown inline p strong text-neutral text-uppercase">Residential</a><br>
+				<!-- for each project in this taxonomy { -->
+				<div>
+					<a tab-index="-1" href="" class="link inline h4 text-blue">Project : 1</a><br>
+				</div>
+				<!-- END : } for each project in this taxonomy -->
+			</div>
+			<!-- END : } for each taxonomy -->
 
-</section><!-- END : Navigation Section -->
+			<!-- if Project Template { -->
+			<div>
+				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Intro</a><br>
+				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Benefits</a><br>
+				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Showcase</a><br>
+				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Facts</a><br>
+				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Other Projects</a><br>
+			</div>
+			<!-- END : } if Project Template -->
+			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Practice</a><br>
+			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">Expertise</a><br>
+			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">History</a><br>
+			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">Process</a><br>
+			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Services</a><br>
+			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Contact</a><br>
+		</div>
+	</div>
+</section>
+<!-- END : Navigation -->
 
 
 

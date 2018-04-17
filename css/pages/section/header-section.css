@@ -6,7 +6,7 @@
 .header-section {}
 
 .header-section .header {
-	padding: 20px 0;
+	padding: 30px 0;
 }
 
 .header-section .header .logo {
@@ -15,12 +15,11 @@
 	text-decoration: none;
 }
 
-.header-section .header .logo img {
-	display: block;
-	width: 38px;
-}
-
 
 @media( min-width: 640px )  {}
-@media( min-width: 1040px ) {}
+@media( min-width: 1040px ) {
+	.header-section .header {
+		padding: 50px 0;
+	}
+}
 @media( min-width: 1380px ) {}

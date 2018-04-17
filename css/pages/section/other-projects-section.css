@@ -64,7 +64,7 @@
 	}
 
 	.other-project-section .other-project-list .other-project:focus {
-		outline: none;
+		outline: 0;
 	}
 }
 

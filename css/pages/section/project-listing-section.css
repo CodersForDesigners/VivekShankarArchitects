@@ -59,7 +59,7 @@
 	}
 
 	.project-listing-section .project-type:focus {
-		outline: none;
+		outline: 0;
 	}
 }
 
