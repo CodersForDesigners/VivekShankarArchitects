@@ -79,7 +79,8 @@ $(document).ready(function(){
 	<div class="container">
 		<div class="row">
 			<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
-				Benefits
+				<span>Benefits</span>
+				<span class="underline fill-teal"></span>
 			</div>
 		</div>
 		<div class="point row">
@@ -194,7 +195,8 @@ $(document).ready(function(){
 	<div class="container">
 		<div class="row">
 			<div class="h2 strong text-uppercase columns small-10 small-offset-1">
-				Showcase
+				<span>Showcase</span>
+				<span class="underline fill-light"></span>
 			</div>
 		</div>
 	</div>
@@ -205,7 +207,8 @@ $(document).ready(function(){
 	<div class="container">
 		<div class="row">
 			<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
-				Fact File
+				<span>Fact File</span>
+				<span class="underline fill-teal"></span>
 			</div>
 		</div>
 		<div class="point row">

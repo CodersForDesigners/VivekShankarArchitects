@@ -2,6 +2,12 @@
  * Benefits Section
  */
 
+.benefits-section {
+	background-image: -webkit-linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 20%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
+	background-image: -moz-linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 20%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
+	background-image: linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 20%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
+}
+
 .benefits-section .point {
 	margin-top: 30px;
 }

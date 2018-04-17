@@ -158,7 +158,7 @@
 			<div class="columns small-10 small-offset-1">
 				<div class="heading">
 					<!-- <i class="material-icons inline-middle">error</i> -->
-					<span class="inline-middle text-red">Attention</span>
+					<span class="inline-middle" style="color: #ffd777;">Attention</span>
 				</div>
 
 				<div class="message row fill-red gradient-red-45">

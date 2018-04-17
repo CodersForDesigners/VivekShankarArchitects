@@ -105,9 +105,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
-					Expertise
+					<span>Expertise</span>
+					<span class="underline fill-teal"></span>
 				</div>
 			</div>
+		</div>
+		<div class="container">
 			<div class="point row">
 				<div class="columns small-10 small-offset-1 large-4">
 					<div class="heading h4 strong">Global DNA</div>
@@ -170,7 +173,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="title h2 text-uppercase strong columns small-10 small-offset-1">
-					Origin Story 
+					<span>Origin Story</span>
+					<span class="underline fill-light"></span>
 				</div>
 			</div>
 			<div class="description row">
@@ -206,7 +210,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
-					Process
+					<span>Process</span>
+					<span class="underline fill-teal"></span>
 				</div>
 				<div class="logo columns small-10 small-offset-1 large-9 xlarge-8">
 					<img class="show-for-mobile block" src="/media/logo-vsa-large.svg<?php echo $ver ?>">
