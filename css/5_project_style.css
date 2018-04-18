@@ -486,3 +486,166 @@ select:focus {
 
 
 
+
+/*
+ *
+ *	Gradient Band
+ *
+ */
+
+
+.gradient-band:after {
+	z-index: 1;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 3%;
+	left: 0;
+	right: 0;
+	bottom: 3%;
+	width: 100%;
+	height: auto;
+
+	-webkit-transform: translateY(0%) skewY(-45deg);
+	-moz-transform: translateY(0%) skewY(-45deg);
+	transform: translateY(0%) skewY(-45deg);
+
+	-webkit-animation: 10s floatBand cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	-moz-animation: 10s floatBand cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	animation: 10s floatBand cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+
+	background: var(--teal);
+	background: -moz-linear-gradient(left, var(--blue), var(--teal), var(--green), var(--teal), var(--blue), var(--teal), var(--green), var(--teal) );
+	background: -webkit-linear-gradient(left, var(--blue), var(--teal),var(--green), var(--teal), var(--blue), var(--teal),var(--green), var(--teal) );
+	background: linear-gradient(to right, var(--blue), var(--teal), var(--green), var(--teal), var(--blue), var(--teal), var(--green), var(--teal) );
+	background-size: 300% 100%;
+}
+
+@keyframes floatBand {
+	0%, 100% {
+		-webkit-transform: translateY(-3%) skewY(-45deg);
+		-moz-transform: translateY(-3%) skewY(-45deg);
+		transform: translateY(-3%) skewY(-45deg);
+		background-position: 0% 50%;
+	}
+	50% {
+		-webkit-transform: translateY(3%) skewY(-45deg);
+		-moz-transform: translateY(3%) skewY(-45deg);
+		transform: translateY(3%) skewY(-45deg);
+		background-position: 100% 100%;
+	}
+}
+
+@media( min-width: 640px )  {
+	.gradient-band:after {
+		top: 8%;
+		bottom: 8%;
+	}
+
+	@keyframes floatBand {
+		0%, 100% {
+			-webkit-transform: translateY(-5%) skewY(-45deg);
+			-moz-transform: translateY(-5%) skewY(-45deg);
+			transform: translateY(-5%) skewY(-45deg);
+			background-position: 0% 50%;
+		}
+		50% {
+			-webkit-transform: translateY(5%) skewY(-45deg);
+			-moz-transform: translateY(5%) skewY(-45deg);
+			transform: translateY(5%) skewY(-45deg);
+			background-position: 100% 100%;
+		}
+	}
+}
+
+@media( min-width: 1040px )  {
+	.gradient-band:after {
+		top: 12%;
+		bottom: 12%;
+	}
+
+	@keyframes floatBand {
+		0%, 100% {
+			-webkit-transform: translateY(-8%) skewY(-45deg);
+			-moz-transform: translateY(-8%) skewY(-45deg);
+			transform: translateY(-8%) skewY(-45deg);
+			background-position: 0% 50%;
+		}
+		50% {
+			-webkit-transform: translateY(8%) skewY(-45deg);
+			-moz-transform: translateY(8%) skewY(-45deg);
+			transform: translateY(8%) skewY(-45deg);
+			background-position: 100% 100%;
+		}
+	}
+}
+
+@media( min-width: 1380px )  {
+	.gradient-band:after {
+		top: 20%;
+		bottom: 20%;
+	}
+
+	@keyframes floatBand {
+		0%, 100% {
+			-webkit-transform: translateY(-8%) skewY(-45deg);
+			-moz-transform: translateY(-8%) skewY(-45deg);
+			transform: translateY(-8%) skewY(-45deg);
+			background-position: 0% 50%;
+		}
+		50% {
+			-webkit-transform: translateY(8%) skewY(-45deg);
+			-moz-transform: translateY(8%) skewY(-45deg);
+			transform: translateY(8%) skewY(-45deg);
+			background-position: 100% 100%;
+		}
+	}
+}
+
+@media( min-width: 1600px )  {
+	.gradient-band:after {
+		top: 24%;
+		bottom: 24%;
+	}
+
+	@keyframes floatBand {
+		0%, 100% {
+			-webkit-transform: translateY(-10%) skewY(-45deg);
+			-moz-transform: translateY(-10%) skewY(-45deg);
+			transform: translateY(-10%) skewY(-45deg);
+			background-position: 0% 50%;
+		}
+		50% {
+			-webkit-transform: translateY(10%) skewY(-45deg);
+			-moz-transform: translateY(10%) skewY(-45deg);
+			transform: translateY(10%) skewY(-45deg);
+			background-position: 100% 100%;
+		}
+	}
+}
+
+@media( min-width: 1940px )  {
+	.gradient-band:after {
+		top: 28%;
+		bottom: 28%;
+	}
+
+	@keyframes floatBand {
+		0%, 100% {
+			-webkit-transform: translateY(-12%) skewY(-45deg);
+			-moz-transform: translateY(-12%) skewY(-45deg);
+			transform: translateY(-12%) skewY(-45deg);
+			background-position: 0% 50%;
+		}
+		50% {
+			-webkit-transform: translateY(12%) skewY(-45deg);
+			-moz-transform: translateY(12%) skewY(-45deg);
+			transform: translateY(12%) skewY(-45deg);
+			background-position: 100% 100%;
+		}
+	}
+}
+
+
+
+
