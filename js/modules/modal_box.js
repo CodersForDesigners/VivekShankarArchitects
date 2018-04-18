@@ -1,5 +1,10 @@
-$(document).ready(function() {
-	// Open Modal Box
+$( document ).ready( function () {
+
+	/*
+	 *
+	 * General modal trigger opener
+	 *
+	 */
 	$('.js_modal_trigger').on('click', function( event ){
 		event.preventDefault();
 
@@ -10,43 +15,41 @@ $(document).ready(function() {
 
 	});
 
+	/*
+	 *
+	 * The Menu open and the General Modal Closer are the same button.
+	 * On hitting the button when it says "Close", close any open modal or nav menu
+	 * On hitting the button when it says "Menu", open the nav menu
+	 *
+	 */
+	$( ".js_menu_opener.js_modal_closer" ).on( "click", function ( event ) {
 
-	// close the modal
-	function closeModal ( event ) {
+		var $body = $( "body" )
+		if ( $body.hasClass( "modal-open" ) ) {
+			$body.removeClass( "modal-open nav-open" );
+		}
+		else {
+			$body.addClass( "modal-open nav-open" );
+		}
 
-		event.stopImmediatePropagation();
-		event.preventDefault();
+	} );
 
-		$('.js_modal_box').fadeOut( 350 ); // Hide Modal Box
-		$('.body').removeClass('modal-open'); // UnFreeze Page Layer
-		$('.js_modal_box_content').removeClass('active'); // Hide All Modal Content
-
-		var $videoEmbeds = $( event.target )
-			.closest( ".js_modal_box" )
-			.find( ".youtube_embed" );
-		$videoEmbeds.each( function ( _i, el ) {
-			unsetVideoEmbed( el );
-			setVideoEmbed( el );
-		} )
-
-		// Form reset operations
-		$('.form-error').removeClass('form-error');
-
-	}
-
-	// Close Modal Box,
-	// on clicking the close button
-	$('.js_modal_box .js_modal_close').on('click', closeModal );
-	// on hitting the escape key
+	/*
+	 *
+	 * On hitting the "ESCAPE" key, close any open modal or nav menu
+	 *
+	 */
 	$( document ).on( "keyup", function ( event ) {
 
 		var keyAlias = ( event.key || String.fromCharCode( event.which ) ).toLowerCase();
 		var keyCode = parseInt( event.which || event.keyCode );
 
-		if ( keyAlias == "esc" || keyAlias == "escape" || keyCode == 27 ) {
-			closeModal( event );
+		if ( ! ( keyAlias == "esc" || keyAlias == "escape" || keyCode == 27 ) ) {
+			return;
 		}
 
-	} )
+		$( "body" ).removeClass( "modal-open nav-open" );
 
-});
+	} );
+
+} );

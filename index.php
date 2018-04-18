@@ -6,6 +6,14 @@
 	ini_set( "error_reporting", E_ALL );
 
 	/*
+	 * -/-/-/-/
+	 * Database
+	 * -/-/-/-/
+	 */
+	require_once __DIR__ . '/lib/db.php';
+	require_once __DIR__ . '/lib/projects.php';
+
+	/*
 	 * Versioning Assets to invalidate the browser cache
 	 */
 	$ver = '?v=201804162';
@@ -18,6 +26,9 @@
 	// included external php files with functions.
 	require ('inc/head.php');
 	require ('inc/lazaro.php'); /* -- Lazaro disclaimer and footer -- */
+
+	// Get projects by type
+	$projectsByType = getProjectsByType();
 
 ?>
 
@@ -373,7 +384,7 @@
 <!-- Menu -->
 <section class="menu" tabindex="-1">
 	<div class="menu-container container">
-		<div class="menu-toggle inline">
+		<div class="menu-toggle inline js_menu_opener js_modal_closer">
 			<span class="menu-label h4 text-uppercase">&nbsp;</span>
 			<span class="menu-icon">
 				<span></span>
@@ -394,17 +405,17 @@
 			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Home</a><br>
 			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">Welcome</a><br>
 
-			<a tab-index="-1" class="link dropdown inline h3 strong text-teal text-uppercase">Projects</a><br>
-			<!-- for each taxonomy { -->
-			<div>
-				<a tab-index="-1" class="link dropdown inline p strong text-neutral text-uppercase">Residential</a><br>
-				<!-- for each project in this taxonomy { -->
-				<div>
-					<a tab-index="-1" href="" class="link inline h4 text-blue">Project : 1</a><br>
-				</div>
-				<!-- END : } for each project in this taxonomy -->
+			<a tab-index="-1" class="link dropdown inline h3 strong text-teal text-uppercase js_sub_menu_trigger">Projects</a><br>
+			<div class="js_sub_menu" style="display: none">
+				<?php foreach ( $projectsByType as $type => $projects ) : ?>
+					<a tab-index="-1" class="link dropdown inline p strong text-neutral text-uppercase js_sub_menu_trigger"><?php echo $type ?></a><br>
+					<div class="js_sub_menu" style="display: none">
+						<?php foreach ( $projects as $project ) : ?>
+							<a tab-index="-1" href="project/<?php echo $project[ 'slug' ] ?>" class="link inline h4 text-blue"><?php echo $project[ 'name' ] ?></a><br>
+						<?php endforeach; ?>
+					</div>
+				<?php endforeach; ?>
 			</div>
-			<!-- END : } for each taxonomy -->
 
 			<!-- if Project Template { -->
 			<div>
@@ -494,6 +505,7 @@
 
 <!-- JS Modules -->
 <script type="text/javascript" src="/js/modules/pageless.js"></script>
+<script type="text/javascript" src="/js/modules/navigation.js"></script>
 <script type="text/javascript" src="/js/modules/video_embed.js"></script>
 <script type="text/javascript" src="/js/modules/modal_box.js"></script>
 <script type="text/javascript" src="/js/modules/smoothscroll.js"></script>
