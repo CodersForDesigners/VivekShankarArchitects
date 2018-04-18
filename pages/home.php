@@ -1,4 +1,4 @@
-<?php 
+<?php
 	/*
 	 *
 	 *	# Home Page
@@ -33,35 +33,15 @@ $(document).ready(function(){
 
 <!-- Project Listing Section -->
 <section id="projects-list" class="project-listing-section fill-neutral section js_section">
-	<div class="project-type" tabindex="-1">
-		<div class="title h3 strong text-uppercase">Residential</div>
-		<div class="heading label">Apartments, Villas, Row Houses</div>
-	</div>
-	<div class="project-type" tabindex="-1">
-		<div class="title h3 strong text-uppercase">Industrial</div>
-		<div class="heading label">Factories</div>
-	</div>
-	<div class="project-type" tabindex="-1">
-		<div class="title h3 strong text-uppercase">Commercial</div>
-		<div class="heading label">Retail, Office Buildings, Mall</div>
-	</div>
-	<div class="project-type" tabindex="-1">
-		<div class="title h3 strong text-uppercase">Institutions</div>
-		<div class="heading label">Schools, Colleges</div>
-	</div>
-	<div class="project-type" tabindex="-1">
-		<div class="title h3 strong text-uppercase">Hospitality</div>
-		<div class="heading label">Restaurants, Hotels</div>
-	</div>
-	<div class="project-type" tabindex="-1">
-		<div class="title h3 strong text-uppercase">Homes</div>
-		<div class="heading label">Custom Villas, Interiors</div>
-	</div>
-	<div class="project-type" tabindex="-1">
-		<div class="title h3 strong text-uppercase">Conceptual</div>
-		<div class="heading label">Unbuilt Projects</div>
-	</div>
+	<?php foreach ( $projectsByType as $type => $projects ) : ?>
+		<?php
+			$firstProjectImage = $projects[ 0 ][ 'featured images' ][ 0 ];
+			$imageURL = 'media/projects/' . $firstProjectImage[ 'id' ] . '.' . explode( '/', $firstProjectImage[ 'mimeType' ] )[ 1 ];
+		?>
+		<div class="project-type" tabindex="-1">
+			<div class="title h3 strong text-uppercase"><?php echo $type ?></div>
+			<div class="heading label"><?php echo $projects[ 0 ][ 'type description' ] ?></div>
+			<div class="image" style="background-image: url( '<?php echo $imageURL ?>' )"></div>
+		</div>
+	<?php endforeach; ?>
 </section><!-- END : Project Listing Section -->
-
-
-

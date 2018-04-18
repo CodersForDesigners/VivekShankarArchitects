@@ -31,8 +31,17 @@ function getProjectsByType () {
 
 	global $connection;
 
-	$query = 'SELECT name, slug, type FROM projects ORDER BY type';
+	$query = 'SELECT name, slug, type, `type description`, `featured images` FROM projects ORDER BY type';
 	$projects = DB\raw( $connection, $query );
+
+	// Parse the values that are JSON-encoded
+	foreach ( $projects as &$project ) {
+		foreach ( $project as $key => $value ) {
+			if ( $value[ 0 ] == '[' )
+				$project[ $key ] = json_decode( $value, true );
+		}
+	}
+	unset( $project );
 
 	$projectsByType = [ ];
 	foreach ( $projects as $project ) {
