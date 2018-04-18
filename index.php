@@ -57,7 +57,7 @@
 <div id="page-wrapper" class="fill-off-dark" data-page="<?php echo $viewName ?>"><!-- Page Wrapper -->
 
 	<!-- Header Section -->
-	<section class="header-section fill-off-dark section">
+	<section id="header" class="header-section fill-off-dark section js_section">
 		<div class="container">
 			<div class="header row">
 				<div class="columns small-5 small-offset-1 medium-offset-0 large-3">
@@ -89,7 +89,7 @@
 
 
 	<!-- Practice Section -->
-	<section class="practice-section block-space-top-bottom section">
+	<section id="practice" class="practice-section block-space-top-bottom section js_section">
 		<div class="container">
 			<div class="row">
 				<div class="title h1 strong text-uppercase columns small-10 small-offset-1">
@@ -113,7 +113,7 @@
 	</section><!-- END : Practice Section -->
 
 	<!-- Expertise Section -->
-	<section class="expertise-section gradient-band section">
+	<section id="expertise" class="expertise-section gradient-band section js_section">
 		<div class="inner-section fill-light block-space-top-bottom">
 			<div class="container">
 				<div class="row">
@@ -183,7 +183,7 @@
 	</section><!-- END : Expertise Section -->
 
 	<!-- History Section -->
-	<section class="history-section block-space-top-bottom section">
+	<section id="history" class="history-section block-space-top-bottom section js_section">
 		<div class="container">
 			<div class="row">
 				<div class="title h2 text-uppercase strong columns small-10 small-offset-1">
@@ -220,7 +220,7 @@
 	</section><!-- END : History Section -->
 
 	<!-- Process Section -->
-	<section class="process-section fill-light block-space-top-bottom section">
+	<section id="process" class="process-section fill-light block-space-top-bottom section js_section">
 		<div class="container">
 			<div class="row">
 				<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
@@ -278,7 +278,7 @@
 	</section><!-- END : Process Section -->
 
 	<!-- Services Section -->
-	<section class="services-section block-space-top-bottom section">
+	<section id="services" class="services-section block-space-top-bottom section js_section">
 		<div class="container">
 			<div class="row">
 				<div class="h2 strong text-uppercase columns small-10 small-offset-1">
@@ -309,7 +309,7 @@
 	</section><!-- END : Services Section -->
 
 	<!-- Contact Section -->
-	<section class="contact-section fill-light block-space-top-bottom section">
+	<section id="contact" class="contact-section fill-light block-space-top-bottom section js_section">
 		<div class="container">
 			<div class="row">
 				<div class="columns small-10 small-offset-1">

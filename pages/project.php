@@ -7,7 +7,7 @@
 ?>
 
 <!-- Landing Section -->
-<section class="landing-section fill-teal gradient-blue-green block-space-bottom section">
+<section id="landing" class="landing-section fill-teal gradient-blue-green block-space-bottom section js_section">
 	<div class="slick-home-landing">
 		<div class="slide">
 			<img class="block" src="http://via.placeholder.com/1920x1080?text=1">
@@ -32,7 +32,7 @@ $(document).ready(function(){
 </script>
 
 <!-- Intro Section -->
-<section class="intro-section block-space-top-bottom section">
+<section id="intro" class="intro-section block-space-top-bottom section js_section">
 	<div class="container">
 		<div class="row">
 			<div class="columns small-10 small-offset-1">
@@ -75,7 +75,7 @@ $(document).ready(function(){
 </section><!-- END : Intro Section -->
 
 <!-- Benefits Section -->
-<section class="benefits-section gradient-band section">
+<section id="benefits" class="benefits-section gradient-band section js_section">
 	<div class="inner-section fill-light block-space-top-bottom">
 		<div class="container">
 			<div class="row">
@@ -193,7 +193,7 @@ $(document).ready(function(){
 </section><!-- END : Benefits Section -->
 
 <!-- Showcase Section -->
-<section class="showcase-section block-space-top-bottom section">
+<section id="showcase" class="showcase-section block-space-top-bottom section js_section">
 	<div class="container">
 		<div class="row">
 			<div class="h2 strong text-uppercase columns small-10 small-offset-1">
@@ -205,7 +205,7 @@ $(document).ready(function(){
 </section><!-- END : Showcase Section -->
 
 <!-- Facts Section -->
-<section class="facts-section fill-light block-space-top-bottom section">
+<section id="fact-file" class="facts-section fill-light block-space-top-bottom section js_section">
 	<div class="container">
 		<div class="row">
 			<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
@@ -244,7 +244,7 @@ $(document).ready(function(){
 </section><!-- END : Facts Section -->
 
 <!-- Other Project Section -->
-<section class="other-project-section fill-light section">
+<section id="other-projects" class="other-project-section fill-light section js_section">
 	<div class="container">
 		<div class="row">
 			<div class="title h3 text-uppercase text-center text-teal columns small-10 small-offset-1">
