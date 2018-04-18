@@ -394,14 +394,14 @@
 				<span></span>
 			</span>
 		</div>
-		<div class="menu-toggle-close"></div>
 	</div>
 </div>
 <!-- END : Menu -->
 
 <!-- Navigation -->
-<div class="navigation">
+<div class="navigation js_navigation">
 	<div class="nav-container container text-right">
+		<div class="menu-close-toggler js_modal_close"></div>
 		<div class="inline nav-list fill-dark text-left">
 			<div class="title h1 strong text-off-dark">Menu</div>
 			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Home</a><br>

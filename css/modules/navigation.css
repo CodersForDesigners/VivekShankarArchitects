@@ -21,6 +21,14 @@
 	transition: top .4s ease-in-out;
 }
 
+.nav-open .navigation .menu-close-toggler {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 110%;
+	width: 100%;
+}
+
 .navigation .nav-container {
 	position: relative;
 }
@@ -153,7 +161,3 @@
 	}
 
 }
-
-
-
-

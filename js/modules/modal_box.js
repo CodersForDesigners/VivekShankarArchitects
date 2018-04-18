@@ -15,6 +15,8 @@ $( document ).ready( function () {
 
 	});
 
+	$( ".js_modal_box .js_modal_close, .js_navigation .js_modal_close" ).on( "click", closeModal );
+
 	/*
 	 *
 	 * The Menu open and the General Modal Closer are the same button.
@@ -26,7 +28,7 @@ $( document ).ready( function () {
 
 		var $body = $( "body" )
 		if ( $body.hasClass( "modal-open" ) ) {
-			$body.removeClass( "modal-open nav-open" );
+			closeModal();
 		}
 		else {
 			$body.addClass( "modal-open nav-open" );
@@ -48,8 +50,19 @@ $( document ).ready( function () {
 			return;
 		}
 
-		$( "body" ).removeClass( "modal-open nav-open" );
+		closeModal();
 
 	} );
+
+	function closeModal () {
+
+		event.stopImmediatePropagation();
+		event.preventDefault();
+
+		$( ".js_modal_box" ).fadeOut( 350 );
+
+		$( ".body" ).removeClass( "modal-open nav-open" );
+
+	}
 
 } );

@@ -150,14 +150,6 @@
   transform: rotate(-135deg);
 }
 
-.menu .menu-toggle-close {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 0;
-}
-
 
 @media( max-width: 640px )  {
 	.menu .menu-toggle.hide {
@@ -190,13 +182,6 @@
 		-moz-transform: scale(.85) translateY(190px);
 		transform: scale(.85) translateY(190px);
 	}
-	.nav-open .menu .menu-toggle-close {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 50%;
-	}
 }
 
 @media( min-width: 1380px ) {
@@ -209,8 +194,5 @@
 		-webkit-transform: scale(1) translateY(175px);
 		-moz-transform: scale(1) translateY(175px);
 		transform: scale(1) translateY(175px);
-	}
-	.nav-open .menu .menu-toggle-close {
-		width: 66.66666%;
 	}
 }
