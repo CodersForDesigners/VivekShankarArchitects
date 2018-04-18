@@ -10,8 +10,8 @@
 	 * Database
 	 * -/-/-/-/
 	 */
-	require_once __DIR__ . '/lib/db.php';
-	require_once __DIR__ . '/lib/projects.php';
+	require_once __DIR__ . '/inc/db.php';
+	require_once __DIR__ . '/inc/projects.php';
 
 	/*
 	 * Versioning Assets to invalidate the browser cache

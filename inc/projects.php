@@ -9,7 +9,7 @@ $connection = DB\getConnection( [
 	'password' => $productionEnv ? '95a9e9d5deeb8046fc4c530080afcdbe5a855d5c5de09056' : ''
 ] );
 // "Use" the database
-$connection->exec( file_get_contents( __DIR__ . '/../lib/Database setup.sql' ) );
+$connection->exec( file_get_contents( __DIR__ . '/Database setup.sql' ) );
 
 function getProjects () {
 
