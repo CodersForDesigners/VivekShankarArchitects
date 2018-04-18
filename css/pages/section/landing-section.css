@@ -5,8 +5,245 @@
 .landing-section {
 	z-index: 4;
 	box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
+	padding-bottom: 40px;
 }
 
+.landing-section .slick-landing { position: relative; }
+
+.landing-section .slick-landing.slick-slider { margin: 0; }
+
+.landing-section .slick-landing .slide {}
+
+.landing-section .slick-landing .slide:focus { outline: none; }
+
+
+/* -- the dots -- */
+
+.landing-section .slick-landing .slick-dots {
+	z-index: 2;
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	padding: 0;
+	bottom: -40px;
+	left: 50%;
+	-webkit-transform: -webkit-translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+	text-align: center;
+}
+
+.landing-section .slick-landing .slick-dots li {
+	margin: 0;
+	width: auto;
+	height: auto;
+}
+
+.landing-section .slick-landing .slick-dots li button,
+.landing-section .slick-landing .slick-dots li button:hover,
+.landing-section .slick-landing .slick-dots li button:focus {
+	min-width: 0;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+	/*background: peachpuff;*/
+}
+
+.landing-section .slick-landing .slick-dots li button:before {
+	content: '—';
+	font-family: 'proxima-nova', Arial, sans-serif;
+	position: relative;
+	top: auto;
+	left: auto;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 40px;
+	color: var(--light);
+}
+
+
+
+/* -- the arrows -- */
+
+.landing-section .slick-landing button.slick-arrow,
+.landing-section .slick-landing button.slick-arrow:hover,
+.landing-section .slick-landing button.slick-arrow:focus {
+	z-index: 3;
+
+	top: 50%;
+	left: auto;
+	right: auto;
+	bottom: auto;
+
+	width: 55px;
+	height: 55px;
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+
+	background-color: rgba(73, 204, 191, 0.7);
+}
+
+.landing-section .slick-landing button.slick-arrow.slick-prev {
+	left: 0;
+	transform: translate(55px, -50%) rotate(45deg);
+}
+	
+.landing-section .slick-landing button.slick-arrow.slick-next {
+	right: 0;
+	transform: translate(-55px, -50%) rotate(-45deg);
+}
+
+.landing-section .slick-landing button.slick-arrow:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 40px;
+}
+
+.landing-section .slick-landing button.slick-arrow.slick-prev:before {
+	transform: translate(-2px, 2px) rotate(-45deg);
+	background-image: url('/plugins/slick/ic_prev.svg');
+}
+.landing-section .slick-landing button.slick-arrow.slick-next:before {
+	transform: translate(2px, 2px) rotate(45deg);
+	background-image: url('/plugins/slick/ic_next.svg');
+}
+
+
 @media( min-width: 640px )  {}
-@media( min-width: 1040px ) {}
-@media( min-width: 1380px ) {}
+
+@media( min-width: 800px )  {
+	.landing-section {
+		padding-bottom: 60px;
+	}
+
+	/* -- the dots -- */
+	.landing-section .slick-landing .slick-dots {
+		height: 60px;
+		bottom: -60px;
+	}
+
+	.landing-section .slick-landing .slick-dots li button,
+	.landing-section .slick-landing .slick-dots li button:hover,
+	.landing-section .slick-landing .slick-dots li button:focus {
+		width: 50px;
+		height: 60px;
+		line-height: 60px;
+	}
+
+	.landing-section .slick-landing .slick-dots li button:before {
+		font-size: 28px;
+		line-height: 60px;
+	}
+}
+
+@media( min-width: 1040px ) {
+	.landing-section {
+		padding-bottom: 90px;
+	}
+
+	/* -- the arrows -- */
+
+	.landing-section .slick-landing button.slick-arrow,
+	.landing-section .slick-landing button.slick-arrow:hover,
+	.landing-section .slick-landing button.slick-arrow:focus {
+		width: 75px;
+		height: 75px;
+	}
+
+	.landing-section .slick-landing button.slick-arrow:before {
+		background-size: 50px;
+	}
+
+	.landing-section .slick-landing button.slick-arrow.slick-prev {
+		left: 0;
+		transform: translate(75px, -50%) rotate(45deg);
+	}
+		
+	.landing-section .slick-landing button.slick-arrow.slick-next {
+		right: 0;
+		transform: translate(-75px, -50%) rotate(-45deg);
+	}
+
+
+	/* -- the dots -- */
+	.landing-section .slick-landing .slick-dots {
+		height: 90px;
+		bottom: -90px;
+	}
+
+	.landing-section .slick-landing .slick-dots li button,
+	.landing-section .slick-landing .slick-dots li button:hover,
+	.landing-section .slick-landing .slick-dots li button:focus {
+		width: 60px;
+		height: 90px;
+		line-height: 90px;
+	}
+
+	.landing-section .slick-landing .slick-dots li button:before {
+		font-size: 36px;
+		line-height: 90px;
+	}
+}
+@media( min-width: 1380px ) {
+	.landing-section {
+		padding-bottom: 120px;
+	}
+
+	/* -- the arrows -- */
+
+	.landing-section .slick-landing button.slick-arrow,
+	.landing-section .slick-landing button.slick-arrow:hover,
+	.landing-section .slick-landing button.slick-arrow:focus {
+		width: 90px;
+		height: 90px;
+	}
+
+	.landing-section .slick-landing button.slick-arrow:before {
+		background-size: 60px;
+	}
+
+	.landing-section .slick-landing button.slick-arrow.slick-prev {
+		left: 0;
+		transform: translate(90px, -50%) rotate(45deg);
+	}
+		
+	.landing-section .slick-landing button.slick-arrow.slick-next {
+		right: 0;
+		transform: translate(-90px, -50%) rotate(-45deg);
+	}
+
+	/* -- the dots -- */
+	.landing-section .slick-landing .slick-dots {
+		height: 120px;
+		bottom: -120px;
+	}
+
+	.landing-section .slick-landing .slick-dots li button,
+	.landing-section .slick-landing .slick-dots li button:hover,
+	.landing-section .slick-landing .slick-dots li button:focus {
+		width: 70px;
+		height: 120px;
+		line-height: 120px;
+	}
+
+	.landing-section .slick-landing .slick-dots li button:before {
+		font-size: 40px;
+		line-height: 120px;
+	}
+}

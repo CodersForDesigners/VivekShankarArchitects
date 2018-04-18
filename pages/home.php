@@ -8,7 +8,7 @@
 
 <!-- Landing Section -->
 <section id="landing" class="landing-section fill-teal gradient-blue-green block-space-bottom section js_section">
-	<div class="slick-home-landing">
+	<div class="slick-landing">
 		<div class="slide">
 			<img class="block" src="http://via.placeholder.com/1920x1080?text=1">
 		</div>
@@ -27,7 +27,24 @@ $(document).ready(function(){
 	 *	Slick Home Landing
 	 */
 
-	$('.slick-home-landing').slick();
+	$('.slick-landing').slick({
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		adaptiveHeight: true,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		responsive: [
+		{
+			breakpoint: 800,
+			settings: {
+				arrows: false
+			}
+		} ]
+	});
+
 });
 </script>
 

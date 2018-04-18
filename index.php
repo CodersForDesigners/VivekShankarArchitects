@@ -16,7 +16,7 @@
 	/*
 	 * Versioning Assets to invalidate the browser cache
 	 */
-	$ver = '?v=20180416s21';
+	$ver = '?v=2018041651';
 
 	// get info on the request
 	$view = require "server/pageless.php";
