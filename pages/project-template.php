@@ -83,9 +83,9 @@ $(document).ready(function(){
 				The factory has two levels of manufacturing and had to meet all the technical norms of an industrial building. A long canopy on its’ west side connects the new facility with the old one and aesthetically breaks away from the usual canopies seen in industrial facilities.
 			</div>
 			<div class="quick-links columns small-10 small-offset-1 medium-2 large-1">
-				<a class="button-link" tabindex="-1" href="#">Benefits</a>
-				<a class="button-link" tabindex="-1" href="#">Showcase</a>
-				<a class="button-link" tabindex="-1" href="#">Fact File</a>
+				<a class="button-link" tabindex="-1" href="#benefits">Benefits</a>
+				<a class="button-link" tabindex="-1" href="#showcase">Showcase</a>
+				<a class="button-link" tabindex="-1" href="#fact-file">Fact File</a>
 			</div>
 		</div>
 	</div>

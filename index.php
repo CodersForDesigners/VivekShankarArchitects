@@ -104,9 +104,9 @@
 					<div class="p strong em text-teal">Architecture that is Global yet Local.</div>
 				</div>
 				<div class="quick-links columns small-10 small-offset-1 medium-2 large-2 xlarge-1 xlarge-offset-2">
-					<a class="button-link" tabindex="-1" href="#">Expertise</a>
-					<a class="button-link" tabindex="-1" href="#">Origin Story</a>
-					<a class="button-link" tabindex="-1" href="#">Process</a>
+					<a class="button-link" tabindex="-1" href="#expertise">Expertise</a>
+					<a class="button-link" tabindex="-1" href="#history">Origin Story</a>
+					<a class="button-link" tabindex="-1" href="#process">Process</a>
 				</div>
 			</div>
 		</div>
@@ -237,6 +237,7 @@
 			<div class="point row">
 				<div class="heading columns small-10 small-offset-1">
 					<span class="inline h4 strong text-uppercase text-light">Research</span>
+					<img class="ribbon" src="/media/process-ribbon-1.svg<?php echo $ver ?>">
 				</div>
 				<div class="description hide-for-mobile columns small-10 small-offset-1 large-5">
 					<div class="p">We see the relevance of research not just as the first vital step of the design process that lays down a set of parameters but as the thought generator infused with a high degree of intellectual content that influences the design process.</div>
@@ -250,6 +251,7 @@
 			<div class="point row">
 				<div class="heading columns small-10 small-offset-1">
 					<span class="inline h4 strong text-uppercase text-light">Design</span>
+					<img class="ribbon" src="/media/process-ribbon-2.svg<?php echo $ver ?>">
 				</div>
 				<div class="description hide-for-mobile columns small-10 small-offset-1 large-5">
 					<div class="p">The inferences drawn from the research enable the formulation of a design agenda that comprises the amalgamation of the site characteristics, climate and budget with the design intent. The client brief is re-imagined and rewritten by us in order to maintain the rigor of the research.</div>
@@ -264,6 +266,7 @@
 			<div class="point row">
 				<div class="heading columns small-10 small-offset-1">
 					<span class="inline h4 strong text-uppercase text-light">Execution</span>
+					<img class="ribbon" src="/media/process-ribbon-3.svg<?php echo $ver ?>">
 				</div>
 				<div class="description hide-for-mobile columns small-10 small-offset-1 large-5">
 					<div class="p">This phase witnesses the translation of the drawing content to a physical manifestation of a structural core of steel and concrete and subsequently the resemblance to the 3D render starts to interestingly emerge until the completion of the project.</div>

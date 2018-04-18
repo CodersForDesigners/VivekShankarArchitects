@@ -32,10 +32,10 @@
 	content: '';
 	position: absolute;
 	z-index: 1;
-	top: 2px;
-	left: -200px;
+	top: 76px;
+	left: -288px;
 	width: 200px;
-	height: 32px;
+	height: 16px;
 	background-color: var(--teal);
 }
 
@@ -48,7 +48,6 @@
 	width: 150px;
 	height: 32px;
 	background-color: var(--teal);
-	box-shadow: -2px 2px 4px 0 rgba(0,0,0,0.2);
 }
 
 .process-section .point:nth-child(1) .heading:before { background-color: var(--blue) }
@@ -69,6 +68,16 @@
 	background: -moz-linear-gradient(left, var(--off-light) 0%, var(--neutral) 100%);
 	background: -webkit-linear-gradient(left, var(--off-light) 0%, var(--neutral) 100%);
 	background: linear-gradient(to right, var(--off-light) 0%, var(--neutral) 100%);
+}
+
+.process-section .point .heading .ribbon {
+	position: absolute;
+	z-index: 1;
+	top: -6px;
+	left: -9px;
+	width: 80px;
+	height: auto;
+	transform: translateX(-100%);
 }
 
 .process-section .point .excerpt {
@@ -111,10 +120,10 @@
 	}
 
 	.process-section .point .heading:before {
-		top: 0px;
-		left: -280px;
+		top: 89px;
+		left: -385px;
 		width: 280px;
-		height: 38px;
+		height: 18px;
 	}
 
 	.process-section .point .heading:after {
@@ -122,6 +131,12 @@
 		left: -15px;
 		width: 180px;
 		height: 38px;
+	}
+
+	.process-section .point .heading .ribbon {
+		top: -8px;
+		left: -13px;
+		width: 94px;
 	}
 
 	.process-section .point .description {
@@ -166,10 +181,10 @@
 	}
 
 	.process-section .point .heading:before {
-		top: 5px;
-		left: -300px;
+		top: 94px;
+		left: -417px;
 		width: 280px;
-		height: 40px;
+		height: 19px;
 	}
 
 	.process-section .point .heading:after {
@@ -177,6 +192,12 @@
 		left: -40px;
 		width: 200px;
 		height: 40px;
+	}
+
+	.process-section .point .heading .ribbon {
+		top: -8px;
+		left: -39px;
+		width: 99px;
 	}
 
 	.process-section .point .description {
@@ -206,10 +227,10 @@
 	}
 
 	.process-section .point .heading:before {
-		top: 10px;
-		left: -740px;
+		top: 111px;
+		left: -876px;
 		width: 710px;
-		height: 40px;
+		height: 23px;
 	}
 
 	.process-section .point .heading:after {
@@ -217,6 +238,13 @@
 		left: -50px;
 		width: 240px;
 		height: 48px;
+	}
+
+
+	.process-section .point .heading .ribbon {
+		top: -10px;
+		left: -49px;
+		width: 118px;
 	}
 
 
