@@ -4,11 +4,12 @@
 
 .project-listing-section {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	text-align: center;
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
 	transform: translateZ(0);
+	box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
 }
 
 .project-listing-section .project-type {

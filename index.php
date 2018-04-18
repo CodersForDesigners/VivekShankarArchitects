@@ -57,7 +57,7 @@
 <div id="page-wrapper" class="fill-off-dark" data-page="<?php echo $viewName ?>"><!-- Page Wrapper -->
 
 	<!-- Header Section -->
-	<section class="header-section section">
+	<section class="header-section fill-off-dark section">
 		<div class="container">
 			<div class="header row">
 				<div class="columns small-5 small-offset-1 medium-offset-0 large-3">
