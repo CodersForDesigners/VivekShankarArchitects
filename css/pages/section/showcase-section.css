@@ -6,6 +6,48 @@
 	z-index: 2;
 }
 
-@media( min-width: 640px )  {}
-@media( min-width: 1040px ) {}
+.showcase-section .tabs {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.showcase-section .tabs .tab {
+	margin-left: 10px;
+}
+
+.showcase-section .tabs .tab:first-child {
+	margin-left: 0;
+}
+
+.showcase-section .tabs .tab.active {
+	color: var(--teal);
+	background-color: var(--light);
+}
+
+.showcase-section .showcase-masonry {
+	margin-top: 10px;
+}
+
+.showcase-section .showcase-masonry .showcase-item {
+	padding: 8px;
+	font-size: 0;
+	line-height: 0;
+}
+
+@media( min-width: 640px )  {
+	.showcase-section .tabs {
+		text-align: left;
+	}
+}
+@media( min-width: 1040px ) {
+	.showcase-section .tabs {
+		margin-top: 70px;
+	}
+	.showcase-section .showcase-masonry {
+		margin-top: 30px;
+	}
+	.showcase-section .showcase-masonry .showcase-item {
+		padding: 12px;
+	}
+}
 @media( min-width: 1380px ) {}

@@ -189,5 +189,7 @@
 	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick.css<?php echo $ver ?>"/>
 	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick-theme.css<?php echo $ver ?>"/>
 	<script type="text/javascript" src="/plugins/slick/slick.min.js<?php echo $ver ?>"></script>
+	<!-- Masonry -->
+	<script type="text/javascript" src="/plugins/masonry/masonry.pkgd.min.js<?php echo $ver ?>"></script>
 
 <?php } ?>

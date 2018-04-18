@@ -196,13 +196,43 @@ $(document).ready(function(){
 <section id="showcase" class="showcase-section block-space-top-bottom section js_section">
 	<div class="container">
 		<div class="row">
-			<div class="h2 strong text-uppercase columns small-10 small-offset-1">
+			<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
 				<span>Showcase</span>
 				<span class="underline fill-light"></span>
 			</div>
 		</div>
+		<div class="row">
+			<div class="tabs columns small-10 small-offset-1">
+				<a class="tab active button-link" tabindex="-1" href="#">Finished<span class="hide-for-mobile"> Project</span></a>
+				<a class="tab button-link" tabindex="-1" href="#">3D Renders</a>
+				<a class="tab button-link" tabindex="-1" href="#">Concept<span class="hide-for-mobile"> Drawings</span></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="showcase-masonry">
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
+			</div>
+		</div>
 	</div>
 </section><!-- END : Showcase Section -->
+<script type="text/javascript">
+$(document).ready(function(){
+
+	/*
+	 *	Masonry Showcase
+	 */
+
+	$('.showcase-masonry').masonry();
+});
+</script>
 
 <!-- Facts Section -->
 <section id="fact-file" class="facts-section fill-light block-space-top-bottom section js_section">
