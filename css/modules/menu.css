@@ -186,8 +186,6 @@
 
 @media( min-width: 1040px ) {
 	.menu .menu-container .menu-toggle {
-		border: 1.5px solid rgba(256,256,256,0.5);
-
 		-webkit-transform: scale(.85) translateY(190px);
 		-moz-transform: scale(.85) translateY(190px);
 		transform: scale(.85) translateY(190px);
@@ -206,6 +204,8 @@
 		width: 80px;
 	}
 	.menu .menu-container .menu-toggle {
+		border: 1.5px solid rgba(256,256,256,0.5);
+
 		-webkit-transform: scale(1) translateY(175px);
 		-moz-transform: scale(1) translateY(175px);
 		transform: scale(1) translateY(175px);

@@ -94,6 +94,11 @@ hr {
 strong, .strong { font-weight: 600; }
 em, .em { font-style: italic; }
 
+section, .section {
+	position: relative;
+	z-index: 1;
+}
+
 
 
 

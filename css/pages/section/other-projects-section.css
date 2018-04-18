@@ -2,7 +2,9 @@
  * Other Project Section
  */
 
-.other-project-section {}
+.other-project-section {
+	z-index: 2;
+}
 
 .other-project-section .title {}
 

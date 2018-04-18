@@ -2,7 +2,9 @@
  * History Section
  */
 
-.history-section {}
+.history-section {
+	z-index: 3;
+}
 
 .history-section .description {
 	margin-top: 30px;

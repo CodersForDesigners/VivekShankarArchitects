@@ -4,6 +4,7 @@
 
 .project-listing-section {
 	position: relative;
+	z-index: 2;
 	text-align: center;
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);

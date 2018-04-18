@@ -2,7 +2,9 @@
  * Practice Section
  */
 
-.practice-section {}
+.practice-section {
+	z-index: 3;
+}
 
 .practice-section .meta {
 	margin-top: 30px;

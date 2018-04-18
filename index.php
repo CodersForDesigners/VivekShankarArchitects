@@ -8,7 +8,7 @@
 	/*
 	 * Versioning Assets to invalidate the browser cache
 	 */
-	$ver = '?v=201804162';
+	$ver = '?v=2018041621';
 
 	// get info on the request
 	$view = require "server/pageless.php";
@@ -43,10 +43,10 @@
 
 <!--  ★  MARKUP GOES HERE  ★  -->
 
-<div id="page-wrapper" data-page="<?php echo $viewName ?>"><!-- Page Wrapper -->
+<div id="page-wrapper" class="fill-off-dark" data-page="<?php echo $viewName ?>"><!-- Page Wrapper -->
 
 	<!-- Header Section -->
-	<section class="header-section fill-off-dark">
+	<section class="header-section section">
 		<div class="container">
 			<div class="header row">
 				<div class="columns small-5 small-offset-1 medium-offset-0 large-3">
@@ -78,7 +78,7 @@
 
 
 	<!-- Practice Section -->
-	<section class="practice-section fill-off-dark block-space-top-bottom">
+	<section class="practice-section block-space-top-bottom section">
 		<div class="container">
 			<div class="row">
 				<div class="title h1 strong text-uppercase columns small-10 small-offset-1">
@@ -102,75 +102,77 @@
 	</section><!-- END : Practice Section -->
 
 	<!-- Expertise Section -->
-	<section class="expertise-section fill-light block-space-top-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
-					<span>Expertise</span>
-					<span class="underline fill-teal"></span>
+	<section class="expertise-section gradient-band section">
+		<div class="inner-section fill-light block-space-top-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
+						<span>Expertise</span>
+						<span class="underline fill-teal"></span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="container">
-			<div class="point row">
-				<div class="columns small-10 small-offset-1 large-4">
-					<div class="heading h4 strong">Global DNA</div>
-					<div class="excerpt p strong em text-teal hide-for-mobile">Vivek trained and worked with the internationally renowned architect Zaha Hadid.</div>
+			<div class="container">
+				<div class="point row">
+					<div class="columns small-10 small-offset-1 large-4">
+						<div class="heading h4 strong">Global DNA</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek trained and worked with the internationally renowned architect Zaha Hadid.</div>
+					</div>
+					<div class="columns small-10 small-offset-1 large-5">
+						<div class="description p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. He spent 8 years under Zaha, working on award winning projects in Tokyo, Munich, Singapore, Rome and London.</div>
+					</div>
 				</div>
-				<div class="columns small-10 small-offset-1 large-5">
-					<div class="description p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. He spent 8 years under Zaha, working on award winning projects in Tokyo, Munich, Singapore, Rome and London.</div>
+				<div class="point row">
+					<div class="columns small-10 small-offset-1 large-4">
+						<div class="heading h4 strong">Process Driven Global Standards</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek returned to India and setup his practice to exacting global standards.</div>
+					</div>
+					<div class="columns small-10 small-offset-1 large-5">
+						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice to exacting global standards. Today the firm operates under the umbrella of these global standards that enable bespoke Design Strategies for each project and client.</div>
+					</div>
 				</div>
-			</div>
-			<div class="point row">
-				<div class="columns small-10 small-offset-1 large-4">
-					<div class="heading h4 strong">Process Driven Global Standards</div>
-					<div class="excerpt p strong em text-teal hide-for-mobile">Vivek returned to India and setup his practice to exacting global standards.</div>
+				<div class="point row">
+					<div class="columns small-10 small-offset-1 large-4">
+						<div class="heading h4 strong">Local Context Advantage</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Indian leaniage ensures we do not run into operational delays and cost overruns.</div>
+					</div>
+					<div class="columns small-10 small-offset-1 large-5">
+						<div class="description p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns that International Architects most often suffer when they operate in India.</div>
+					</div>
 				</div>
-				<div class="columns small-10 small-offset-1 large-5">
-					<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice to exacting global standards. Today the firm operates under the umbrella of these global standards that enable bespoke Design Strategies for each project and client.</div>
+				<div class="point row">
+					<div class="columns small-10 small-offset-1 large-4">
+						<div class="heading h4 strong">Integrated Research, Design and Execution Process</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">We carefully integrate our Research Team with our Design and Execution teams.</div>
+					</div>
+					<div class="columns small-10 small-offset-1 large-5">
+						<div class="description p">Innovation is not realistic in a pure implementation environment. We have deliberately created the optimal conditions for innovation; we carefully integrate our Research Team with our Design and Execution teams with a proprietary triple layer process. The result is research driven bespoke strategy.</div>
+					</div>
 				</div>
-			</div>
-			<div class="point row">
-				<div class="columns small-10 small-offset-1 large-4">
-					<div class="heading h4 strong">Local Context Advantage</div>
-					<div class="excerpt p strong em text-teal hide-for-mobile">Indian leaniage ensures we do not run into operational delays and cost overruns.</div>
+				<div class="point row">
+					<div class="columns small-10 small-offset-1 large-4">
+						<div class="heading h4 strong">Innovation that leads to Sustainability</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Innovation is not possible without a bespoke strategy for every project.</div>
+					</div>
+					<div class="columns small-10 small-offset-1 large-5">
+						<div class="description p">The way that we approach a project is highly personalised. Innovation is not possible without a bespoke strategy for every project. Sustainability can only be achieved if Innovation has a stable Design is typically undertaken by a small, close-knit team of individuals, yet this team is able to draw on the wide range of skills that only a practice of our size can offer.</div>
+					</div>
 				</div>
-				<div class="columns small-10 small-offset-1 large-5">
-					<div class="description p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns that International Architects most often suffer when they operate in India.</div>
-				</div>
-			</div>
-			<div class="point row">
-				<div class="columns small-10 small-offset-1 large-4">
-					<div class="heading h4 strong">Integrated Research, Design and Execution Process</div>
-					<div class="excerpt p strong em text-teal hide-for-mobile">We carefully integrate our Research Team with our Design and Execution teams.</div>
-				</div>
-				<div class="columns small-10 small-offset-1 large-5">
-					<div class="description p">Innovation is not realistic in a pure implementation environment. We have deliberately created the optimal conditions for innovation; we carefully integrate our Research Team with our Design and Execution teams with a proprietary triple layer process. The result is research driven bespoke strategy.</div>
-				</div>
-			</div>
-			<div class="point row">
-				<div class="columns small-10 small-offset-1 large-4">
-					<div class="heading h4 strong">Innovation that leads to Sustainability</div>
-					<div class="excerpt p strong em text-teal hide-for-mobile">Innovation is not possible without a bespoke strategy for every project.</div>
-				</div>
-				<div class="columns small-10 small-offset-1 large-5">
-					<div class="description p">The way that we approach a project is highly personalised. Innovation is not possible without a bespoke strategy for every project. Sustainability can only be achieved if Innovation has a stable Design is typically undertaken by a small, close-knit team of individuals, yet this team is able to draw on the wide range of skills that only a practice of our size can offer.</div>
-				</div>
-			</div>
-			<div class="point row">
-				<div class="columns small-10 small-offset-1 large-4">
-					<div class="heading h4 strong">Last Mile Design Management </div>
-					<div class="excerpt p strong em text-teal hide-for-mobile">Vivek’s driving principle is the last mile craftsmanship</div>
-				</div>
-				<div class="columns small-10 small-offset-1 large-5">
-					<div class="description p">The repeating tragedy is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
+				<div class="point row">
+					<div class="columns small-10 small-offset-1 large-4">
+						<div class="heading h4 strong">Last Mile Design Management </div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek’s driving principle is the last mile craftsmanship</div>
+					</div>
+					<div class="columns small-10 small-offset-1 large-5">
+						<div class="description p">The repeating tragedy is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section><!-- END : Expertise Section -->
 
 	<!-- History Section -->
-	<section class="history-section fill-off-dark block-space-top-bottom">
+	<section class="history-section block-space-top-bottom section">
 		<div class="container">
 			<div class="row">
 				<div class="title h2 text-uppercase strong columns small-10 small-offset-1">
@@ -207,7 +209,7 @@
 	</section><!-- END : History Section -->
 
 	<!-- Process Section -->
-	<section class="process-section fill-light block-space-top-bottom">
+	<section class="process-section fill-light block-space-top-bottom section">
 		<div class="container">
 			<div class="row">
 				<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
@@ -265,7 +267,7 @@
 	</section><!-- END : Process Section -->
 
 	<!-- Services Section -->
-	<section class="services-section fill-off-dark block-space-top-bottom">
+	<section class="services-section block-space-top-bottom section">
 		<div class="container">
 			<div class="row">
 				<div class="h2 strong text-uppercase columns small-10 small-offset-1">
@@ -296,7 +298,7 @@
 	</section><!-- END : Services Section -->
 
 	<!-- Contact Section -->
-	<section class="contact-section fill-light block-space-top-bottom">
+	<section class="contact-section fill-light block-space-top-bottom section">
 		<div class="container">
 			<div class="row">
 				<div class="columns small-10 small-offset-1">
@@ -371,7 +373,7 @@
 <!-- ☰ Super Navigator  ☰ -->
 
 <!-- Menu -->
-<section class="menu" tabindex="-1">
+<div class="menu" tabindex="-1">
 	<div class="menu-container container">
 		<div class="menu-toggle inline">
 			<span class="menu-label h4 text-uppercase">&nbsp;</span>
@@ -383,11 +385,11 @@
 		</div>
 		<div class="menu-toggle-close"></div>
 	</div>
-</section>
+</div>
 <!-- END : Menu -->
 
 <!-- Navigation -->
-<section class="navigation">
+<div class="navigation">
 	<div class="nav-container container text-right">
 		<div class="inline nav-list fill-dark text-left">
 			<div class="title h1 strong text-off-dark">Menu</div>
@@ -423,7 +425,7 @@
 			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Contact</a><br>
 		</div>
 	</div>
-</section>
+</div>
 <!-- END : Navigation -->
 
 

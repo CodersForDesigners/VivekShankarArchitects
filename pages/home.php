@@ -7,7 +7,7 @@
 ?>
 
 <!-- Landing Section -->
-<section class="landing-section fill-teal gradient-blue-green block-space-bottom">
+<section class="landing-section fill-teal gradient-blue-green block-space-bottom section">
 	<div class="slick-home-landing">
 		<div class="slide">
 			<img class="block" src="http://via.placeholder.com/1920x1080?text=1">
@@ -32,7 +32,7 @@ $(document).ready(function(){
 </script>
 
 <!-- Project Listing Section -->
-<section class="project-listing-section fill-neutral">
+<section class="project-listing-section fill-neutral section">
 	<div class="project-type" tabindex="-1">
 		<div class="title h3 strong text-uppercase">Residential</div>
 		<div class="heading label">Apartments, Villas, Row Houses</div>

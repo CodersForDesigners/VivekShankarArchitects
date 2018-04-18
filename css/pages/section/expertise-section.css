@@ -3,9 +3,64 @@
  */
 
 .expertise-section {
+	z-index: 1;
+}
+
+.expertise-section.gradient-band:after {
+	/* -- Gradient Band -- */
+	z-index: 1;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 5000px;
+	height: 880px;
+
+	-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+	-moz-transform: translate(-50%, -50%) rotate(-45deg);
+	transform: translate(-50%, -50%) rotate(-45deg);
+
+	-webkit-animation: 12s floatBandExpertise cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	-moz-animation: 12s floatBandExpertise cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	animation: 12s floatBandExpertise cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+
+	background: var(--teal);
+	background: -moz-linear-gradient(left, var(--blue), var(--teal), var(--green), var(--teal), var(--blue), var(--teal), var(--green), var(--teal) );
+	background: -webkit-linear-gradient(left, var(--blue), var(--teal),var(--green), var(--teal), var(--blue), var(--teal),var(--green), var(--teal) );
+	background: linear-gradient(to right, var(--blue), var(--teal), var(--green), var(--teal), var(--blue), var(--teal), var(--green), var(--teal) );
+	background-size: 300% 100%;
+}
+
+@keyframes floatBandExpertise {
+	0%, 100% {
+		-webkit-transform: translate(-50%, -40%) rotate(-45deg);
+		-moz-transform: translate(-50%, -40%) rotate(-45deg);
+		transform: translate(-50%, -40%) rotate(-45deg);
+		background-position: 0% 100%;
+	}
+	50% {
+		-webkit-transform: translate(-50%, -60%) rotate(-45deg);
+		-moz-transform: translate(-50%, -60%) rotate(-45deg);
+		transform: translate(-50%, -60%) rotate(-45deg);
+		background-position: 100% 100%;
+	}
+}
+
+.expertise-section .inner-section {
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	height: auto;
 	background-image: -webkit-linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 20%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
 	background-image: -moz-linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 20%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
 	background-image: linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 20%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
+}
+
+.expertise-section .content {
+	position: relative;
+	z-index: 2;
 }
 
 .expertise-section .point {
@@ -17,6 +72,10 @@
 }
 
 @media( min-width: 640px )  {
+	.expertise-section:after {
+		/* -- Gradient Band -- */
+		height: 880px;
+	}
 	.expertise-section .point .excerpt {
 		margin-top: 10px;
 		width: 66.66667%;
@@ -38,3 +97,25 @@
 }
 	
 @media( min-width: 1380px ) {}
+
+@media( min-width: 1600px ) {
+
+	.expertise-section.gradient-band:after {
+		height: 600px;
+	}
+
+	@keyframes floatBandExpertise {
+		0%, 100% {
+			-webkit-transform: translate(-50%, -45%) rotate(-45deg);
+			-moz-transform: translate(-50%, -45%) rotate(-45deg);
+			transform: translate(-50%, -45%) rotate(-45deg);
+			background-position: 0% 100%;
+		}
+		50% {
+			-webkit-transform: translate(-50%, -55%) rotate(-45deg);
+			-moz-transform: translate(-50%, -55%) rotate(-45deg);
+			transform: translate(-50%, -55%) rotate(-45deg);
+			background-position: 100% 100%;
+		}
+	}
+}

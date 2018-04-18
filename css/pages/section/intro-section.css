@@ -2,7 +2,9 @@
  * Intro Section
  */
 
-.intro-section {}
+.intro-section {
+	z-index: 2;
+}
 
 .intro-section .name {
 	display: inline-block;

@@ -7,7 +7,7 @@
 ?>
 
 <!-- Landing Section -->
-<section class="landing-section fill-teal gradient-blue-green block-space-bottom">
+<section class="landing-section fill-teal gradient-blue-green block-space-bottom section">
 	<div class="slick-home-landing">
 		<div class="slide">
 			<img class="block" src="http://via.placeholder.com/1920x1080?text=1">
@@ -32,7 +32,7 @@ $(document).ready(function(){
 </script>
 
 <!-- Intro Section -->
-<section class="intro-section fill-off-dark block-space-top-bottom">
+<section class="intro-section block-space-top-bottom section">
 	<div class="container">
 		<div class="row">
 			<div class="columns small-10 small-offset-1">
@@ -75,123 +75,125 @@ $(document).ready(function(){
 </section><!-- END : Intro Section -->
 
 <!-- Benefits Section -->
-<section class="benefits-section fill-light block-space-top-bottom">
-	<div class="container">
-		<div class="row">
-			<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
-				<span>Benefits</span>
-				<span class="underline fill-teal"></span>
+<section class="benefits-section gradient-band section">
+	<div class="inner-section fill-light block-space-top-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
+					<span>Benefits</span>
+					<span class="underline fill-teal"></span>
+				</div>
 			</div>
-		</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Optimal Capital Cost
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Optimal Capital Cost
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Build of spaces to optimize cost of Construction</span>
+					<span class="block">Ensure future expansion plans at low cost in a modular fashion</span>
+					<span class="block">Optimum current and future use of land parcel</span>
+					<span class="block">Use of right material</span>
+					<span class="block">Material appropriate for climatic conditions and industry type.</span>
+				</div>
 			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Build of spaces to optimize cost of Construction</span>
-				<span class="block">Ensure future expansion plans at low cost in a modular fashion</span>
-				<span class="block">Optimum current and future use of land parcel</span>
-				<span class="block">Use of right material</span>
-				<span class="block">Material appropriate for climatic conditions and industry type.</span>
-			</div>
-		</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Running Cost Savings
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Minimize losses of services (steam, refrigeration, compressed air)</span>
-				<span class="block">Minimum wastage and handling costs</span>
-				<span class="block">Optimum manpower movement</span>
-				<span class="block">Energy efficiency</span>
-			</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Balancing Function and Aesthetics
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Specific industry requirements (Food Safety, Chemical Industry)</span>
-				<span class="block">Manufacturing efficiency</span>
-				<span class="block">Maintenance efficiency</span>
-				<span class="block">Cleaning efficiency, avoid pest infestation</span>
-			</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Health & Safety
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Safe work environment</span>
-				<span class="block">Ensure emergency exits</span>
-				<span class="block">Regulatory compliance</span>
-				<span class="block">Protect workers from potential hazards such as falling objects, harmful chemicals and loud noise levels</span>
-				<span class="block">Take utmost care of the safety of workers on the shop floor taking industrial ergonomics into consideration</span>
-				<span class="block">Prevent the factory from becoming a heat island from inside</span>
-				<span class="block">Safe evacuation in an emergency</span>
-				<span class="block">Prevent occupational hazards</span>
-			</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Lighting & Ventilation
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Natural Ventilation</span>
-				<span class="block">Natural lighting</span>
-				<span class="block">Optimum working environment</span>
-				<span class="block">Reduce heat accumulation in production areas</span>
-			</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Optimised People / Vehicle Flow
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Smooth flow of raw material and finished products</span>
-				<span class="block">Avoid vehicle congestions</span>
-				<span class="block">Ensure access to authorized people</span>
-			</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Material Flow
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Raw Material flow</span>
-				<span class="block">Finished product flow</span>
-				<span class="block">Avoid cross flow of men and material</span>
-				<span class="block">Ensure flow clean to dirty ( can we have a more elegant word)</span>
-				<span class="block">Arrangement  of equipment decks adapted to the task and the conditions of the operating environment</span>
-				<span class="block">Floor space planned efficiently for expeditious movement of raw materials, processing and finished goods</span>
-				<span class="block">Walkways designed for parts to be delivered at convenient distances for assembly and minimal redundant spaces</span>
-				<span class="block">Enabling continuous flow of people and materials through the assembly line on the shop floor</span>
-				<span class="block">Restriction on flow of men and material as required by the industry ( example: Food industry – no movement from dirty area to clean area)</span>
-				<span class="block">Preventing stock pile up and enabling just-in-time operations</span>
-				<span class="block">Efficiency in loading / unloading and material flow</span>
-			</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Construction Speed
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Facilitate construction scheduling to ensure construction and installation of equipment in shortest time</span>
-				<span class="block">Plan for equipment movement in construction</span>
-				<span class="block">Design considering needs for installation and or change of equipment’s.</span>
-				<span class="block">Fastest time to Production.</span>
-				<span class="block">Assist the client in designing the layout</span>
-			</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Brand Image
-			</div>
-			<div class="description p columns small-10 small-offset-1 large-5">
-				<span class="block">Project to conform to the ethos of the Brand</span>
-				<span class="block">Facilitate design to enable factory visit of partners and consumers without disrupting the operations.</span>
-				<span class="block">Ensure public visibility of only clean areas</span>
-				<span class="block">Providing an inspiring environment to employees</span>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Running Cost Savings
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Minimize losses of services (steam, refrigeration, compressed air)</span>
+					<span class="block">Minimum wastage and handling costs</span>
+					<span class="block">Optimum manpower movement</span>
+					<span class="block">Energy efficiency</span>
+				</div>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Balancing Function and Aesthetics
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Specific industry requirements (Food Safety, Chemical Industry)</span>
+					<span class="block">Manufacturing efficiency</span>
+					<span class="block">Maintenance efficiency</span>
+					<span class="block">Cleaning efficiency, avoid pest infestation</span>
+				</div>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Health & Safety
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Safe work environment</span>
+					<span class="block">Ensure emergency exits</span>
+					<span class="block">Regulatory compliance</span>
+					<span class="block">Protect workers from potential hazards such as falling objects, harmful chemicals and loud noise levels</span>
+					<span class="block">Take utmost care of the safety of workers on the shop floor taking industrial ergonomics into consideration</span>
+					<span class="block">Prevent the factory from becoming a heat island from inside</span>
+					<span class="block">Safe evacuation in an emergency</span>
+					<span class="block">Prevent occupational hazards</span>
+				</div>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Lighting & Ventilation
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Natural Ventilation</span>
+					<span class="block">Natural lighting</span>
+					<span class="block">Optimum working environment</span>
+					<span class="block">Reduce heat accumulation in production areas</span>
+				</div>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Optimised People / Vehicle Flow
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Smooth flow of raw material and finished products</span>
+					<span class="block">Avoid vehicle congestions</span>
+					<span class="block">Ensure access to authorized people</span>
+				</div>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Material Flow
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Raw Material flow</span>
+					<span class="block">Finished product flow</span>
+					<span class="block">Avoid cross flow of men and material</span>
+					<span class="block">Ensure flow clean to dirty ( can we have a more elegant word)</span>
+					<span class="block">Arrangement  of equipment decks adapted to the task and the conditions of the operating environment</span>
+					<span class="block">Floor space planned efficiently for expeditious movement of raw materials, processing and finished goods</span>
+					<span class="block">Walkways designed for parts to be delivered at convenient distances for assembly and minimal redundant spaces</span>
+					<span class="block">Enabling continuous flow of people and materials through the assembly line on the shop floor</span>
+					<span class="block">Restriction on flow of men and material as required by the industry ( example: Food industry – no movement from dirty area to clean area)</span>
+					<span class="block">Preventing stock pile up and enabling just-in-time operations</span>
+					<span class="block">Efficiency in loading / unloading and material flow</span>
+				</div>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Construction Speed
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Facilitate construction scheduling to ensure construction and installation of equipment in shortest time</span>
+					<span class="block">Plan for equipment movement in construction</span>
+					<span class="block">Design considering needs for installation and or change of equipment’s.</span>
+					<span class="block">Fastest time to Production.</span>
+					<span class="block">Assist the client in designing the layout</span>
+				</div>
+			<div class="point row">
+				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+					Brand Image
+				</div>
+				<div class="description p columns small-10 small-offset-1 large-5">
+					<span class="block">Project to conform to the ethos of the Brand</span>
+					<span class="block">Facilitate design to enable factory visit of partners and consumers without disrupting the operations.</span>
+					<span class="block">Ensure public visibility of only clean areas</span>
+					<span class="block">Providing an inspiring environment to employees</span>
+				</div>
 			</div>
 		</div>
 	</div>
 </section><!-- END : Benefits Section -->
 
 <!-- Showcase Section -->
-<section class="showcase-section fill-off-dark block-space-top-bottom">
+<section class="showcase-section block-space-top-bottom section">
 	<div class="container">
 		<div class="row">
 			<div class="h2 strong text-uppercase columns small-10 small-offset-1">
@@ -203,7 +205,7 @@ $(document).ready(function(){
 </section><!-- END : Showcase Section -->
 
 <!-- Facts Section -->
-<section class="facts-section fill-light block-space-top-bottom">
+<section class="facts-section fill-light block-space-top-bottom section">
 	<div class="container">
 		<div class="row">
 			<div class="title h2 strong text-uppercase columns small-10 small-offset-1">
@@ -242,7 +244,7 @@ $(document).ready(function(){
 </section><!-- END : Facts Section -->
 
 <!-- Other Project Section -->
-<section class="other-project-section fill-light">
+<section class="other-project-section fill-light section">
 	<div class="container">
 		<div class="row">
 			<div class="title h3 text-uppercase text-center text-teal columns small-10 small-offset-1">

@@ -3,6 +3,7 @@
  */
 
 .process-section {
+	z-index: 2;
 	background-image: -webkit-linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 25%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
 	background-image: -moz-linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 25%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');
 	background-image: linear-gradient(to bottom, rgba(256,256,256,0) 0%, var(--light) 25%, var(--light) 80%, rgba(256,256,256,0) 100%), url('/media/texture-grid.png');

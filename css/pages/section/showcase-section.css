@@ -1,0 +1,11 @@
+/*
+ * Showcase Section
+ */
+
+.showcase-section {
+	z-index: 2;
+}
+
+@media( min-width: 640px )  {}
+@media( min-width: 1040px ) {}
+@media( min-width: 1380px ) {}
