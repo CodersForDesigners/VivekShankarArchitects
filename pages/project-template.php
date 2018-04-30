@@ -123,6 +123,7 @@ $(document).ready(function(){
 					<span class="block">Optimum manpower movement</span>
 					<span class="block">Energy efficiency</span>
 				</div>
+			</div>
 			<div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Balancing Function and Aesthetics
@@ -133,6 +134,7 @@ $(document).ready(function(){
 					<span class="block">Maintenance efficiency</span>
 					<span class="block">Cleaning efficiency, avoid pest infestation</span>
 				</div>
+			</div>
 			<div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Health & Safety
@@ -147,6 +149,7 @@ $(document).ready(function(){
 					<span class="block">Safe evacuation in an emergency</span>
 					<span class="block">Prevent occupational hazards</span>
 				</div>
+			</div>
 			<div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Lighting & Ventilation
@@ -157,6 +160,7 @@ $(document).ready(function(){
 					<span class="block">Optimum working environment</span>
 					<span class="block">Reduce heat accumulation in production areas</span>
 				</div>
+			</div>
 			<div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Optimised People / Vehicle Flow
@@ -166,6 +170,7 @@ $(document).ready(function(){
 					<span class="block">Avoid vehicle congestions</span>
 					<span class="block">Ensure access to authorized people</span>
 				</div>
+			</div>
 			<div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Material Flow
@@ -183,6 +188,7 @@ $(document).ready(function(){
 					<span class="block">Preventing stock pile up and enabling just-in-time operations</span>
 					<span class="block">Efficiency in loading / unloading and material flow</span>
 				</div>
+			</div>
 			<div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Construction Speed
@@ -194,6 +200,7 @@ $(document).ready(function(){
 					<span class="block">Fastest time to Production.</span>
 					<span class="block">Assist the client in designing the layout</span>
 				</div>
+			</div>
 			<div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Brand Image
