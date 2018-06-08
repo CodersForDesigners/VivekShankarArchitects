@@ -11,13 +11,38 @@ RewriteRule .? "-" [QSA,L]
 # and if it is a GET request,
 # but if it does not have a query string,
 # then append a trailing slash, and trigger a re-direct
-RewriteCond %{REQUEST_URI} !/$
-RewriteCond %{REQUEST_METHOD} GET [NC]
-RewriteCond %{QUERY_STRING} ^\??$
-RewriteRule .? %{REQUEST_URI}/ [QSA,R=301,L]
+# RewriteCond %{REQUEST_URI} !/$
+# RewriteCond %{REQUEST_METHOD} GET [NC]
+# RewriteCond %{QUERY_STRING} ^\??$
+# RewriteRule .? %{REQUEST_URI}/ [QSA,R=301,L]
+
+## If the URL does not map to an existing file on the file-system,
+## it could be a page other than the home page; those are in the "pages" folder
+## a little hackery follows to make this work
+## on the live server and local environment setup
+# this is for live server environment
+	# If the URL don't map to an existing file
+# RewriteCond "%{DOCUMENT_ROOT}%{REQUEST_URI}" !-f
+# RewriteCond "%{REQUEST_URI}" ^/([^/]+)/([^/]+.*)
+# RewriteCond "%{DOCUMENT_ROOT}/%1/pages/%2\.php" -f
+# RewriteRule . /%1/pages/%2.php [L]
+# this is for local dev environment
+	# If the URL don't map to an existing file
+# RewriteCond "%{DOCUMENT_ROOT}%{REQUEST_URI}" !-f
+# RewriteCond "%{DOCUMENT_ROOT}/pages%{REQUEST_URI}\.php" -f
+# RewriteRule . /pages%{REQUEST_URI}.php [L]
+
+# Home page
+RewriteCond "%{DOCUMENT_ROOT}%{REQUEST_URI}" !-f
+RewriteRule ^/?$ /index.php?_view=home [QSA,L,NC]
+
+# For individual projects
+RewriteCond "%{DOCUMENT_ROOT}%{REQUEST_URI}" !-f
+RewriteRule ^/?project/(.+)$ /index.php?_view=project-template&_project=$1 [QSA,L,NC]
 
 # the catch-all "else" block
 # forward the request to index.php; it will do the heavy-lifting
+RewriteCond "%{DOCUMENT_ROOT}%{REQUEST_URI}" !-f
 RewriteRule .? index.php [QSA,L]
 
 </IfModule>

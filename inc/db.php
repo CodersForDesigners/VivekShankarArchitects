@@ -40,9 +40,11 @@ function getConnection ( $parameters = [ ] ) {
 	$password = ! empty( $password ) ? $password : 'root';
 	$options = ! empty( $options ) ? $options : [
 		\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+		\PDO::ATTR_PERSISTENT => true, // what does this do?
 		// ensures that numbers aren't converted to strings when reading
 		\PDO::ATTR_EMULATE_PREPARES => false,
-		\PDO::ATTR_STRINGIFY_FETCHES => false
+		\PDO::ATTR_STRINGIFY_FETCHES => false,
+		\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'"
 	];
 
 	try {
@@ -116,7 +118,8 @@ function clearEntries ( $connection, $collection ) {
 function getEntries ( $connection, $collection, ...$options ) {
 
 	// default values
-	$options = ! empty( $options ) ? $options : [ \PDO::FETCH_NUM ];
+	// $options = ! empty( $options ) ? $options : [ \PDO::FETCH_NUM ];
+	$options = ! empty( $options ) ? $options : [ \PDO::FETCH_ASSOC ];
 
 	$query = 'SELECT * FROM ' . $collection;
 
@@ -145,6 +148,9 @@ function getEntriesWhere ( $connection, $collection, $filters = [ ] ) {
 	if ( ! empty( $filters ) ) {
 		$clauses = [ ];
 		foreach ( $filters as $key => $clause_and_value ) {
+			if ( is_string( $clause_and_value ) ) {
+				$clause_and_value = '"' . $clause_and_value . '"';
+			}
 			$clauses[ ] = $key . ' = ' . $clause_and_value;
 		}
 		$query .= ' WHERE ' . implode( ' AND ', $clauses );
@@ -153,7 +159,7 @@ function getEntriesWhere ( $connection, $collection, $filters = [ ] ) {
 	try {
 		$statement = $connection->prepare( $query );
 		$statement->execute();
-		$entries = $statement->fetchAll( \PDO::FETCH_CLASS );
+		$entries = $statement->fetchAll( \PDO::FETCH_ASSOC );
 	}
 	catch ( \PDOException $e ) {
 		echo $e->getMessage();

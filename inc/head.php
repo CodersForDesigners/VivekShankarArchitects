@@ -39,7 +39,7 @@
 	*
 	- -->
 	<!-- Set the base URL for all relative URLs within the document -->
-	<base href="/"><!-- ( example : http://example.com/page.html ) -->
+	<!-- <base href="/"> --><!-- ( example : http://example.com/page.html ) -->
 	<!-- Links to top level resource in an hierarchical structure -->
 	<link rel="index" href="http://example.com/article/">
 	<!-- Helps prevent duplicate content issues -->
@@ -189,6 +189,8 @@
 	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick.css<?php echo $ver ?>"/>
 	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick-theme.css<?php echo $ver ?>"/>
 	<script type="text/javascript" src="/plugins/slick/slick.min.js<?php echo $ver ?>"></script>
+	<!-- imagesLoaded -->
+	<script type="text/javascript" src="/plugins/imagesLoaded/imagesLoaded-v4.1.4.min.js<?php echo $ver ?>"></script>
 	<!-- Masonry -->
 	<script type="text/javascript" src="/plugins/masonry/masonry.pkgd.min.js<?php echo $ver ?>"></script>
 
