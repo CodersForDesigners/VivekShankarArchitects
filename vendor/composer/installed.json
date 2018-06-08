@@ -1,63 +1,5 @@
 [
     {
-        "name": "tinify/tinify",
-        "version": "1.5.2",
-        "version_normalized": "1.5.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/tinify/tinify-php.git",
-            "reference": "b15d1f31d94d9b06e60251543cc918f426f0d55b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/tinify/tinify-php/zipball/b15d1f31d94d9b06e60251543cc918f426f0d55b",
-            "reference": "b15d1f31d94d9b06e60251543cc918f426f0d55b",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "ext-json": "*",
-            "lib-curl": ">=7.20.0",
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0",
-            "symfony/yaml": "~2.0"
-        },
-        "time": "2017-07-19T12:26:04+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "lib/Tinify.php",
-                "lib/Tinify/Exception.php"
-            ],
-            "psr-4": {
-                "Tinify\\": "lib/Tinify/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Rolf Timmermans",
-                "email": "rolftimmermans@voormedia.com"
-            }
-        ],
-        "description": "PHP client for the Tinify API. Tinify compresses your images intelligently. Read more at https://tinify.com.",
-        "homepage": "https://tinify.com/developers",
-        "keywords": [
-            "api",
-            "compress",
-            "images",
-            "tinify",
-            "tinyjpg",
-            "tinypng"
-        ]
-    },
-    {
         "name": "phpmailer/phpmailer",
         "version": "v6.0.5",
         "version_normalized": "6.0.5.0",
@@ -124,5 +66,59 @@
             }
         ],
         "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
+    },
+    {
+        "name": "cloudinary/cloudinary_php",
+        "version": "1.10.0",
+        "version_normalized": "1.10.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cloudinary/cloudinary_php.git",
+            "reference": "aca317781ec1ad6614187a73dd0058026a02474e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/aca317781ec1ad6614187a73dd0058026a02474e",
+            "reference": "aca317781ec1ad6614187a73dd0058026a02474e",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.8.*"
+        },
+        "time": "2018-05-10T14:02:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src"
+            ],
+            "files": [
+                "src/Helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cloudinary",
+                "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
+            }
+        ],
+        "description": "Cloudinary PHP SDK",
+        "homepage": "https://github.com/cloudinary/cloudinary_php",
+        "keywords": [
+            "cdn",
+            "cloud",
+            "cloudinary",
+            "image management",
+            "sdk"
+        ]
     }
 ]

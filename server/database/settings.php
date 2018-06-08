@@ -33,7 +33,6 @@ header( 'Content-Type: application/json' );
 $settings = null;
 // try {
 	$settings = json_decode( file_get_contents( 'php://input' ), true );
-	$settings = [ $settings ];
 // 	if ( ! is_array( $settings ) ) {
 // 		throw new Exception( 'Request body is not of the proper format.' )
 // 	}
@@ -46,7 +45,6 @@ $settings = null;
 // Actually make the response now
 ob_start();
 $clientResponse[ "message" ] = 'Settings are being processed.';
-// $clientResponse[ "data" ] = $settings;
 echo json_encode( $clientResponse );
 header( 'Content-Encoding: none' );
 header( 'Connection: close' );
@@ -67,13 +65,10 @@ flush();
  * Pull in necessary dependencies
  *
  */
-require_once $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php';
+// require_once $_SERVER[ 'DOCUMENT_ROOT' ] . '/html/vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 require_once __DIR__ . '/../../inc/mailer.php';
-
-// TinyPNG API Keys
-$tinyPNGKeyDBFile = __DIR__ . '/tinyPNG-API-keys.json';
-$tinyPNGApiKeys = json_decode( file_get_contents( $tinyPNGKeyDBFile ), true );
 
 
 /*
@@ -96,121 +91,111 @@ foreach ( $settings as $setting ) {
 }
 $images = array_values( array_unique( $images, SORT_REGULAR ) );
 
-// Get a list of all the images that need to be fetched
-// ( i.e. that don't already exist locally )
-$mediaDirectory = __DIR__ . '/../../media/settings/';
-$imagesToBeFetched = array_filter( $images, function ( $image ) {
-	global $mediaDirectory;
-	$filename = $image[ 'id' ] . '.' . explode( '/', $image[ 'mimeType' ] )[ 1 ];
-	$imageLocalPath = $mediaDirectory . $filename;
-	return ! file_exists( $imageLocalPath );
-} );
 
 // Get a list of all the image URLs
 $imageURLs = array_map( function ( $image ) {
 	return 'https://drive.google.com/uc?id=' . $image[ 'id' ];
-}, $imagesToBeFetched );
+}, $images );
 // Get a list of all the image file-names that will be created
 $imageFiles = array_map( function ( $image ) {
-	return $image[ 'id' ] . '.' . explode( '/', $image[ 'mimeType' ] )[ 1 ];
-}, $imagesToBeFetched );
+	return 'settings/' . $image[ 'id' ];
+}, $images );
 
+// Set up access to the CDN
+Cloudinary::config( [
+	"cloud_name" => "vsa",
+	"api_key" => "826445639995552",
+	"api_secret" => "Y8_jVPB1z7cQhuZJ1OiLwuMfjlM"
+] );
 
-// Fetch the images and store them in a temporary directory
-$mediaDirectoryTemporary = __DIR__ . '/../../media/tmp/';
-foreach ( $imagesToBeFetched as $index => $image ) {
-	$imageLocalPath = $mediaDirectoryTemporary . $imageFiles[ $index ];
-	try {
-		file_put_contents(
-			$imageLocalPath,
-			file_get_contents( $imageURLs[ $index ] )
-		);
-	} catch ( Exception $e ) {
-		$errors[ ] = $e->getMessage();
-	}
-}
+// Upload the images to the CDN
+// function uploadToCDN ( $from, $to ) {
 
+// 	return Cloudinary\Uploader::upload( $from, [
+// 		// 'folder' => '',
+// 		'public_id' => $to,
+// 		'invalidate' => true,
+// 		'async' => true,
+// 		// 'eager' => [
+// 		// 	[
+// 		// 		'if' => 'iw >= 1600',
+// 		// 		'width' => 1600,
+// 		// 		// 'crop' => 'scale',
+// 		// 		'fetch_format' => 'auto'
+// 		// 	],
+// 		// 	[
+// 		// 		'if' => 'iw >= 1200',
+// 		// 		'width' => 1200,
+// 		// 		// 'crop' => 'scale',
+// 		// 		'fetch_format' => 'auto'
+// 		// 	],
+// 		// 	[
+// 		// 		'if' => 'iw >= 800',
+// 		// 		'width' => 800,
+// 		// 		// 'crop' => 'scale',
+// 		// 		'fetch_format' => 'auto'
+// 		// 	],
+// 		// 	[
+// 		// 		'if' => 'iw >= 400',
+// 		// 		'width' => 400,
+// 		// 		// 'crop' => 'scale',
+// 		// 		'fetch_format' => 'auto'
+// 		// 	]
+// 		// ],
+// 		// 'eager_async' => true
+// 	] );
 
-// Compress the images and move them over to the primary directory
-function compressImage ( $sourcePath, $targetPath ) {
-
-	global $tinyPNGApiKeys;
-
-	foreach ( $tinyPNGApiKeys as $apiKey ) {
-		if ( ! $apiKey[ 'limitReached' ] ) {
-			try {
-				Tinify\setKey( $apiKey[ 'key' ] );
-				Tinify\fromFile( $sourcePath )->toFile( $targetPath );
-			} catch( Tinify\AccountException $e ) {
-				$apiKey[ 'limitReached' ] = true;
-				continue;
-			}
-			break;
-		}
-	}
-
-}
-foreach ( $imagesToBeFetched as $index => $image ) {
-	$sourcePath = $mediaDirectoryTemporary . $imageFiles[ $index ];
-	$targetPath = $mediaDirectory . $imageFiles[ $index ];
-	try {
-		compressImage( $sourcePath, $targetPath );
-	} catch ( Exception $e ) {
-		$errors[ ] = $e->getMessage();
-	}
-}
-
-// If there were errors, send out an e-mail to them ( and us )
-if ( ! empty( $errors ) ) {
-	// Send a mail to us
-	Mailer\sendMessage( [
-		'name' => 'Aditya',
-		'email' => 'adityabhat@lazaro.in',
-		'subject' => '[!] VSA :: Something went wrong',
-		'message' => implode( '\n\n', $errors )
-	] );
-	// Send a mail to them
-	Mailer\sendMessage( [
-		'name' => 'Vivek',
-		'email' => 'vivekvsdp@gmail.com',
-		'subject' => 'Website – There was an error during publishing',
-		'message' => 'Please try publishing again.\nIf the issue persists, then contact Aditya at 7760118668.\n\nThis message was auto-generated.'
-	] );
-	exit;
-}
-
-// Remove the temporary images
-foreach ( $imagesToBeFetched as $index => $image ) {
-	$filePath = $mediaDirectoryTemporary . $imageFiles[ $index ];
-	@unlink( $filePath );
-}
-// Finally, remove the images that do not exist
-$imageFilesCurrentInMediaDirectory = array_slice( scandir( $mediaDirectory ), 2 );
-$imageFilesToBeRemoved = array_diff( $imageFilesCurrentInMediaDirectory, $imageFiles );
-foreach ( $imageFilesToBeRemoved as $file ) {
-	@unlink( $file );
-}
-
-
-
-
-
-// Fetch all the images
-// $mediaDir = __DIR__ . '/../../media/settings/';
-// $imageFields = [ 'Home Featured Images' ];
-// foreach ( $settings as $setting ) {
-// 	foreach ( $setting as $key => $value ) {
-// 		if ( ! in_array( $key, $imageFields ) ) continue;
-// 		foreach ( $value as $image ) {
-// 			$imageURL = 'https://drive.google.com/uc?id=' . $image[ 'id' ];
-// 			$filename = $image[ 'id' ] . '.' . explode( '/', $image[ 'mimeType' ] )[ 1 ];
-// 			// $imageLocalPath = $mediaDir . $setting[ 'slug' ] . $filename;
-// 			$imageLocalPath = $mediaDir . $filename;
-// 			if ( file_exists( $imageLocalPath ) ) continue;
-// 			file_put_contents( $imageLocalPath, file_get_contents( $imageURL ) );
-// 		}
+// }
+// foreach ( $images as $index => $image ) {
+// 	$sourcePath = $imageURLs[ $index ];
+// 	$targetPath = $imageFiles[ $index ];
+// 	try {
+// 		uploadToCDN( $sourcePath, $targetPath );
+// 	} catch ( Exception $e ) {
+// 		$errors[ ] = $e->getMessage();
 // 	}
 // }
+// // If there were errors, send out an e-mail to them ( and us )
+// if ( ! empty( $errors ) ) {
+// 	// Send a mail to us
+// 	Mailer\sendMessage( [
+// 		'name' => 'Aditya',
+// 		'email' => 'adityabhat@lazaro.in',
+// 		'subject' => '[!] VSA :: Something went wrong',
+// 		'message' => implode( '\n\n', $errors )
+// 	] );
+// 	// Send a mail to them
+// 	// Mailer\sendMessage( [
+// 	// 	'name' => 'Vivek',
+// 	// 	'email' => 'vivekvsdp@gmail.com',
+// 	// 	'subject' => 'Website – There was an error during publishing',
+// 	// 	'message' => 'Please try publishing again.\nIf the issue persists, then contact Aditya at 7760118668.\n\nThis message was auto-generated.'
+// 	// ] );
+// 	exit;
+// }
+
+// // Finally, remove the images that are not is use anymore
+// $cloudinary = new Cloudinary\Api();
+// $resources = $cloudinary->resources( [
+// 	'resource_type' => 'image',
+// 	'type' => 'upload',
+// 	'prefix' => 'settings'
+// ] );
+// $imagePublicIds = array_map( function ( $resource ) {
+// 	return $resource[ 'public_id' ];
+// }, $resources->getArrayCopy()[ 'resources' ] );
+
+
+// $imagesToBeRemoved = array_diff( $imagePublicIds, $imageFiles );
+// $cloudinary->delete_resources( $imagesToBeRemoved );
+
+
+
+
+
+
+
+
 
 // // Stringifying the array fields
 foreach ( $settings as &$setting ) {

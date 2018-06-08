@@ -1,23 +1,76 @@
-<?php 
+<?php
 	/*
 	 *
 	 *	# Project Template
 	 *
 	 */
+
+	$projectName = $_REQUEST[ '_project' ];
+	$project = getProjectBySlug( $projectName );
+	$projectTypology = getTypologyByName( $project[ 'Typology' ] );
+
+	// Page Title
+	if ( $viewName == 'project-template' ) {
+		$pageTitle .= ' | ' . $project[ 'Name' ];
+	}
+
+	// Other projects from the same type
+	$otherProjectsOfTheType = array_filter( $projectsByTypology[ $project[ 'Typology' ] ], function ( $currentProject ) use ( $project ) {
+		return $currentProject[ 'name' ] != $project[ 'Name' ];
+	} );
+
+	$factFileIsEmpty = false;
+	$showcaseIsEmpty = false;
+	if ( empty( $project[ 'Design Brief' ] ) && empty( $project[ 'Budget' ] ) && empty( $project[ 'Design Intervention' ] ) ) {
+		$factFileIsEmpty = true;
+	}
+	if ( empty( $project[ 'Finished Project' ] ) && empty( $project[ '3D Renders' ] ) && empty( $project[ 'Concept Drawings' ] ) ) {
+		$showcaseIsEmpty = true;
+	}
+
 ?>
+
+<?php
+function viewMarkup () {
+
+	global $mimeToFileExtensions;
+	global $project;
+	global $projectTypology;
+	global $baseImageUrl;
+	global $otherProjectsOfTheType;
+	global $showcaseIsEmpty;
+	global $factFileIsEmpty;
+
+?>
+
+
+
+
+
+
+
+
 
 <!-- Landing Section -->
 <section id="landing" class="landing-section fill-teal gradient-blue-green section js_section">
 	<div class="slick-landing">
-		<div class="slide">
-			<img class="block" src="http://via.placeholder.com/1920x1080?text=1">
-		</div>
-		<div class="slide">
-			<img class="block" src="http://via.placeholder.com/1920x1080?text=2">
-		</div>
-		<div class="slide">
-			<img class="block" src="http://via.placeholder.com/1920x1080?text=3">
-		</div>
+		<?php foreach ( $project[ 'Featured Image' ] as $image ) : ?>
+			<?php
+				$imageURL_XL = $baseImageUrl . ',w_1600/projects/' . $image[ 'id' ];
+				$imageURL_L = $baseImageUrl . ',w_1200/projects/' . $image[ 'id' ];
+				$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
+				$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
+			?>
+			<!-- <div class="slide"> -->
+				<!-- <img class="block" src="<?php // echo $baseImageUrl . $image[ 'id' ] . $mimeToFileExtensions[ $image[ 'mimeType' ] ] ?>"> -->
+			<!-- </div> -->
+			<picture class="slide">
+				<source class="block" srcset="<?php echo $imageURL_XL ?>" media="(min-width: 1380px)">
+				<source class="block" srcset="<?php echo $imageURL_L ?>" media="(min-width: 1040px)">
+				<source class="block" srcset="<?php echo $imageURL_M ?>" media="(min-width: 640px)">
+				<img class="block" srcset="<?php echo $imageURL_S ?>">
+			</picture>
+		<?php endforeach; ?>
 	</div>
 </section><!-- END : Landing Section -->
 <script type="text/javascript">
@@ -53,45 +106,73 @@ $(document).ready(function(){
 	<div class="container">
 		<div class="row">
 			<div class="columns small-10 small-offset-1">
-				<div class="typology h1 strong text-uppercase">Industrial</div>
-				<div class="name h4 strong">Buhler — Phoenix Factory</div>
+				<div class="typology h1 strong text-uppercase"><?php echo $project[ 'Typology' ] ?></div>
+				<div class="name h4 strong"><?php echo $project[ 'Name' ] ?></div>
 			</div>
 			<div class="meta columns small-4 small-offset-1 medium-2">
-				<div class="label text-neutral">Place</div>
-				<div class="p">Bangalore</div>
+				<?php if ( ! empty( $project[ 'Location' ] ) ) : ?>
+					<div class="label text-neutral">Location</div>
+					<div class="p"><?php echo $project[ 'Location' ] ?></div>
+				<?php endif; ?>
 
-				<div class="label text-neutral">Year</div>
-				<div class="p">2011</div>
+				<?php if ( ! empty( $project[ 'Year' ] ) ) : ?>
+					<div class="label text-neutral">Year</div>
+					<div class="p"><?php echo $project[ 'Year' ] ?></div>
+				<?php endif; ?>
 
-				<div class="label text-neutral">Area</div>
-				<div class="p">90,000 sq.ft.</div>
+				<?php if ( ! empty( $project[ 'Area' ] ) ) : ?>
+					<div class="label text-neutral">Area</div>
+					<div class="p"><?php echo $project[ 'Area' ] ?></div>
+				<?php endif; ?>
 			</div>
 			<div class="meta columns small-5 small-offset-1 medium-3 large-2 large-offset-0">
-				<div class="label text-neutral">Structural Engineer</div>
-				<div class="p">Adams Kara Taylor</div>
+				<?php if ( ! empty( $project[ 'Structural Engineer' ] ) ) : ?>
+					<div class="label text-neutral">Structural Engineer</div>
+					<div class="p"><?php echo $project[ 'Structural Engineer' ] ?></div>
+				<?php endif; ?>
 
-				<div class="label text-neutral">M+E Engineer</div>
-				<div class="p">PHA Consult</div>
+				<?php if ( ! empty( $project[ 'M&E Engineer' ] ) ) : ?>
+					<div class="label text-neutral">M&E Engineer</div>
+					<div class="p"><?php echo $project[ 'M&E Engineer' ] ?></div>
+				<?php endif; ?>
 
-				<div class="label text-neutral">Landscape Architect</div>
-				<div class="p">Gillespies</div>
+				<?php if ( ! empty( $project[ 'Plumbing Consultant' ] ) ) : ?>
+					<div class="label text-neutral">Plumbing Consultant</div>
+					<div class="p"><?php echo $project[ 'Plumbing Consultant' ] ?></div>
+				<?php endif; ?>
 
-				<div class="label text-neutral">Lighting Engineer</div>
-				<div class="p">Claude Engle</div>
+				<?php if ( ! empty( $project[ 'Landscape Architect' ] ) ) : ?>
+					<div class="label text-neutral">Landscape Architect</div>
+					<div class="p"><?php echo $project[ 'Landscape Architect' ] ?></div>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $project[ 'Lighting Engineer' ] ) ) : ?>
+					<div class="label text-neutral">Lighting Engineer</div>
+					<div class="p"><?php echo $project[ 'Lighting Engineer' ] ?></div>
+				<?php endif; ?>
 			</div>
+			<?php if ( ! empty( $project[ 'Description' ] ) ) : ?>
 			<div class="description p columns small-10 small-offset-1 medium-7 large-4">
-				The factory has two levels of manufacturing and had to meet all the technical norms of an industrial building. A long canopy on its’ west side connects the new facility with the old one and aesthetically breaks away from the usual canopies seen in industrial facilities.
+				<?php echo $project[ 'Description' ] ?>
 			</div>
+			<?php endif; ?>
 			<div class="quick-links columns small-10 small-offset-1 medium-2 large-1">
-				<a class="button-link" tabindex="-1" href="#benefits">Benefits</a>
-				<a class="button-link" tabindex="-1" href="#showcase">Showcase</a>
-				<a class="button-link" tabindex="-1" href="#fact-file">Fact File</a>
+				<?php if ( ! empty( $projectTypology[ 'Benefits' ] ) ) : ?>
+					<a class="button-link" tabindex="-1" href="#benefits">Benefits</a>
+				<?php endif; ?>
+				<?php if ( ! $showcaseIsEmpty ) : ?>
+					<a class="button-link" tabindex="-1" href="#showcase">Showcase</a>
+				<?php endif; ?>
+				<?php if ( ! $factFileIsEmpty ) : ?>
+					<a class="button-link" tabindex="-1" href="#fact-file">Fact File</a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
 </section><!-- END : Intro Section -->
 
 <!-- Benefits Section -->
+<?php if ( ! empty( $projectTypology[ 'Benefits' ] ) ) : ?>
 <section id="benefits" class="benefits-section gradient-band section js_section">
 	<div class="inner-section fill-light block-space-top-bottom">
 		<div class="container">
@@ -101,7 +182,17 @@ $(document).ready(function(){
 					<span class="underline fill-teal"></span>
 				</div>
 			</div>
-			<div class="point row">
+			<?php foreach ( $projectTypology[ 'Benefits' ] as $benefit ) : ?>
+				<div class="point row">
+					<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+						<?php echo $benefit[ 'Title' ] ?>
+					</div>
+					<div class="description p columns small-10 small-offset-1 large-5">
+						<?php echo $benefit[ 'Description' ] ?>
+					</div>
+				</div>
+			<?php endforeach; ?>
+			<!-- <div class="point row">
 				<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 					Optimal Capital Cost
 				</div>
@@ -211,12 +302,14 @@ $(document).ready(function(){
 					<span class="block">Ensure public visibility of only clean areas</span>
 					<span class="block">Providing an inspiring environment to employees</span>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section><!-- END : Benefits Section -->
+<?php endif; ?>
 
 <!-- Showcase Section -->
+<?php if ( ! $showcaseIsEmpty ) : ?>
 <section id="showcase" class="showcase-section block-space-top-bottom section js_section">
 	<div class="container">
 		<div class="row">
@@ -227,38 +320,108 @@ $(document).ready(function(){
 		</div>
 		<div class="row">
 			<div class="tabs columns small-10 small-offset-1">
-				<a class="tab active button-link" tabindex="-1" href="#">Finished<span class="hide-for-mobile"> Project</span></a>
-				<a class="tab button-link" tabindex="-1" href="#">3D Renders</a>
-				<a class="tab button-link" tabindex="-1" href="#">Concept<span class="hide-for-mobile"> Drawings</span></a>
+				<?php if ( ! empty( $project[ 'Finished Project' ] ) ) : ?>
+					<div class="tab button-link js_gallery_btn" tabindex="-1" data-link="Finished Project">Finished<span class="hide-for-mobile"> Project</span></div>
+				<?php endif; ?>
+				<?php if ( ! empty( $project[ '3D Renders' ] ) ) : ?>
+					<div class="tab button-link js_gallery_btn" tabindex="-1" data-link="3D Renders">3D Renders</div>
+				<?php endif; ?>
+				<?php if ( ! empty( $project[ 'Concept Drawings' ] ) ) : ?>
+					<div class="tab button-link js_gallery_btn" tabindex="-1" data-link="Concept Drawings">Concept<span class="hide-for-mobile"> Drawings</span></div>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="row">
-			<div class="showcase-masonry">
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-				<div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="http://via.placeholder.com/650x500"></div>
-			</div>
+			<?php if ( ! empty( $project[ 'Finished Project' ] ) ) : ?>
+				<div class="showcase-masonry js_showcase_masonry" data-gallery="Finished Project">
+					<?php foreach ( $project[ 'Finished Project' ] as $image ) : ?>
+						<!-- <div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="<?php //echo $baseImageUrl . $image[ 'id' ] . $mimeToFileExtensions[ $image[ 'mimeType' ] ] ?>"></div> -->
+						<?php
+							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
+							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
+						?>
+						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
+							<source class="block" srcset="<?php echo $imageURL_M ?>" media="(min-width: 640px)">
+							<img class="block" srcset="<?php echo $imageURL_S ?>">
+						</picture></div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( ! empty( $project[ '3D Renders' ] ) ) : ?>
+				<div class="showcase-masonry hidden js_showcase_masonry" data-gallery="3D Renders">
+					<?php foreach ( $project[ '3D Renders' ] as $image ) : ?>
+						<!-- <div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="<?php //echo $baseImageUrl . $image[ 'id' ] . $mimeToFileExtensions[ $image[ 'mimeType' ] ] ?>"></div> -->
+						<?php
+							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
+							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
+						?>
+						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
+							<source class="block" srcset="<?php echo $imageURL_M ?>" media="(min-width: 640px)">
+							<img class="block" srcset="<?php echo $imageURL_S ?>">
+						</picture></div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( ! empty( $project[ 'Concept Drawings' ] ) ) : ?>
+				<div class="showcase-masonry hidden js_showcase_masonry" data-gallery="Concept Drawings">
+					<?php foreach ( $project[ 'Concept Drawings' ] as $image ) : ?>
+						<!-- <div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="<?php //echo $baseImageUrl . $image[ 'id' ] . $mimeToFileExtensions[ $image[ 'mimeType' ] ] ?>"></div> -->
+						<?php
+							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
+							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
+						?>
+						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
+							<source class="block" srcset="<?php echo $imageURL_M ?>" media="(min-width: 640px)">
+							<img class="block" srcset="<?php echo $imageURL_S ?>">
+						</picture></div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </section><!-- END : Showcase Section -->
 <script type="text/javascript">
-$(document).ready(function(){
 
-	/*
-	 *	Masonry Showcase
-	 */
+	$( document ).ready( function () {
 
-	$('.showcase-masonry').masonry();
-});
+		/*
+		 *	Masonry Showcase
+		 */
+
+		$( ".js_gallery_btn" ).first().addClass( "active" );
+		$( ".showcase-masonry" ).first().imagesLoaded().done( function ( instance ) {
+			$( instance.elements[ 0 ] ).masonry();
+		} );
+
+		$( document ).on( "click", ".js_gallery_btn", function ( event ) {
+
+			event.preventDefault();
+
+			var $button = $( event.target ).closest( ".js_gallery_btn" );
+
+			// Mark the selected button
+			$( ".js_gallery_btn" ).removeClass( "active" );
+			$button.addClass( "active" );
+
+			// Show the corresponding gallery
+			var gallery = $button.data( "link" );
+			$( ".js_showcase_masonry" ).addClass( "hidden" );
+			$( "[ data-gallery = \"" + gallery + "\" ]" )
+				.removeClass( "hidden" )
+				.imagesLoaded()
+				.done( function ( instance ) {
+					$( instance.elements[ 0 ] ).masonry();
+				} );
+
+		} )
+
+	} );
+
 </script>
+<?php endif; ?>
 
 <!-- Facts Section -->
+<?php if ( ! $factFileIsEmpty ) : ?>
 <section id="fact-file" class="facts-section fill-light block-space-top-bottom section js_section">
 	<div class="container">
 		<div class="row">
@@ -267,61 +430,70 @@ $(document).ready(function(){
 				<span class="underline fill-teal"></span>
 			</div>
 		</div>
+		<?php if ( ! empty( $project[ 'Design Brief' ] ) ) : ?>
 		<div class="point row">
 			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 				Design Brief
 			</div>
 			<div class="description columns small-10 small-offset-1 large-5">
-				<div class="p">A contemporary design which offers privacy to the inside and at the same time opens up to the outside with ample natural light. Maximum natural ventilation to ensure enhanced indoor air quality for employees.Roof top ventilator for cool air circulation and hot air exhaust.</div>
-				<div class="p strong">Benefit : Maximum savings on running cost; profitable returns on the capital invested.</div>
+				<div class="p"><?php echo $project[ 'Design Brief' ] ?></div>
 			</div>
 		</div>
-		<div class="point row">
-			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
-				Design Intervention
-			</div>
-			<div class="description columns small-10 small-offset-1 large-5">
-				<div class="p">Proposed a structural column grid that enabled efficient space utilization.</div>
-				<div class="p">Extended canopy connecting the new facility to the old became the primary design feature on the exterior.</div>
-				<div class="p">The structural grid and the steel staircases became the primary design elements on the inside of the factory.</div>
-			</div>
-		</div>
+		<?php endif; ?>
+		<?php if ( ! empty( $project[ 'Budget' ] ) ) : ?>
 		<div class="point row">
 			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
 				Budget
 			</div>
 			<div class="description columns small-10 small-offset-1 large-5">
-				<div class="p">₹ 110,000,000 INR</div>
+				<div class="p"><?php echo $project[ 'Budget' ] ?></div>
 			</div>
 		</div>
+		<?php endif; ?>
+		<?php if ( ! empty( $project[ 'Design Intervention' ] ) ) : ?>
+		<div class="point row">
+			<div class="heading h4 strong columns small-10 small-offset-1 large-4">
+				Design Intervention
+			</div>
+			<div class="description columns small-10 small-offset-1 large-5">
+				<div class="p"><?php echo $project[ 'Design Intervention' ] ?></div>
+			</div>
+		</div>
+		<?php endif; ?>
 	</div>
 </section><!-- END : Facts Section -->
+<?php endif; ?>
 
 <!-- Other Project Section -->
+<?php if ( ! empty( $otherProjectsOfTheType ) ) : ?>
 <section id="other-projects" class="other-project-section fill-light section js_section">
 	<div class="container">
 		<div class="row">
 			<div class="title h3 text-uppercase text-center text-teal columns small-10 small-offset-1">
-				Other &lt;Industrial&gt; Projects
+				Other <?php echo $project[ 'Typology' ] ?> Projects
 			</div>
 		</div>
 	</div>
 	<div class="other-project-list fill-neutral">
-		<div class="other-project" tabindex="-1">
-			<div class="name h3 strong text-uppercase">Halcyon Complex</div>
-			<div class="place label">Bangalore</div>
-		</div>
-		<div class="other-project" tabindex="-1">
-			<div class="name h3 strong text-uppercase">Smartome</div>
-			<div class="place label">Mumbai</div>
-		</div>
-		<div class="other-project" tabindex="-1">
-			<div class="name h3 strong text-uppercase">Rajharhat Mall</div>
-			<div class="place label">Kolkata</div>
-		</div>
-		<div class="other-project" tabindex="-1">
-			<div class="name h3 strong text-uppercase">Golden Gate Bridge</div>
-			<div class="place label">San Francisco</div>
-		</div>
+		<?php foreach ( $otherProjectsOfTheType as $project ) : ?>
+			<a href="project/<?php echo $project[ 'ID' ] ?>" class="other-project" tabindex="-1">
+				<div class="name h3 strong text-uppercase text-light"><?php echo $project[ 'name' ] ?></div>
+				<div class="place label text-light"><?php echo $project[ 'Location' ] ?></div>
+				<!-- <div class="image" style="background-image: url( '<?php //echo $baseImageUrl . $project[ 'Featured Image' ][ 0 ][ 'id' ] . $mimeToFileExtensions[ $project[ 'Featured Image' ][ 0 ][ 'mimeType' ] ] ?>' )"></div> -->
+				<div class="image" style="background-image: url( '<?php echo $baseImageUrl . ',w_800/projects/' . $project[ 'Featured Image' ][ 0 ][ 'id' ] ?>' )"></div>
+			</a>
+		<?php endforeach; ?>
 	</div>
 </section><!-- END : Other Projects Section -->
+<?php endif; ?>
+
+
+
+
+
+
+
+
+
+<?php
+}

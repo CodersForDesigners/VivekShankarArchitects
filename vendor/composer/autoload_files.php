@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '74ed299072414d276bb7568fe71d5b0c' => $vendorDir . '/tinify/tinify/lib/Tinify.php',
-    '9635627915aaea7a98d6d14d04ca5b56' => $vendorDir . '/tinify/tinify/lib/Tinify/Exception.php',
+    'c15243c55ab4c20eff78d1e24be20dac' => $vendorDir . '/cloudinary/cloudinary_php/src/Helpers.php',
 );

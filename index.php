@@ -11,7 +11,9 @@
 	 * -/-/-/-/
 	 */
 	require_once __DIR__ . '/inc/db.php';
-	require_once __DIR__ . '/inc/projects.php';
+	require_once __DIR__ . '/inc/db/settings.php';
+	require_once __DIR__ . '/inc/db/typologies.php';
+	require_once __DIR__ . '/inc/db/projects.php';
 
 	/*
 	 * Versioning Assets to invalidate the browser cache
@@ -19,16 +21,34 @@
 	$ver = '?v=2018041651';
 
 	// get info on the request
-	$view = require "server/pageless.php";
-	$viewName = $view[ 0 ];
-	$viewPath = $view[ 1 ];
+	// $view = require "server/pageless.php";
+	// $viewName = $view[ 0 ];
+	// $viewPath = $view[ 1 ];
+	$viewName = $_REQUEST[ '_view' ];
 
 	// included external php files with functions.
 	require ('inc/head.php');
 	require ('inc/lazaro.php'); /* -- Lazaro disclaimer and footer -- */
 
+	// Helper values
+	$mimeToFileExtensions = [
+		'image/jpeg' => '.jpeg',
+		'image/png' => '.png'
+	];
+	$serverBaseUrl = 'http://' . $_SERVER[ 'HTTP_HOST' ] . '/';
+	// $baseImageUrl = $serverBaseUrl . 'media/projects/';
+	$baseImageUrl = 'https://res.cloudinary.com/vsa/image/upload/f_auto';
+
+	// Get settings
+	$settings = getSettings();
 	// Get projects by type
-	$projectsByType = getProjectsByType();
+	$projectsByTypology = getProjectsByTypology();
+
+	// Page Title
+	$pageTitle = 'Vivek Shankar Architects';
+
+	// Pull the view-specific code
+	require __DIR__ . '/pages/' . $viewName . '.php';
 
 ?>
 
@@ -44,7 +64,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Page Title | Page Name -->
-	<title>Page Title <?php echo ( $viewName != "404" ? " | " . $viewName : "" ) ?></title>
+	<title><?php echo $pageTitle ?></title>
 
 	<?php echo gethead(); ?>
 
@@ -83,7 +103,8 @@
 	<!-- Page Content -->
 	<div id="page-content">
 
-		<?php require $viewPath; ?>
+		<?php // require __DIR__ . '/pages/' . $viewName . '.php'; ?>
+		<?php viewMarkup(); ?>
 
 	</div> <!-- END : Page Content -->
 
@@ -183,7 +204,7 @@
 	</section><!-- END : Expertise Section -->
 
 	<!-- History Section -->
-	<section id="history" class="history-section block-space-top-bottom section js_section">
+	<section id="origin-story" class="history-section block-space-top-bottom section js_section">
 		<div class="container">
 			<div class="row">
 				<div class="title h2 text-uppercase strong columns small-10 small-offset-1">
@@ -325,11 +346,11 @@
 						Get in touch
 					</div>
 					<a class="call button fill-teal" href="tel:+918041328203" target="_blank">
-						<img src="media/icon-call.svg<?php echo $ver ?>">
+						<img src="/media/icon-call.svg<?php echo $ver ?>">
 						<span>+91 80 4132 8203</span>
 					</a>
 					<a class="email button fill-off-light" href="#" target="_blank">
-						<img src="media/icon-email.svg<?php echo $ver ?>">
+						<img src="/media/icon-email.svg<?php echo $ver ?>">
 						<span>Email</span>
 					</a>
 				</div>
@@ -349,19 +370,19 @@
 					<div class="social-icons">
 						<a class="icon" href="">
 							<span>Facebook</span>
-							<img src="media/icon-facebook.svg<?php echo $ver ?>">
+							<img src="/media/icon-facebook.svg<?php echo $ver ?>">
 						</a>
 						<a class="icon" href="">
 							<span>LinkedIn</span>
-							<img src="media/icon-linkedin.svg<?php echo $ver ?>">
+							<img src="/media/icon-linkedin.svg<?php echo $ver ?>">
 						</a>
 						<a class="icon" href="">
 							<span>Instagram</span>
-							<img src="media/icon-instagram.svg<?php echo $ver ?>">
+							<img src="/media/icon-instagram.svg<?php echo $ver ?>">
 						</a>
 						<a class="icon" href="">
 							<span>YouTube</span>
-							<img src="media/icon-youtube.svg<?php echo $ver ?>">
+							<img src="/media/icon-youtube.svg<?php echo $ver ?>">
 						</a>
 					</div>
 				</div>
@@ -412,31 +433,32 @@
 
 			<a tab-index="-1" class="link dropdown inline h3 strong text-teal text-uppercase js_sub_menu_trigger">Projects</a><br>
 			<div class="js_sub_menu" style="display: none">
-				<?php foreach ( $projectsByType as $type => $projects ) : ?>
+				<?php foreach ( $projectsByTypology as $type => $projects ) : ?>
 					<a tab-index="-1" class="link dropdown inline p strong text-neutral text-uppercase js_sub_menu_trigger"><?php echo $type ?></a><br>
 					<div class="js_sub_menu" style="display: none">
 						<?php foreach ( $projects as $project ) : ?>
-							<a tab-index="-1" href="project/<?php echo $project[ 'slug' ] ?>" class="link inline h4 text-blue"><?php echo $project[ 'name' ] ?></a><br>
+							<a tab-index="-1" href="/project/<?php echo $project[ 'ID' ] ?>" class="link inline h4 text-blue"><?php echo $project[ 'name' ] ?></a><br>
 						<?php endforeach; ?>
 					</div>
 				<?php endforeach; ?>
 			</div>
 
-			<!-- if Project Template { -->
-			<div>
-				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Intro</a><br>
-				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Benefits</a><br>
-				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Showcase</a><br>
-				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Facts</a><br>
-				<a tab-index="-1" href="" class="link inline h4 strong text-off-light text-uppercase">Other Projects</a><br>
-			</div>
-			<!-- END : } if Project Template -->
-			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Practice</a><br>
-			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">Expertise</a><br>
-			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">History</a><br>
-			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">Process</a><br>
-			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Services</a><br>
-			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Contact</a><br>
+			<?php if ( $viewName == 'project-template' ) : ?>
+				<div>
+					<a tab-index="-1" href="#intro" class="link inline h4 strong text-off-light text-uppercase">Intro</a><br>
+					<a tab-index="-1" href="#benefits" class="link inline h4 strong text-off-light text-uppercase">Benefits</a><br>
+					<a tab-index="-1" href="#showcase" class="link inline h4 strong text-off-light text-uppercase">Showcase</a><br>
+					<a tab-index="-1" href="#fact-file" class="link inline h4 strong text-off-light text-uppercase">Facts</a><br>
+					<a tab-index="-1" href="#other-projects" class="link inline h4 strong text-off-light text-uppercase">Other Projects</a><br>
+				</div>
+			<?php endif; ?>
+
+			<a tab-index="-1" href="#practice" class="link inline h3 strong text-teal text-uppercase">Practice</a><br>
+			<a tab-index="-1" href="#expertise" class="link inline p strong text-neutral text-uppercase">Expertise</a><br>
+			<a tab-index="-1" href="#origin-story" class="link inline p strong text-neutral text-uppercase">History</a><br>
+			<a tab-index="-1" href="#process" class="link inline p strong text-neutral text-uppercase">Process</a><br>
+			<a tab-index="-1" href="#services" class="link inline h3 strong text-teal text-uppercase">Services</a><br>
+			<a tab-index="-1" href="#contact" class="link inline h3 strong text-teal text-uppercase">Contact</a><br>
 		</div>
 	</div>
 </div>
@@ -509,7 +531,7 @@
 
 
 <!-- JS Modules -->
-<script type="text/javascript" src="/js/modules/pageless.js"></script>
+<!-- <script type="text/javascript" src="/js/modules/pageless.js"></script> -->
 <script type="text/javascript" src="/js/modules/navigation.js"></script>
 <script type="text/javascript" src="/js/modules/video_embed.js"></script>
 <script type="text/javascript" src="/js/modules/modal_box.js"></script>
