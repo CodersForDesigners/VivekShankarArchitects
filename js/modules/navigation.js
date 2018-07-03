@@ -72,6 +72,10 @@ $( ".js_sub_menu_trigger" ).on( "click", function ( event ) {
  * Smooth scroll to the section whenever a navigation menu item is hit
  *
  */
+$( document ).on( "click", ".js_link_internal", function ( event ) {
+	$( ".js_menu_opener" ).trigger( "click" );
+} );
+
 $( ".js_nav_section a" ).on( "click", function ( event ) {
 
 	event.preventDefault();

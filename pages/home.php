@@ -32,7 +32,7 @@ function viewMarkup () {
 				$imageURL_S = $baseImageUrl . ',w_400/settings/' . $image[ 'id' ];
 			?>
 			<!-- <div class="slide">
-				<img class="block" src="<?php echo $imageURL ?>">
+				<img class="block" src="<?php //echo $imageURL ?>">
 			</div> -->
 			<picture class="slide" style="display: inline">
 				<source class="block" srcset="<?php echo $imageURL_XL ?>" media="(min-width: 1380px)">
@@ -75,12 +75,13 @@ $(document).ready(function(){
 <section id="projects-list" class="project-listing-section fill-neutral section js_section">
 	<?php foreach ( $projectsByTypology as $type => $projects ) : ?>
 		<?php
-			$firstProject = $projects[ 0 ];
-			$firstProjectImage = $firstProject[ 'Featured Image' ][ 0 ];
-			// $imageURL = $baseImageUrl . $firstProjectImage[ 'id' ] . $mimeToFileExtensions[ $firstProjectImage[ 'mimeType' ] ];
-			$imageURL = $baseImageUrl . ',w_800/projects/' . $firstProjectImage[ 'id' ];
+			$currentTypology = getTypologyByName( $type );
+			$featuredProjectIndex = array_search( $currentTypology[ 'Featured Project' ], array_column( $projects, 'name' ) );
+			$featuredProject = $projects[ $featuredProjectIndex ];
+			$featuredProjectImage = $featuredProject[ 'Featured Image' ][ 0 ];
+			$imageURL = $baseImageUrl . ',w_800/projects/' . $featuredProjectImage[ 'id' ];
 		?>
-		<a class="project-type text-light" tabindex="-1" href="project/<?php echo $firstProject[ 'ID' ] ?>">
+		<a class="project-type text-light fill-black" tabindex="-1" href="project/<?php echo $featuredProject[ 'ID' ] ?>">
 			<div class="title h3 strong text-uppercase"><?php echo $type ?></div>
 			<div class="heading label"><?php echo $projects[ 0 ][ 'Type Description' ] ?></div>
 			<div class="image" style="background-image: url( '<?php echo $imageURL ?>' )"></div>

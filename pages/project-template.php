@@ -333,7 +333,7 @@ $(document).ready(function(){
 		</div>
 		<div class="row">
 			<?php if ( ! empty( $project[ 'Finished Project' ] ) ) : ?>
-				<div class="showcase-masonry js_showcase_masonry" data-gallery="Finished Project">
+				<div class="showcase-masonry hidden js_showcase_masonry" data-gallery="Finished Project">
 					<?php foreach ( $project[ 'Finished Project' ] as $image ) : ?>
 						<!-- <div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="<?php //echo $baseImageUrl . $image[ 'id' ] . $mimeToFileExtensions[ $image[ 'mimeType' ] ] ?>"></div> -->
 						<?php
@@ -341,7 +341,7 @@ $(document).ready(function(){
 							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
 						?>
 						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
-							<source class="block" srcset="<?php echo $imageURL_M ?>" media="(min-width: 640px)">
+							<!-- <source class="block" srcset="<?php //echo $imageURL_M ?>" media="(min-width: 640px)"> -->
 							<img class="block" srcset="<?php echo $imageURL_S ?>">
 						</picture></div>
 					<?php endforeach; ?>
@@ -356,7 +356,7 @@ $(document).ready(function(){
 							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
 						?>
 						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
-							<source class="block" srcset="<?php echo $imageURL_M ?>" media="(min-width: 640px)">
+							<!-- <source class="block" srcset="<?php //echo $imageURL_M ?>" media="(min-width: 640px)"> -->
 							<img class="block" srcset="<?php echo $imageURL_S ?>">
 						</picture></div>
 					<?php endforeach; ?>
@@ -371,7 +371,7 @@ $(document).ready(function(){
 							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
 						?>
 						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
-							<source class="block" srcset="<?php echo $imageURL_M ?>" media="(min-width: 640px)">
+							<!-- <source class="block" srcset="<?php //echo $imageURL_M ?>" media="(min-width: 640px)"> -->
 							<img class="block" srcset="<?php echo $imageURL_S ?>">
 						</picture></div>
 					<?php endforeach; ?>
@@ -389,9 +389,13 @@ $(document).ready(function(){
 		 */
 
 		$( ".js_gallery_btn" ).first().addClass( "active" );
-		$( ".showcase-masonry" ).first().imagesLoaded().done( function ( instance ) {
-			$( instance.elements[ 0 ] ).masonry();
+		$( ".js_showcase_masonry" ).first().imagesLoaded().done( function ( instance ) {
+			setTimeout( function () {
+				$( instance.elements[ 0 ] ).masonry();
+			}, 500 );
 		} );
+		// Show the first tab
+		$( ".js_showcase_masonry" ).first().removeClass( "hidden" );
 
 		$( document ).on( "click", ".js_gallery_btn", function ( event ) {
 
@@ -476,9 +480,9 @@ $(document).ready(function(){
 	</div>
 	<div class="other-project-list fill-neutral">
 		<?php foreach ( $otherProjectsOfTheType as $project ) : ?>
-			<a href="project/<?php echo $project[ 'ID' ] ?>" class="other-project" tabindex="-1">
-				<div class="name h3 strong text-uppercase text-light"><?php echo $project[ 'name' ] ?></div>
-				<div class="place label text-light"><?php echo $project[ 'Location' ] ?></div>
+			<a href="/project/<?php echo $project[ 'ID' ] ?>" class="other-project text-light fill-black" tabindex="-1">
+				<div class="name h3 strong text-uppercase"><?php echo $project[ 'name' ] ?></div>
+				<div class="place label"><?php echo $project[ 'Location' ] ?></div>
 				<!-- <div class="image" style="background-image: url( '<?php //echo $baseImageUrl . $project[ 'Featured Image' ][ 0 ][ 'id' ] . $mimeToFileExtensions[ $project[ 'Featured Image' ][ 0 ][ 'mimeType' ] ] ?>' )"></div> -->
 				<div class="image" style="background-image: url( '<?php echo $baseImageUrl . ',w_800/projects/' . $project[ 'Featured Image' ][ 0 ][ 'id' ] ?>' )"></div>
 			</a>

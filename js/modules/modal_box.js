@@ -28,7 +28,7 @@ $( document ).ready( function () {
 
 		var $body = $( "body" )
 		if ( $body.hasClass( "modal-open" ) ) {
-			closeModal();
+			closeModal( event );
 		}
 		else {
 			$body.addClass( "modal-open nav-open" );
@@ -50,11 +50,11 @@ $( document ).ready( function () {
 			return;
 		}
 
-		closeModal();
+		closeModal( event );
 
 	} );
 
-	function closeModal () {
+	function closeModal ( event ) {
 
 		event.stopImmediatePropagation();
 		event.preventDefault();
