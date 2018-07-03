@@ -36,13 +36,13 @@
 
 .other-project-section .other-project-list .other-project .name {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	letter-spacing: 0.05rem;
 }
 
 .other-project-section .other-project-list .other-project .place {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	margin-top: 5px;
 }
 
@@ -56,6 +56,25 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	opacity: 0.65;
+}
+
+.other-project-section .other-project-list .other-project .image:after {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 10%, rgba(0,0,0,0) 65%);
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 10%,rgba(0,0,0,0) 65%);
+	background: linear-gradient(to right, rgba(0,0,0,0.65) 10%,rgba(0,0,0,0) 65%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
 }
 
 @media( min-width: 640px )  {}

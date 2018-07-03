@@ -90,17 +90,24 @@
 	border: none;
 	border-radius: 0;
 
-	background-color: rgba(73, 204, 191, 0.7);
+	/*background-color: rgba(73, 204, 191, 0.7);*/
+	background-color: rgba(0, 0, 0, 0.25);
 }
 
 .landing-section .slick-landing button.slick-arrow.slick-prev {
 	left: 0;
-	transform: translate(55px, -50%) rotate(45deg);
+	/*transform: translate(55px, -50%);*/
+	transform: translate(0, -50%);
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
 }
 	
 .landing-section .slick-landing button.slick-arrow.slick-next {
 	right: 0;
-	transform: translate(-55px, -50%) rotate(-45deg);
+	/*transform: translate(-55px, -50%);*/
+	transform: translate(0, -50%);
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
 }
 
 .landing-section .slick-landing button.slick-arrow:before {
@@ -116,11 +123,11 @@
 }
 
 .landing-section .slick-landing button.slick-arrow.slick-prev:before {
-	transform: translate(-2px, 2px) rotate(-45deg);
+	transform: translate(-2px, 0px);
 	background-image: url('/plugins/slick/ic_prev.svg');
 }
 .landing-section .slick-landing button.slick-arrow.slick-next:before {
-	transform: translate(2px, 2px) rotate(45deg);
+	transform: translate(2px, 0px);
 	background-image: url('/plugins/slick/ic_next.svg');
 }
 
@@ -172,12 +179,14 @@
 
 	.landing-section .slick-landing button.slick-arrow.slick-prev {
 		left: 0;
-		transform: translate(75px, -50%) rotate(45deg);
+		/*transform: translate(75px, -50%);*/
+		transform: translate(0, -50%);
 	}
 		
 	.landing-section .slick-landing button.slick-arrow.slick-next {
 		right: 0;
-		transform: translate(-75px, -50%) rotate(-45deg);
+		/*transform: translate(-75px, -50%);*/
+		transform: translate(0, -50%);
 	}
 
 
@@ -220,12 +229,14 @@
 
 	.landing-section .slick-landing button.slick-arrow.slick-prev {
 		left: 0;
-		transform: translate(90px, -50%) rotate(45deg);
+		/*transform: translate(90px, -50%);*/
+		transform: translate(0, -50%);
 	}
 		
 	.landing-section .slick-landing button.slick-arrow.slick-next {
 		right: 0;
-		transform: translate(-90px, -50%) rotate(-45deg);
+		/*transform: translate(-90px, -50%);*/
+		transform: translate(0, -50%);
 	}
 
 	/* -- the dots -- */

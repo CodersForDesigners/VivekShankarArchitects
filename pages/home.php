@@ -81,7 +81,7 @@ $(document).ready(function(){
 			$featuredProjectImage = $featuredProject[ 'Featured Image' ][ 0 ];
 			$imageURL = $baseImageUrl . ',w_800/projects/' . $featuredProjectImage[ 'id' ];
 		?>
-		<a class="project-type text-light fill-black" tabindex="-1" href="project/<?php echo $featuredProject[ 'ID' ] ?>">
+		<a class="project-type block text-light fill-black" tabindex="-1" href="project/<?php echo $featuredProject[ 'ID' ] ?>">
 			<div class="title h3 strong text-uppercase"><?php echo $type ?></div>
 			<div class="heading label"><?php echo $projects[ 0 ][ 'Type Description' ] ?></div>
 			<div class="image" style="background-image: url( '<?php echo $imageURL ?>' )"></div>

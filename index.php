@@ -126,7 +126,7 @@
 				</div>
 				<div class="quick-links columns small-10 small-offset-1 medium-2 large-2 xlarge-1 xlarge-offset-2">
 					<a class="button-link" tabindex="-1" href="#expertise">Expertise</a>
-					<a class="button-link" tabindex="-1" href="#history">Origin Story</a>
+					<a class="button-link" tabindex="-1" href="#origin-story">Origin Story</a>
 					<a class="button-link" tabindex="-1" href="#process">Process</a>
 				</div>
 			</div>
@@ -151,25 +151,25 @@
 						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek trained and worked with the internationally renowned architect Zaha Hadid.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. He spent 8 years under Zaha, working on award winning projects in Tokyo, Munich, Singapore, Rome and London.</div>
+						<div class="description p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. Vivek has worked on projects across Europe while working with Zaha Hadid Architects.</div>
 					</div>
 				</div>
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Process Driven Global Standards</div>
-						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek returned to India and setup his practice to exacting global standards.</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek returned to India and setup his practice to exacting global design trends.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice to exacting global standards. Today the firm operates under the umbrella of these global standards that enable bespoke Design Strategies for each project and client.</div>
+						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice by consciously questioning the role of the Architect in the Indian context and the difference his practice can make to a client and the end user.His approach of not going with the stereotype approach of designing gave him design commissions which had a high potential to explore.</div>
 					</div>
 				</div>
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Local Context Advantage</div>
-						<div class="excerpt p strong em text-teal hide-for-mobile">Indian leaniage ensures we do not run into operational delays and cost overruns.</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Indian lineage ensures we do not run into operational delays and cost overruns.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns that International Architects most often suffer when they operate in India.</div>
+						<div class="description p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns. Moreover international architects fail to understand the challenges faced with local construction practices.</div>
 					</div>
 				</div>
 				<div class="point row">
@@ -192,11 +192,11 @@
 				</div>
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
-						<div class="heading h4 strong">Last Mile Design Management </div>
+						<div class="heading h4 strong">Last Mile Design Management</div>
 						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek’s driving principle is the last mile craftsmanship</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">The repeating tragedy is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
+						<div class="description p">The repeating flaw is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
 					</div>
 				</div>
 			</div>
@@ -305,28 +305,29 @@
 	<section id="services" class="services-section block-space-top-bottom section js_section">
 		<div class="container">
 			<div class="row">
-				<div class="h2 strong text-uppercase columns small-10 small-offset-1">
-					Services
+				<div class="heading h2 strong text-uppercase columns small-10 small-offset-1">
+					<span>Services</span>
+					<span class="underline fill-neutral"></span>
 				</div>
-				<div class="columns small-10 small-offset-1 medium-5 medium-offset-1">
-					<div class="h4">Architecture</div>
-					<div class="p">The heart and soul of what we provide. Our comprehensive architectural services include conceptual and schematic design, design development and construction documentation, assisting with contractor bidding and/or negotiating and construction contract administration. Architecture embodies all we touch. And we are a combination of artists and tacticians, imagining, coordinating and creating some of the world’s most iconic places.</div>
+				<div class="service columns small-10 small-offset-1 large-5 large-offset-1">
+					<div class="title h4 text-teal">Architecture</div>
+					<div class="description p text-neutral">The heart and soul of what we provide. Our comprehensive architectural services include conceptual and schematic design, design development and construction documentation, assisting with contractor bidding and/or negotiating and construction contract administration. Architecture embodies all we touch. And we are a combination of artists and tacticians, imagining, coordinating and creating some of the world’s most iconic places.</div>
 				</div>
-				<div class="columns small-10 small-offset-1 medium-5 medium-offset-0">
-					<div class="h4">Planning & Development</div>
-					<div class="p">We combine global reach with a tremendous local touch. Our commitment to our communities allows us to effectively navigate local regulatory approval processes from platting subdivisions to zoning and permitting. We also handle issues of site analysis, access, circulation, parking, urban design, local development guidelines and place-making. It’s the entire picture. Always.</div>
+				<div class="service columns small-10 small-offset-1 large-5 large-offset-0">
+					<div class="title h4 text-teal">Planning & Development</div>
+					<div class="description p text-neutral">We combine global reach with a tremendous local touch. Our commitment to our communities allows us to effectively navigate local regulatory approval processes from platting subdivisions to zoning and permitting. We also handle issues of site analysis, access, circulation, parking, urban design, local development guidelines and place-making. It’s the entire picture. Always.</div>
 				</div>
-				<div class="columns small-10 small-offset-1 medium-5 medium-offset-1">
-					<div class="h4">Structural Engineering</div>
-					<div class="p">We stretch the design boundaries daily, but always with a practical guide. Our highly experienced in-house team of structural engineers consistently communicates with the architectural team to ensure structural considerations are incorporated into designs from day one. This close cooperation translates into buildings that simply work.</div>
+				<div class="service columns small-10 small-offset-1 large-5 large-offset-1">
+					<div class="title h4 text-teal">Structural Engineering</div>
+					<div class="description p text-neutral">We stretch the design boundaries daily, but always with a practical guide. Our highly experienced in-house team of structural engineers consistently communicates with the architectural team to ensure structural considerations are incorporated into designs from day one. This close cooperation translates into buildings that simply work.</div>
 				</div>
-				<div class="columns small-10 small-offset-1 medium-5 medium-offset-0">
-					<div class="h4">Interior Design</div>
-					<div class="p">Our award-winning interior design group, one of the largest in the nation, offers creative and intelligent responses to your goals and requirements. We know how to listen and infuse your organization’s personality into a space.</div>
+				<div class="service columns small-10 small-offset-1 large-5 large-offset-0">
+					<div class="title h4 text-teal">Interior Design</div>
+					<div class="description p text-neutral">Our award-winning interior design group, one of the largest in the nation, offers creative and intelligent responses to your goals and requirements. We know how to listen and infuse your organization’s personality into a space.</div>
 				</div>
-				<div class="columns small-10 small-offset-1 medium-5 medium-offset-1">
-					<div class="h4">Sustainable Design</div>
-					<div class="p">Sustainability is infused into all that we touch. We build energy simulation models early in our process to help inform decisions made in our design studios. Our approach is collaborative and integrated, focused on conserving resources, achieving energy independence, reducing greenhouse gas emissions and effectively improving your bottom line.</div>
+				<div class="service columns small-10 small-offset-1 large-5 large-offset-1">
+					<div class="title h4 text-teal">Sustainable Design</div>
+					<div class="description p text-neutral">Sustainability is infused into all that we touch. We build energy simulation models early in our process to help inform decisions made in our design studios. Our approach is collaborative and integrated, focused on conserving resources, achieving energy independence, reducing greenhouse gas emissions and effectively improving your bottom line.</div>
 				</div>
 			</div>
 		</div>
@@ -428,8 +429,8 @@
 		<div class="menu-close-toggler js_modal_close"></div>
 		<div class="inline nav-list fill-dark text-left">
 			<div class="title h1 strong text-off-dark">Menu</div>
-			<a tab-index="-1" href="" class="link inline h3 strong text-teal text-uppercase">Home</a><br>
-			<a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase">Welcome</a><br>
+			<a tab-index="-1" href="/" class="link inline h3 strong text-teal text-uppercase">Home</a><br>
+			<!-- <a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase js_link_internal">Welcome</a><br> -->
 
 			<a tab-index="-1" class="link dropdown inline h3 strong text-teal text-uppercase js_sub_menu_trigger">Projects</a><br>
 			<div class="js_sub_menu" style="display: none">
@@ -445,20 +446,20 @@
 
 			<?php if ( $viewName == 'project-template' ) : ?>
 				<div>
-					<a tab-index="-1" href="#intro" class="link inline h4 strong text-off-light text-uppercase">Intro</a><br>
-					<a tab-index="-1" href="#benefits" class="link inline h4 strong text-off-light text-uppercase">Benefits</a><br>
-					<a tab-index="-1" href="#showcase" class="link inline h4 strong text-off-light text-uppercase">Showcase</a><br>
-					<a tab-index="-1" href="#fact-file" class="link inline h4 strong text-off-light text-uppercase">Facts</a><br>
-					<a tab-index="-1" href="#other-projects" class="link inline h4 strong text-off-light text-uppercase">Other Projects</a><br>
+					<a tab-index="-1" href="#intro" class="link inline h4 strong text-off-light text-uppercase js_link_internal">Intro</a><br>
+					<a tab-index="-1" href="#benefits" class="link inline h4 strong text-off-light text-uppercase js_link_internal">Benefits</a><br>
+					<a tab-index="-1" href="#showcase" class="link inline h4 strong text-off-light text-uppercase js_link_internal">Showcase</a><br>
+					<a tab-index="-1" href="#fact-file" class="link inline h4 strong text-off-light text-uppercase js_link_internal">Facts</a><br>
+					<a tab-index="-1" href="#other-projects" class="link inline h4 strong text-off-light text-uppercase js_link_internal">Other Projects</a><br>
 				</div>
 			<?php endif; ?>
 
-			<a tab-index="-1" href="#practice" class="link inline h3 strong text-teal text-uppercase">Practice</a><br>
-			<a tab-index="-1" href="#expertise" class="link inline p strong text-neutral text-uppercase">Expertise</a><br>
-			<a tab-index="-1" href="#origin-story" class="link inline p strong text-neutral text-uppercase">History</a><br>
-			<a tab-index="-1" href="#process" class="link inline p strong text-neutral text-uppercase">Process</a><br>
-			<a tab-index="-1" href="#services" class="link inline h3 strong text-teal text-uppercase">Services</a><br>
-			<a tab-index="-1" href="#contact" class="link inline h3 strong text-teal text-uppercase">Contact</a><br>
+			<a tab-index="-1" href="#practice" class="link inline h3 strong text-teal text-uppercase js_link_internal">Practice</a><br>
+			<a tab-index="-1" href="#expertise" class="link inline p strong text-neutral text-uppercase js_link_internal">Expertise</a><br>
+			<a tab-index="-1" href="#origin-story" class="link inline p strong text-neutral text-uppercase js_link_internal">History</a><br>
+			<a tab-index="-1" href="#process" class="link inline p strong text-neutral text-uppercase js_link_internal">Process</a><br>
+			<a tab-index="-1" href="#services" class="link inline h3 strong text-teal text-uppercase js_link_internal">Services</a><br>
+			<a tab-index="-1" href="#contact" class="link inline h3 strong text-teal text-uppercase js_link_internal">Contact</a><br>
 		</div>
 	</div>
 </div>

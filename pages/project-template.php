@@ -480,7 +480,7 @@ $(document).ready(function(){
 	</div>
 	<div class="other-project-list fill-neutral">
 		<?php foreach ( $otherProjectsOfTheType as $project ) : ?>
-			<a href="/project/<?php echo $project[ 'ID' ] ?>" class="other-project text-light fill-black" tabindex="-1">
+			<a href="/project/<?php echo $project[ 'ID' ] ?>" class="other-project block text-light fill-black" tabindex="-1">
 				<div class="name h3 strong text-uppercase"><?php echo $project[ 'name' ] ?></div>
 				<div class="place label"><?php echo $project[ 'Location' ] ?></div>
 				<!-- <div class="image" style="background-image: url( '<?php //echo $baseImageUrl . $project[ 'Featured Image' ][ 0 ][ 'id' ] . $mimeToFileExtensions[ $project[ 'Featured Image' ][ 0 ][ 'mimeType' ] ] ?>' )"></div> -->
