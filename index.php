@@ -533,12 +533,12 @@
 
 <!-- JS Modules -->
 <!-- <script type="text/javascript" src="/js/modules/pageless.js"></script> -->
-<script type="text/javascript" src="/js/modules/navigation.js"></script>
-<script type="text/javascript" src="/js/modules/video_embed.js"></script>
-<script type="text/javascript" src="/js/modules/modal_box.js"></script>
-<script type="text/javascript" src="/js/modules/smoothscroll.js"></script>
-<script type="text/javascript" src="/js/modules/form.js"></script>
-<script type="text/javascript" src="/js/modules/disclaimer.js"></script>
+<script type="text/javascript" src="/js/modules/navigation.js<?php echo $ver ?>"></script>
+<script type="text/javascript" src="/js/modules/video_embed.js<?php echo $ver ?>"></script>
+<script type="text/javascript" src="/js/modules/modal_box.js<?php echo $ver ?>"></script>
+<script type="text/javascript" src="/js/modules/smoothscroll.js<?php echo $ver ?>"></script>
+<script type="text/javascript" src="/js/modules/form.js<?php echo $ver ?>"></script>
+<script type="text/javascript" src="/js/modules/disclaimer.js<?php echo $ver ?>"></script>
 
 <script type="text/javascript">
 
