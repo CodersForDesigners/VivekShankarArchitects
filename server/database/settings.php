@@ -109,85 +109,113 @@ Cloudinary::config( [
 ] );
 
 // Upload the images to the CDN
-// function uploadToCDN ( $from, $to ) {
+function uploadToCDN ( $from, $to ) {
 
-// 	return Cloudinary\Uploader::upload( $from, [
-// 		// 'folder' => '',
-// 		'public_id' => $to,
-// 		'invalidate' => true,
-// 		'async' => true,
-// 		// 'eager' => [
-// 		// 	[
-// 		// 		'if' => 'iw >= 1600',
-// 		// 		'width' => 1600,
-// 		// 		// 'crop' => 'scale',
-// 		// 		'fetch_format' => 'auto'
-// 		// 	],
-// 		// 	[
-// 		// 		'if' => 'iw >= 1200',
-// 		// 		'width' => 1200,
-// 		// 		// 'crop' => 'scale',
-// 		// 		'fetch_format' => 'auto'
-// 		// 	],
-// 		// 	[
-// 		// 		'if' => 'iw >= 800',
-// 		// 		'width' => 800,
-// 		// 		// 'crop' => 'scale',
-// 		// 		'fetch_format' => 'auto'
-// 		// 	],
-// 		// 	[
-// 		// 		'if' => 'iw >= 400',
-// 		// 		'width' => 400,
-// 		// 		// 'crop' => 'scale',
-// 		// 		'fetch_format' => 'auto'
-// 		// 	]
-// 		// ],
-// 		// 'eager_async' => true
-// 	] );
+	return Cloudinary\Uploader::upload( $from, [
+		// 'folder' => '',
+		'public_id' => $to,
+		'invalidate' => true,
+		// 'async' => true,
+		// 'eager' => [
+		// 	[
+		// 		'if' => 'iw >= 1600',
+		// 		'width' => 1600,
+		// 		// 'crop' => 'scale',
+		// 		'fetch_format' => 'auto'
+		// 	],
+		// 	[
+		// 		'if' => 'iw >= 1200',
+		// 		'width' => 1200,
+		// 		// 'crop' => 'scale',
+		// 		'fetch_format' => 'auto'
+		// 	],
+		// 	[
+		// 		'if' => 'iw >= 800',
+		// 		'width' => 800,
+		// 		// 'crop' => 'scale',
+		// 		'fetch_format' => 'auto'
+		// 	],
+		// 	[
+		// 		'if' => 'iw >= 400',
+		// 		'width' => 400,
+		// 		// 'crop' => 'scale',
+		// 		'fetch_format' => 'auto'
+		// 	]
+		// ],
+		// 'eager_async' => true
+	] );
 
-// }
-// foreach ( $images as $index => $image ) {
-// 	$sourcePath = $imageURLs[ $index ];
-// 	$targetPath = $imageFiles[ $index ];
-// 	try {
-// 		uploadToCDN( $sourcePath, $targetPath );
-// 	} catch ( Exception $e ) {
-// 		$errors[ ] = $e->getMessage();
-// 	}
-// }
-// // If there were errors, send out an e-mail to them ( and us )
-// if ( ! empty( $errors ) ) {
-// 	// Send a mail to us
-// 	Mailer\sendMessage( [
-// 		'name' => 'Aditya',
-// 		'email' => 'adityabhat@lazaro.in',
-// 		'subject' => '[!] VSA :: Something went wrong',
-// 		'message' => implode( '\n\n', $errors )
-// 	] );
-// 	// Send a mail to them
-// 	// Mailer\sendMessage( [
-// 	// 	'name' => 'Vivek',
-// 	// 	'email' => 'vivekvsdp@gmail.com',
-// 	// 	'subject' => 'Website – There was an error during publishing',
-// 	// 	'message' => 'Please try publishing again.\nIf the issue persists, then contact Aditya at 7760118668.\n\nThis message was auto-generated.'
-// 	// ] );
-// 	exit;
-// }
+}
+foreach ( $images as $index => $image ) {
+	// a simple throttling thing-a-ma-bob so the cloudinary can breathe
+	// when fetching images from Google Drive
+	if ( $index % 3 == 0 ) {
+		usleep( 0.5 * 1000000 );
+	}
 
-// // Finally, remove the images that are not is use anymore
-// $cloudinary = new Cloudinary\Api();
-// $resources = $cloudinary->resources( [
-// 	'resource_type' => 'image',
-// 	'type' => 'upload',
-// 	'prefix' => 'settings'
-// ] );
-// $imagePublicIds = array_map( function ( $resource ) {
-// 	return $resource[ 'public_id' ];
-// }, $resources->getArrayCopy()[ 'resources' ] );
+	$sourcePath = $imageURLs[ $index ];
+	$targetPath = $imageFiles[ $index ];
+	try {
+		uploadToCDN( $sourcePath, $targetPath );
+	} catch ( Exception $e ) {
+		$errors[ ] = $sourcePath . ' (' . $images[ $index ][ 'name' ] . '): \n<br>' . $e->getMessage();
+	}
+}
+// If there were errors, send out an e-mail to them ( and us )
+if ( ! empty( $errors ) ) {
+	// Send a mail to us
+	Mailer\sendMessage( [
+		'name' => 'Aditya',
+		'email' => 'adityabhat@lazaro.in',
+		'subject' => '[!] VSA :: Something went wrong in ' . __FILE__,
+		'message' => implode( '<br><br>', $errors )
+	] );
+	// Send a mail to them
+	// Mailer\sendMessage( [
+	// 	'name' => 'Vivek',
+	// 	'email' => 'vivekvsdp@gmail.com',
+	// 	'subject' => 'Website – There was an error during publishing',
+	// 	'message' => 'Please try publishing again.\nIf the issue persists, then contact Aditya at 7760118668.\n\nThis message was auto-generated.'
+	// ] );
+	exit;
+}
+
+/*
+ *
+ * Finally, remove the images that are not is use anymore
+ *
+ */
+$imagePublicIds = [ ];
+$cloudinary = new Cloudinary\Api();
+$nextCursor = '';
+
+// You can only fetch the images in small batches, hence we cumulatively build
+// the list of public image IDs
+do {
+
+	// Fetch a batch of images
+	$resources__currentBatch = $cloudinary->resources( [
+		'resource_type' => 'image',
+		'type' => 'upload',
+		'prefix' => 'settings',
+		'max_results' => 500,
+		'next_cursor' => $nextCursor
+	] )->getArrayCopy();
+
+	// // Append the public ids to the cumulative list
+	$imagePublicIds__currentBatch = array_map( function ( $resource ) {
+		return $resource[ 'public_id' ];
+	}, $resources__currentBatch[ 'resources' ] );
+	$imagePublicIds = array_merge( $imagePublicIds, $imagePublicIds__currentBatch );
+
+	// // Store a reference to the next batch of images ( if there are more )
+	$nextCursor = $resources__currentBatch[ 'next_cursor' ];
+
+} while ( ! empty( $nextCursor ) );
 
 
-// $imagesToBeRemoved = array_diff( $imagePublicIds, $imageFiles );
-// $cloudinary->delete_resources( $imagesToBeRemoved );
+$imagesToBeRemoved = array_diff( $imagePublicIds, $imageFiles );
+$cloudinary->delete_resources( $imagesToBeRemoved );
 
 
 

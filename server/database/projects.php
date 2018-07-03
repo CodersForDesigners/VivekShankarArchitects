@@ -45,7 +45,6 @@ $projects = null;
 // Actually make the response now
 ob_start();
 $clientResponse[ "message" ] = 'Projects are being processed.';
-// $clientResponse[ "data" ] = $projects;
 echo json_encode( $clientResponse );
 header( 'Content-Encoding: none' );
 header( 'Connection: close' );
@@ -115,7 +114,7 @@ function uploadToCDN ( $from, $to ) {
 		// 'folder' => '',
 		'public_id' => $to,
 		'invalidate' => true,
-		'async' => true,
+		// 'async' => true,
 		// 'async' => true,
 		// 'eager' => [
 		// 	[
@@ -148,12 +147,18 @@ function uploadToCDN ( $from, $to ) {
 
 }
 foreach ( $images as $index => $image ) {
+	// a simple throttling thing-a-ma-bob so the cloudinary can breathe
+	// when fetching images from Google Drive
+	if ( $index % 3 == 0 ) {
+		usleep( 0.5 * 1000000 );
+	}
+
 	$sourcePath = $imageURLs[ $index ];
 	$targetPath = $imageFiles[ $index ];
 	try {
 		uploadToCDN( $sourcePath, $targetPath );
 	} catch ( Exception $e ) {
-		$errors[ ] = $e->getMessage();
+		$errors[ ] = $sourcePath . ' (' . $images[ $index ][ 'name' ] . '): \n<br>' . $e->getMessage();
 	}
 }
 // If there were errors, send out an e-mail to them ( and us )
@@ -162,8 +167,8 @@ if ( ! empty( $errors ) ) {
 	Mailer\sendMessage( [
 		'name' => 'Aditya',
 		'email' => 'adityabhat@lazaro.in',
-		'subject' => '[!] VSA :: Something went wrong',
-		'message' => implode( '\n\n', $errors )
+		'subject' => '[!] VSA :: Something went wrong in ' . __FILE__,
+		'message' => implode( '<br><br>', $errors )
 	] );
 	// Send a mail to them
 	// Mailer\sendMessage( [
@@ -175,20 +180,44 @@ if ( ! empty( $errors ) ) {
 	exit;
 }
 
-// Finally, remove the images that are not is use anymore
+/*
+ *
+ * Finally, remove the images that are not is use anymore
+ *
+ */
+$imagePublicIds = [ ];
 $cloudinary = new Cloudinary\Api();
-$resources = $cloudinary->resources( [
-	'resource_type' => 'image',
-	'type' => 'upload',
-	'prefix' => 'projects'
-] );
-$imagePublicIds = array_map( function ( $resource ) {
-	return $resource[ 'public_id' ];
-}, $resources->getArrayCopy()[ 'resources' ] );
+$nextCursor = '';
+
+// You can only fetch the images in small batches, hence we cumulatively build
+// the list of public image IDs
+do {
+
+	// Fetch a batch of images
+	$resources__currentBatch = $cloudinary->resources( [
+		'resource_type' => 'image',
+		'type' => 'upload',
+		'prefix' => 'projects',
+		'max_results' => 500,
+		'next_cursor' => $nextCursor
+	] )->getArrayCopy();
+
+	// Append the public ids to the cumulative list
+	$imagePublicIds__currentBatch = array_map( function ( $resource ) {
+		return $resource[ 'public_id' ];
+	}, $resources__currentBatch[ 'resources' ] );
+	$imagePublicIds = array_merge( $imagePublicIds, $imagePublicIds__currentBatch );
+
+	// Store a reference to the next batch of images ( if there are more )
+	$nextCursor = $resources__currentBatch[ 'next_cursor' ];
+
+} while ( ! empty( $nextCursor ) );
 
 
 $imagesToBeRemoved = array_diff( $imagePublicIds, $imageFiles );
-$cloudinary->delete_resources( $imagesToBeRemoved );
+if ( ! empty( $imagesToBeRemoved ) ) {
+	$cloudinary->delete_resources( $imagesToBeRemoved );
+}
 
 
 
