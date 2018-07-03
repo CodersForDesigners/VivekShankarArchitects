@@ -25,7 +25,7 @@ function getProjectsByTypology () {
 
 	global $connection;
 
-	$query = 'SELECT P.name, P.ID, P.Typology, P.location, P.`Featured Image`, T.Description AS `Type Description` FROM projects AS P, typologies AS T WHERE P.Typology = T.Name ORDER BY P.Typology DESC';
+	$query = 'SELECT P.name, P.ID, P.Typology, P.Location, P.`Featured Image`, T.Description AS `Type Description` FROM projects AS P, typologies AS T WHERE P.Typology = T.Name ORDER BY P.Typology DESC';
 	// $query = 'SELECT name, ID, Typology, location, `featured image` FROM projects ORDER BY typology';
 	// $query = 'SELECT name, type, `type description`, place, `featured images` FROM projects ORDER BY type';
 
