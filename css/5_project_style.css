@@ -5,7 +5,7 @@
 
 /* ## Basic Breakpoints
  * ====================
- 
+
 @media( min-width: 640px )  {}
 @media( min-width: 1040px ) {}
 @media( min-width: 1380px ) {}
@@ -76,7 +76,7 @@ body, .body {
 	background-color: var(--light);
 }
 
-h1, h2, h3, h4, h5, h6, 
+h1, h2, h3, h4, h5, h6,
 p, small, label {
 	margin: 0;
 	display: inline;
@@ -430,15 +430,15 @@ select:focus {
 }
 
 @media( min-width: 1040px ) {
-	.block-space-top-bottom { padding: 180px 0; }
-	.block-space-top { padding: 180px 0 0 0; }
-	.block-space-bottom { padding: 0 0 180px 0; }
+	.block-space-top-bottom { padding: 100px 0; }
+	.block-space-top { padding: 100px 0 0 0; }
+	.block-space-bottom { padding: 0 0 100px 0; }
 }
 
 @media( min-width: 1380px ) {
-	.block-space-top-bottom { padding: 240px 0; }
-	.block-space-top { padding: 240px 0 0 0; }
-	.block-space-bottom { padding: 0 0 240px 0; }
+	.block-space-top-bottom { padding: 120px 0; }
+	.block-space-top { padding: 120px 0 0 0; }
+	.block-space-bottom { padding: 0 0 120px 0; }
 }
 
 
