@@ -121,8 +121,8 @@
 					<div class="p">2004</div>
 				</div>
 				<div class="description columns small-10 small-offset-1 medium-7 large-5 large-offset-0">
-					<div class="p">Building and operating an international architectural firm in India is possible. In fact we have done it.  Every project we execute follows global standards across Research, Design and Execution. The benefit? Our team has local knowledge in construction techniques, cultural constraints and legal by-laws.</div>
-					<div class="p strong em text-teal">Architecture that is Global yet Local.</div>
+					<div class="p">We are an Architecture practice based in Bangalore with over 16 years of experience in the industry and won several awards for our work in India and oversees. Our Principal Architect has worked with the world renowned architect, Zaha Hadid on many hallmark projects. We specialize in Architecture Design and also take ownership of the development until completion including interior design and project planning services.</div>
+					<div class="p strong em text-teal">Vivek Shankar Architects strives to keep abreast with the future trends that will redraw the city and the profession so as to be equipped to respond to challenges in future markets. The practice consciously strives to induct a process ruled by geometric strategies and material compositions that result in subversion of the conventional mode of perceiving a structure or space.</div>
 				</div>
 				<div class="quick-links columns small-10 small-offset-1 medium-2 large-2 xlarge-1 xlarge-offset-2">
 					<a class="button-link" tabindex="-1" href="#expertise">Expertise</a>
@@ -151,16 +151,16 @@
 						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek trained and worked with the internationally renowned architect Zaha Hadid.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. Vivek has worked on projects across Europe while working with Zaha Hadid Architects.</div>
+						<div class="description p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. He spent 8 years under Zaha, working on award winning projects in Tokyo, Munich, Singapore, Rome and London.</div>
 					</div>
 				</div>
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Process Driven Global Standards</div>
-						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek returned to India and setup his practice to exacting global design trends.</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek returned to India and setup his practice to exacting global standards.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice by consciously questioning the role of the Architect in the Indian context and the difference his practice can make to a client and the end user.His approach of not going with the stereotype approach of designing gave him design commissions which had a high potential to explore.</div>
+						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice to exacting global standards. Today the firm operates under the umbrella of these global standards that enable bespoke Design Strategies for each project and client.</div>
 					</div>
 				</div>
 				<div class="point row">
@@ -169,7 +169,7 @@
 						<div class="excerpt p strong em text-teal hide-for-mobile">Indian lineage ensures we do not run into operational delays and cost overruns.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns. Moreover international architects fail to understand the challenges faced with local construction practices.</div>
+						<div class="description p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns that International Architects most often suffer when they operate in India.</div>
 					</div>
 				</div>
 				<div class="point row">
@@ -196,7 +196,7 @@
 						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek’s driving principle is the last mile craftsmanship</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">The repeating flaw is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
+						<div class="description p">The repeating tragedy is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
 					</div>
 				</div>
 			</div>
@@ -214,27 +214,16 @@
 			</div>
 			<div class="description row">
 				<div class="columns small-10 small-offset-1 large-5">
-					<div class="p">Vivek V.Shankar graduated with a bachelor’s degree in Architecture from BMS College of Engineering in Bangalore in 1998. Vivek took a Masters’ degree (M.Arch) in Architecture and Urbanism from the prestigious AA School of Architecture in London. I</div>
-					<div class="p">Upon completion of his Masters’ degree, Vivek was employed at the office of Zaha Hadid in London.</div>
-					<div class="p">Zaha Hadid is a world renowned architect based in London and recipient of the Pritzker Prize for Architecture. Vivek’s design language is influenced by the work experience gained with ZahaHadid and also the design processes that were experimented during the Masters’ program at the Architectural Association, London. Vivek was part of the design team for the following projects at the office of Zaha Hadid in London.</div>
+					<div class="p">Principal Architect of Vivek Shankar Architects, graduated with a Bachelor’s Degree in Architecture from BMS College of Engineering in Bangalore. He pursued his Master’s degree (M.Arch) – Design Research Lab from the AA School of Architecture in London.</div>
+					<div class="p">Upon completion of his Master’s Degree, Vivek was employed with the world renowned Architect, Zaha Hadid. During his tenure with Zaha Hadid, Vivek was part of the design team for the following projects:</div>
 					<div class="p">
-						<span class="block">1. Guggenheim Museum, Tokyo</span>
-						<span class="block">2. BMW Event and Delivery Center, Munich</span>
-						<span class="block">3. Ordrupgaard Museum, Denmark</span>
-						<span class="block">4. Center for Contemporary arts, Rome</span>
-						<span class="block">5. Interiors for Mandarina Duck, London</span>
+						<span class="block">Guggenheim Museum, Tokyo</span>
+						<span class="block">BMW Event and Delivery Center, Munich</span>
+						<span class="block">Biopolis Master plan, Singapore</span>
+						<span class="block">Center for Contemporary Arts, Rome</span>
+						<span class="block">Interiors for Mandarina Duck, London</span>
 					</div>
-					<div class="p">Vivek has his architectural practice based out of Bangalore and is keen on establishing an affiliation with the latest Trends in design and the changing face of design in Indian Metros. The practice consciously strives to induct a process ruled by geometric strategies and material compositions that result in a subversion of the conventional mode of perceiving a structure or space.</div>
-				</div>
-				<div class="columns small-10 small-offset-1 large-4">
-					<img class="block photograph" src="http://via.placeholder.com/650x500">
-					<div class="p">The projects are currently being designed by the office demand a high level of design ingenuity and resolution. This is achieved by the skilled team of young architects who are trained to adopt the latest in software technology for preparing high quality presentations and technical drawings.</div>
-					<div class="p">Vivek has been a member of the visiting faculty at leading architecture schools in South India.</div>
-				</div>
-			</div>
-			<div class="film row">
-				<div class="columns small-10 small-offset-1 large-5">
-					<img class="block" src="http://via.placeholder.com/1280x720?text=YouTube">
+					<div class="p">He started Vivek Shankar Architects in 2002 and has since then designed and delivered landmark projects across various typologies and scales.  Vivek Shankar Architects  believes in practicing cutting edge design which is enabled by team of skilled designers and engineers/contractors who are able to successfully execute the visualized projects.</div>
 				</div>
 			</div>
 		</div>
