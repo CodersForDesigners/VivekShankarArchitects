@@ -223,6 +223,8 @@
 						<span class="block">Center for Contemporary Arts, Rome</span>
 						<span class="block">Interiors for Mandarina Duck, London</span>
 					</div>
+				</div>
+				<div class="columns small-10 small-offset-1 large-4">
 					<div class="p">He started Vivek Shankar Architects in 2002 and has since then designed and delivered landmark projects across various typologies and scales.  Vivek Shankar Architects  believes in practicing cutting edge design which is enabled by team of skilled designers and engineers/contractors who are able to successfully execute the visualized projects.</div>
 				</div>
 			</div>
