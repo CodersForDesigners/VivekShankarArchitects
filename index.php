@@ -18,7 +18,7 @@
 	/*
 	 * Versioning Assets to invalidate the browser cache
 	 */
-	$ver = '?v=2018041651';
+	$ver = '?v=20180719';
 
 	// get info on the request
 	// $view = require "server/pageless.php";
@@ -347,12 +347,20 @@
 						Get in touch
 					</div>
 					<a class="call button fill-teal" href="tel:+918041328203" target="_blank">
-						<img src="/media/icon-call.svg<?php echo $ver ?>">
-						<span>+91 80 4132 8203</span>
+						<img src="/media/icon-call-light.svg<?php echo $ver ?>">
+						<span>+91 80 41328203</span>
 					</a>
-					<a class="email button fill-off-light" href="#" target="_blank">
-						<img src="/media/icon-email.svg<?php echo $ver ?>">
-						<span>Email</span>
+					<a class="call button fill-off-light" href="tel:+918040952203" target="_blank">
+						<img src="/media/icon-call-neutral.svg<?php echo $ver ?>">
+						<span>+91 80 40952203</span>
+					</a>
+					<a class="email button fill-teal" href="mailto:enquiry@vivekshankararchitects.com" target="_blank">
+						<img src="/media/icon-email-light.svg<?php echo $ver ?>">
+						<span>Enquiry</span>
+					</a>
+					<a class="email button fill-off-light" href="mailto:careers@vivekshankararchitects.com" target="_blank">
+						<img src="/media/icon-email-neutral.svg<?php echo $ver ?>">
+						<span>Careers</span>
 					</a>
 				</div>
 				<div class="location columns small-10 small-offset-1 medium-3 large-2">
@@ -360,28 +368,28 @@
 						Location
 					</div>
 					<div class="address p text-neutral">
-						#203 ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.
+						2230/1, 16th B Cross, 8th Main, D Block, Sahakarnagar, Bangalore-560092. Karnataka. India.
 					</div>
-					<a class="button-link fill-teal" href="">Google Maps</a>
+					<a class="button-link fill-teal" target="_blank" href="https://goo.gl/maps/pnUGjUUYpQw">Google Maps</a>
 				</div>
 				<div class="follow-us columns small-10 small-offset-1 medium-6 large-3">
 					<div class="heading h4 strong text-uppercase text-teal">
 						Follow us
 					</div>
 					<div class="social-icons">
-						<a class="icon" href="">
+						<a class="icon" target="_blank" href="https://www.facebook.com/vivekshankararchitects/">
 							<span>Facebook</span>
 							<img src="/media/icon-facebook.svg<?php echo $ver ?>">
 						</a>
-						<a class="icon" href="">
+						<a class="icon" target="_blank" href="https://www.linkedin.com/company/vivek-shankar-architects/">
 							<span>LinkedIn</span>
 							<img src="/media/icon-linkedin.svg<?php echo $ver ?>">
 						</a>
-						<a class="icon" href="">
+						<a class="icon" target="_blank" href="https://www.instagram.com/vivekshankararchitects/">
 							<span>Instagram</span>
 							<img src="/media/icon-instagram.svg<?php echo $ver ?>">
 						</a>
-						<a class="icon" href="">
+						<a class="icon" target="_blank" href="https://www.youtube.com/channel/UCHut4ml46MJ3JCUQSm5pvNQ">
 							<span>YouTube</span>
 							<img src="/media/icon-youtube.svg<?php echo $ver ?>">
 						</a>

@@ -23,6 +23,10 @@
 	margin-bottom: 10px;
 }
 
+.contact-section .get-in-touch {
+	font-size: 0;
+}
+
 .contact-section .get-in-touch a {
 	padding: 0 12px;
 }
@@ -32,12 +36,10 @@
 	margin-right: 3px;
 }
 
-.contact-section .get-in-touch .call {
-	font-size: 1.1rem;
-}
-
+.contact-section .get-in-touch .call,
 .contact-section .get-in-touch .email {
-	margin-left: 6px;
+	margin-bottom: 15px;
+	margin-right: 10px;
 }
 
 .contact-section .social-icons .icon {
@@ -86,14 +88,9 @@
 		padding: 0 22px;
 	}
 
-	.contact-section .get-in-touch .email {
-		margin-left: 10px;
-	}
-
 	.contact-section .social-icons .icon {
 		width: 48px;
 		height: 48px;
-		margin-left: 10px;
 	}
 
 	.contact-section .social-icons .icon:first-child {
