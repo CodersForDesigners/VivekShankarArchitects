@@ -209,13 +209,18 @@ do {
 	$imagePublicIds = array_merge( $imagePublicIds, $imagePublicIds__currentBatch );
 
 	// // Store a reference to the next batch of images ( if there are more )
-	$nextCursor = $resources__currentBatch[ 'next_cursor' ];
+	$nextCursor = $resources__currentBatch[ 'next_cursor' ] ?? null;
 
 } while ( ! empty( $nextCursor ) );
 
 
 $imagesToBeRemoved = array_diff( $imagePublicIds, $imageFiles );
-$cloudinary->delete_resources( $imagesToBeRemoved );
+if ( ! empty( $imagesToBeRemoved ) ) {
+	$setsOfImagesToBeRemoved = array_chunk( $imagesToBeRemoved, 91 );
+	foreach ( $setsOfImagesToBeRemoved as $imageSet ) {
+		$cloudinary->delete_resources( $imageSet );
+	}
+}
 
 
 
