@@ -295,28 +295,32 @@
 	<!-- Services Section -->
 	<section id="services" class="services-section block-space-top-bottom section js_section">
 		<div class="container">
-			<div class="row hidden">
+			<div class="row">
 				<div class="heading h2 strong text-uppercase columns small-10 small-offset-1">
 					<span>Services</span>
 					<span class="underline fill-neutral"></span>
 				</div>
 				<div class="service columns small-10 small-offset-1 large-5 large-offset-1">
 					<div class="title h4 text-teal">Architecture</div>
-					<div class="description p text-neutral">The heart and soul of what we provide. Our comprehensive architectural services include conceptual and schematic design, design development and construction documentation, assisting with contractor bidding and/or negotiating and construction contract administration. Architecture embodies all we touch. And we are a combination of artists and tacticians, imagining, coordinating and creating some of the world’s most iconic places.</div>
+					<div class="description p text-neutral hidden">The heart and soul of what we provide. Our comprehensive architectural services include conceptual and schematic design, design development and construction documentation, assisting with contractor bidding and/or negotiating and construction contract administration. Architecture embodies all we touch. And we are a combination of artists and tacticians, imagining, coordinating and creating some of the world’s most iconic places.</div>
 				</div>
 				<div class="service columns small-10 small-offset-1 large-5 large-offset-0">
 					<div class="title h4 text-teal">Planning & Development</div>
-					<div class="description p text-neutral">We combine global reach with a tremendous local touch. Our commitment to our communities allows us to effectively navigate local regulatory approval processes from platting subdivisions to zoning and permitting. We also handle issues of site analysis, access, circulation, parking, urban design, local development guidelines and place-making. It’s the entire picture. Always.</div>
+					<div class="description p text-neutral hidden">We combine global reach with a tremendous local touch. Our commitment to our communities allows us to effectively navigate local regulatory approval processes from platting subdivisions to zoning and permitting. We also handle issues of site analysis, access, circulation, parking, urban design, local development guidelines and place-making. It’s the entire picture. Always.</div>
 				</div>
 				<div class="service columns small-10 small-offset-1 large-5 large-offset-1">
 					<div class="title h4 text-teal">Structural Engineering</div>
-					<div class="description p text-neutral">We stretch the design boundaries daily, but always with a practical guide. Our highly experienced in-house team of structural engineers consistently communicates with the architectural team to ensure structural considerations are incorporated into designs from day one. This close cooperation translates into buildings that simply work.</div>
+					<div class="description p text-neutral hidden">We stretch the design boundaries daily, but always with a practical guide. Our highly experienced in-house team of structural engineers consistently communicates with the architectural team to ensure structural considerations are incorporated into designs from day one. This close cooperation translates into buildings that simply work.</div>
 				</div>
 				<div class="service columns small-10 small-offset-1 large-5 large-offset-0">
 					<div class="title h4 text-teal">Interior Design</div>
-					<div class="description p text-neutral">Our award-winning interior design group, one of the largest in the nation, offers creative and intelligent responses to your goals and requirements. We know how to listen and infuse your organization’s personality into a space.</div>
+					<div class="description p text-neutral hidden">Our award-winning interior design group, one of the largest in the nation, offers creative and intelligent responses to your goals and requirements. We know how to listen and infuse your organization’s personality into a space.</div>
 				</div>
 				<div class="service columns small-10 small-offset-1 large-5 large-offset-1">
+					<div class="title h4 text-teal">Building Information Modeling (BIM)</div>
+					<div class="description p text-neutral hidden"></div>
+				</div>
+				<div class="service columns small-10 small-offset-1 large-5 large-offset-1 hidden">
 					<div class="title h4 text-teal">Sustainable Design</div>
 					<div class="description p text-neutral">Sustainability is infused into all that we touch. We build energy simulation models early in our process to help inform decisions made in our design studios. Our approach is collaborative and integrated, focused on conserving resources, achieving energy independence, reducing greenhouse gas emissions and effectively improving your bottom line.</div>
 				</div>
