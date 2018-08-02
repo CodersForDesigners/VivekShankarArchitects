@@ -295,7 +295,7 @@
 	<!-- Services Section -->
 	<section id="services" class="services-section block-space-top-bottom section js_section">
 		<div class="container">
-			<div class="row">
+			<div class="row hidden">
 				<div class="heading h2 strong text-uppercase columns small-10 small-offset-1">
 					<span>Services</span>
 					<span class="underline fill-neutral"></span>
