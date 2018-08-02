@@ -218,14 +218,14 @@
 					<div class="p">Upon completion of his Master’s Degree, Vivek was employed with the world renowned Architect, Zaha Hadid. During his tenure with Zaha Hadid, Vivek was part of the design team for the following projects:</div>
 					<div class="p">
 						<span class="block">Guggenheim Museum, Tokyo</span>
-						<span class="block">BMW Event and Delivery Center, Munich</span>
+						<span class="block">BMW Event and Delivery Centre, Munich</span>
 						<span class="block">Biopolis Master plan, Singapore</span>
-						<span class="block">Center for Contemporary Arts, Rome</span>
+						<span class="block">Centre for Contemporary Arts, Rome</span>
 						<span class="block">Interiors for Mandarina Duck, London</span>
 					</div>
 				</div>
 				<div class="columns small-10 small-offset-1 large-4">
-					<div class="p">He started Vivek Shankar Architects in 2002 and has since then designed and delivered landmark projects across various typologies and scales.  Vivek Shankar Architects  believes in practicing cutting edge design which is enabled by team of skilled designers and engineers/contractors who are able to successfully execute the visualized projects.</div>
+					<div class="p">He started Vivek Shankar Architects in 2002 and has since then designed and delivered landmark projects across various typologies and scales. Vivek Shankar Architects believes in practicing cutting edge design which is enabled by team of skilled designers and engineers equipped with advance designing tools.</div>
 				</div>
 			</div>
 		</div>
