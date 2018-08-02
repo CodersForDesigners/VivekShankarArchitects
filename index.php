@@ -121,8 +121,8 @@
 					<div class="p">2004</div>
 				</div>
 				<div class="description columns small-10 small-offset-1 medium-7 large-5 large-offset-0">
-					<div class="p">We are an Architecture practice based in Bangalore with over 16 years of experience in the industry and won several awards for our work in India and oversees. Our Principal Architect has worked with the world renowned architect, Zaha Hadid on many hallmark projects. We specialize in Architecture Design and also take ownership of the development until completion including interior design and project planning services.</div>
-					<div class="p strong em text-teal">Vivek Shankar Architects strives to keep abreast with the future trends that will redraw the city and the profession so as to be equipped to respond to challenges in future markets. The practice consciously strives to induct a process ruled by geometric strategies and material compositions that result in subversion of the conventional mode of perceiving a structure or space.</div>
+					<div class="p">We are an Architecture practice based in Bangalore with over a decade of experience in the industry and have won several awards for our work. Our Principal Architect has worked with the world renowned architect Zaha Hadid. Vivek Shankar Architects strives to keep abreast with the socio-cultural trends that impact living patterns and urban environments.</div>
+					<div class="p strong em text-teal">The practice consciously adopts a process ruled by geometric strategies and material compositions that result in subversion of the conventional mode of perceiving a structure or space. As a practice we formulate processes to ensure flawless execution of design.</div>
 				</div>
 				<div class="quick-links columns small-10 small-offset-1 medium-2 large-2 xlarge-1 xlarge-offset-2">
 					<a class="button-link" tabindex="-1" href="#expertise">Expertise</a>
