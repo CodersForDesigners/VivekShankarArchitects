@@ -252,8 +252,8 @@
 					<img class="ribbon" src="/media/process-ribbon-1.svg<?php echo $ver ?>">
 				</div>
 				<div class="description hide-for-mobile columns small-10 small-offset-1 large-5">
-					<div class="p">We see the relevance of research not just as the first vital step of the design process that lays down a set of parameters but as the thought generator infused with a high degree of intellectual content that influences the design process.</div>
-					<div class="p">The research phase involves probing into the engineering, material, occupational and programmatic aspects that are relevant to the project being designed.</div>
+					<div class="p">We see the relevance of research not just as the first vital step of the design process that lays down a set of parameters but as the thought generator infused with a high degree of intellectual content influencing the design process.</div>
+					<div class="p">The research phase involves probing into the engineering, material, occupational, environmental and programmatic aspects relevant to the project being designed.</div>
 				</div>
 				<div class="excerpt columns small-8 small-offset-2 large-4 large-offset-1">
 					<div class="p strong em text-teal">The thought generator infused with a high degree of intellectual content that influences the design process.</div>
@@ -266,8 +266,8 @@
 					<img class="ribbon" src="/media/process-ribbon-2.svg<?php echo $ver ?>">
 				</div>
 				<div class="description hide-for-mobile columns small-10 small-offset-1 large-5">
-					<div class="p">The inferences drawn from the research enable the formulation of a design agenda that comprises the amalgamation of the site characteristics, climate and budget with the design intent. The client brief is re-imagined and rewritten by us in order to maintain the rigor of the research.</div>
-					<div class="p">The design phase largely involves the innovative intervention on the site which is realized through a set of conditions be it structural, geometric explorations, climate responsive measures, generated with software capable of simulating the conditions and perceptions. The production of drawings required for execution is produced after gaining absolute clarity on the technical and material aspects of the design. The 3D renders prepared at various stages of the design development enable a holistic reading of the engineering and design aspects.</div>
+					<div class="p">The inferences drawn from the research enable the formulation of a design agenda that comprises the amalgamation of site characteristics, climate and budget with the design intent. The client brief is re-imagined and written by us in order to maintain the rigor of the research and translate them into design content.</div>
+					<div class="p">The design phase largely explores  the innovative intervention on the site which is realized through a set of conditions be it structural, geometric explorations, climate responsive measures, generated with software capable of simulating the conditions and perceptions. The production of drawings is generated after gaining absolute clarity on the technical and material aspects of the design. The 3D renders prepared at various stages of the design development enable a holistic reading of the engineering and design aspects.</div>
 				</div>
 				<div class="excerpt columns small-8 small-offset-2 large-4 large-offset-1">
 					<div class="p strong em text-teal">The amalgamation of the site characteristics, climate & budget with the design intent.</div>
@@ -281,8 +281,8 @@
 					<img class="ribbon" src="/media/process-ribbon-3.svg<?php echo $ver ?>">
 				</div>
 				<div class="description hide-for-mobile columns small-10 small-offset-1 large-5">
-					<div class="p">This phase witnesses the translation of the drawing content to a physical manifestation of a structural core of steel and concrete and subsequently the resemblance to the 3D render starts to interestingly emerge until the completion of the project.</div>
-					<div class="p">We assign a lot of importance to the adherence of instructions mentioned in the drawing along with a high degree of quality control ensured by Project Management and Site Engineers trained to deliver the exacting standards set by Vivek Shankar Architects.  </div>
+					<div class="p">We assign a lot of importance to the adherence of instructions mentioned in the drawing along with a high degree of quality control ensured by Project Management and Site Engineers trained to deliver the exacting standards set by Vivek Shankar Architects.</div>
+					<div class="p">Subsequently the resemblance to the 3D render starts to interestingly translates to physical manifestation of structures and spaces.</div>
 				</div>
 				<div class="excerpt columns small-8 small-offset-2 large-4 large-offset-1">
 					<div class="p strong em text-teal">Translation of the drawing content to a physical manifestation.</div>
