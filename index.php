@@ -148,31 +148,31 @@
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Global DNA</div>
-						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek trained and worked with the internationally renowned architect Zaha Hadid.</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile hidden">Vivek trained and worked with the internationally renowned architect Zaha Hadid.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">Vivek trained and worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. He spent 8 years under Zaha, working on award winning projects in Tokyo, Munich, Singapore, Rome and London.</div>
+						<div class="description p">Vivek worked with the internationally renowned architect Zaha Hadid. His first exposure to Zaha was during his Masters degree at the prestigious AA School of Architecture in London. Vivek has worked on projects across Europe while working with Zaha Hadid Architects.</div>
 					</div>
 				</div>
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
-						<div class="heading h4 strong">Process Driven Global Standards</div>
-						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek returned to India and setup his practice to exacting global standards.</div>
+						<div class="heading h4 strong">Global Standards</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile hidden">Vivek returned to India and setup his practice to exacting global standards.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice to exacting global standards. Today the firm operates under the umbrella of these global standards that enable bespoke Design Strategies for each project and client.</div>
+						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice by consciously challenging the role of the Architect in the Indian context and the difference his practice can make to a client and the end user. His approach got him design commissions which had a high potential to explore. Vivek Shankar Architects follows a structured systems and process to wards design and executing projects.</div>
 					</div>
 				</div>
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Local Context Advantage</div>
-						<div class="excerpt p strong em text-teal hide-for-mobile">Indian lineage ensures we do not run into operational delays and cost overruns.</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile hidden">Indian lineage ensures we do not run into operational delays and cost overruns.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">Global standards in an Indian context are a challenge. Whether it be construction practices, social norms, cultural biases; our strong Indian lineage ensures we do not run into operational delays and cost overruns that International Architects most often suffer when they operate in India.</div>
+						<div class="description p">Vivek Shankar Architects has skills and competencies to achieve Global standards in a developing country. Vivek Shankar Architects has the understanding of social practices and design requirement in a multi-cultural society. Our in depth understanding of construction practices enables the contractor to build spaces matching the design intent.</div>
 					</div>
 				</div>
-				<div class="point row">
+				<div class="point row hidden">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Integrated Research, Design and Execution Process</div>
 						<div class="excerpt p strong em text-teal hide-for-mobile">We carefully integrate our Research Team with our Design and Execution teams.</div>
@@ -181,7 +181,7 @@
 						<div class="description p">Innovation is not realistic in a pure implementation environment. We have deliberately created the optimal conditions for innovation; we carefully integrate our Research Team with our Design and Execution teams with a proprietary triple layer process. The result is research driven bespoke strategy.</div>
 					</div>
 				</div>
-				<div class="point row">
+				<div class="point row hidden">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Innovation that leads to Sustainability</div>
 						<div class="excerpt p strong em text-teal hide-for-mobile">Innovation is not possible without a bespoke strategy for every project.</div>
@@ -193,10 +193,10 @@
 				<div class="point row">
 					<div class="columns small-10 small-offset-1 large-4">
 						<div class="heading h4 strong">Last Mile Design Management</div>
-						<div class="excerpt p strong em text-teal hide-for-mobile">Vivek’s driving principle is the last mile craftsmanship</div>
+						<div class="excerpt p strong em text-teal hide-for-mobile hidden">Vivek’s driving principle is the last mile craftsmanship</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">The repeating tragedy is the dilution of Architectural Design Strategy during the construction phase. Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management standards. We play a key role throughout the design and construction phases, from programming, change control, and procurement to document control, payments and risk management.</div>
+						<div class="description p">Vivek’s driving principle is the last mile craftsmanship that is needed to transform an architectural concept into finely crafted materials and finishes. We audit all projects against global standards using the most up-to-date project management tools. We play a key role throughout the design and construction phases, from programming, change control, procurement to document control and risk management.</div>
 					</div>
 				</div>
 			</div>
