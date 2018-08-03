@@ -118,7 +118,7 @@
 				</div>
 				<div class="meta columns small-10 small-offset-1 large-2">
 					<div class="label text-neutral">Est.</div>
-					<div class="p">2004</div>
+					<div class="p">2002</div>
 				</div>
 				<div class="description columns small-10 small-offset-1 medium-7 large-5 large-offset-0">
 					<div class="p">We are an Architecture practice based in Bangalore with over a decade of experience in the industry and have won several awards for our work. Our Principal Architect has worked with the world renowned architect Zaha Hadid. Vivek Shankar Architects strives to keep abreast with the socio-cultural trends that impact living patterns and urban environments.</div>
