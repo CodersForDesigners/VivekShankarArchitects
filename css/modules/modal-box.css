@@ -39,7 +39,7 @@
 }
 
 .modal-box-content.active {
-	display: flex;
+	display: block;
 }
 
 .modal-box .modal-box-content + .modal-close {

@@ -340,10 +340,10 @@ $(document).ready(function(){
 							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
 							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
 						?>
-						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
+						<div class="showcase-item columns small-6 medium-4 xlarge-3 js_showcase_item"><div class="slide js_modal_trigger" data-mod-id="slick-gallery">
 							<!-- <source class="block" srcset="<?php //echo $imageURL_M ?>" media="(min-width: 640px)"> -->
-							<img class="block" srcset="<?php echo $imageURL_S ?>">
-						</picture></div>
+							<img class="block" src="<?php echo $imageURL_S ?>">
+						</div></div>
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
@@ -355,10 +355,10 @@ $(document).ready(function(){
 							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
 							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
 						?>
-						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
+						<div class="showcase-item columns small-6 medium-4 xlarge-3"><div class="slide js_modal_trigger" data-mod-id="slick-gallery">
 							<!-- <source class="block" srcset="<?php //echo $imageURL_M ?>" media="(min-width: 640px)"> -->
-							<img class="block" srcset="<?php echo $imageURL_S ?>">
-						</picture></div>
+							<img class="block" src="<?php echo $imageURL_S ?>">
+						</div></div>
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
@@ -370,10 +370,10 @@ $(document).ready(function(){
 							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
 							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
 						?>
-						<div class="showcase-item columns small-6 medium-4 xlarge-3"><picture class="slide">
+						<div class="showcase-item columns small-6 medium-4 xlarge-3"><div class="slide js_modal_trigger" data-mod-id="slick-gallery">
 							<!-- <source class="block" srcset="<?php //echo $imageURL_M ?>" media="(min-width: 640px)"> -->
-							<img class="block" srcset="<?php echo $imageURL_S ?>">
-						</picture></div>
+							<img class="block" src="<?php echo $imageURL_S ?>">
+						</div></div>
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
@@ -389,10 +389,10 @@ $(document).ready(function(){
 		 */
 
 		$( ".js_gallery_btn" ).first().addClass( "active" );
-		$( ".js_showcase_masonry" ).first().imagesLoaded().done( function ( instance ) {
-			setTimeout( function () {
-				$( instance.elements[ 0 ] ).masonry();
-			}, 500 );
+		var $masonryLayout = $( ".js_showcase_masonry" ).first().masonry();
+		// Have Masonry continually layout images as they load
+		$masonryLayout.imagesLoaded().progress( function () {
+			$masonryLayout.masonry( "layout" );
 		} );
 		// Show the first tab
 		$( ".js_showcase_masonry" ).first().removeClass( "hidden" );
@@ -410,16 +410,66 @@ $(document).ready(function(){
 			// Show the corresponding gallery
 			var gallery = $button.data( "link" );
 			$( ".js_showcase_masonry" ).addClass( "hidden" );
-			$( "[ data-gallery = \"" + gallery + "\" ]" )
-				.removeClass( "hidden" )
-				.imagesLoaded()
-				.done( function ( instance ) {
-					$( instance.elements[ 0 ] ).masonry();
-				} );
+
+			var $gallery = $( "[ data-gallery = \"" + gallery + "\" ]" );
+			// Un-hide the selected gallery
+			$gallery.removeClass( "hidden" );
+			// Have Masonry layout the gallery
+			var $masonryLayout = $gallery.masonry();
+			// Have Masonry continually layout images as they load
+			$masonryLayout.imagesLoaded().progress( function () {
+				$masonryLayout.masonry( "layout" );
+			} );
 
 		} )
 
 	} );
+
+	// When an image on the galleries in the "Showcase" section is hit,
+	// 	open the gallery in a lightbox
+	window.__MODALS[ "slick-gallery" ] = function ( modId, event ) {
+
+		// Clone the image markup
+		var $galleryImages = $( event.target ).closest( ".js_showcase_masonry" ).find( "img" );
+		var $newGalleryImages = Array.prototype.slice.call( $galleryImages ).map( function ( el ) {
+			var $el = $( el );
+			var src = $el.attr( "src" );
+			// Change the image sources to higher-res versions
+			var newSrc = src.replace( "w_400", "w_800" );
+			return "<div class='slide' style='background-image: url( \"" + newSrc +
+			"\" )'></div>";
+		} );
+		// Re-order the images so that the one clicked on is the first.
+		// 	This is so that that image loads first.
+		var slideIndex = $galleryImages.index( $( event.target ).closest( "img" ) );
+		$newGalleryImages = $newGalleryImages.slice( slideIndex ).concat( $newGalleryImages.slice( 0, slideIndex ) );
+
+		// Empty the modal box of the previous gallery's content
+		var $modalBox = $( ".js_modal_box_content.js_active" );
+		$newGalleryImages = "<div class='slick-landing'>" + $newGalleryImages.join( "" ) + "</div>";
+		$modalBox.html( $newGalleryImages );
+		var $galleryContainer = $modalBox.children().first();
+		// Initialize Slick
+		$galleryContainer.slick( {
+			dots: true,
+			arrows: true,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			adaptiveHeight: true,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			responsive: [
+				{
+					breakpoint: 800,
+					settings: {
+						arrows: false
+					}
+				}
+			]
+		} );
+
+	};
 
 </script>
 <?php endif; ?>

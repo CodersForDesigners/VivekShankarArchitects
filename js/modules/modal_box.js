@@ -8,10 +8,13 @@ $( document ).ready( function () {
 	$('.js_modal_trigger').on('click', function( event ){
 		event.preventDefault();
 
-		var modId = $(event.target).data('modId');
+		var modId = $( event.target ).closest( ".js_modal_trigger" ).data( "modId" );
 		$('.js_modal_box').fadeIn( 350 ); // Show Modal Box
 		$('.body').addClass('modal-open'); // Freeze Page Layer
-		$('.js_modal_box_content[data-mod-id="'+ modId +'"]').addClass('active'); // Activate Appropriate Modal Content
+		$('.js_modal_box_content[data-mod-id="'+ modId +'"]').addClass('active js_active'); // Activate Appropriate Modal Content
+
+		if ( window.__MODALS[ modId ] )
+			window.__MODALS[ modId ]( modId, event );
 
 	});
 
@@ -60,6 +63,7 @@ $( document ).ready( function () {
 		event.preventDefault();
 
 		$( ".js_modal_box" ).fadeOut( 350 );
+		$( ".js_modal_box_content.js_active" ).removeClass( "js_active" );
 
 		$( ".body" ).removeClass( "modal-open nav-open" );
 

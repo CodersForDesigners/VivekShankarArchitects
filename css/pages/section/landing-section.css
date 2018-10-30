@@ -12,7 +12,15 @@
 
 .landing-section .slick-landing.slick-slider { margin: 0; }
 
-.landing-section .slick-landing .slide {}
+.landing-section .slick-landing .slide {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+/* This is for the gallery lightbox */
+.modal-box-content.landing-section .slick-landing .slide {
+	height: calc( 100vh - 200px );
+}
 
 .landing-section .slick-landing .slide:focus { outline: none; }
 
@@ -85,7 +93,7 @@
 	min-width: 0;
 	padding: 0;
 	margin: 0;
-	
+
 	box-shadow: none;
 	border: none;
 	border-radius: 0;
@@ -101,7 +109,7 @@
 	border-top-right-radius: 6px;
 	border-bottom-right-radius: 6px;
 }
-	
+
 .landing-section .slick-landing button.slick-arrow.slick-next {
 	right: 0;
 	/*transform: translate(-55px, -50%);*/
@@ -182,7 +190,7 @@
 		/*transform: translate(75px, -50%);*/
 		transform: translate(0, -50%);
 	}
-		
+
 	.landing-section .slick-landing button.slick-arrow.slick-next {
 		right: 0;
 		/*transform: translate(-75px, -50%);*/
@@ -232,7 +240,7 @@
 		/*transform: translate(90px, -50%);*/
 		transform: translate(0, -50%);
 	}
-		
+
 	.landing-section .slick-landing button.slick-arrow.slick-next {
 		right: 0;
 		/*transform: translate(-90px, -50%);*/

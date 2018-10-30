@@ -192,6 +192,6 @@
 	<!-- imagesLoaded -->
 	<script type="text/javascript" src="/plugins/imagesLoaded/imagesLoaded-v4.1.4.min.js<?php echo $ver ?>"></script>
 	<!-- Masonry -->
-	<script type="text/javascript" src="/plugins/masonry/masonry.pkgd.min.js<?php echo $ver ?>"></script>
+	<script type="text/javascript" src="/plugins/masonry/masonry-v4.2.2.min.js<?php echo $ver ?>"></script>
 
 <?php } ?>
