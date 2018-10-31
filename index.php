@@ -441,8 +441,8 @@
 			<a tab-index="-1" href="/" class="link inline h3 strong text-teal text-uppercase">Home</a><br>
 			<!-- <a tab-index="-1" href="" class="link inline p strong text-neutral text-uppercase js_link_internal">Welcome</a><br> -->
 
-			<a tab-index="-1" class="link dropdown inline h3 strong text-teal text-uppercase js_sub_menu_trigger">Projects</a><br>
-			<div class="js_sub_menu" style="display: none">
+			<a tab-index="-1" class="link dropdown inline h3 strong text-teal text-uppercase active js_sub_menu_trigger">Projects</a><br>
+			<div class="js_sub_menu">
 				<?php foreach ( $projectsByTypology as $type => $projects ) : ?>
 					<a tab-index="-1" class="link dropdown inline p strong text-neutral text-uppercase js_sub_menu_trigger"><?php echo $type ?></a><br>
 					<div class="js_sub_menu" style="display: none">
