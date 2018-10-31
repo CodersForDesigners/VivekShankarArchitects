@@ -4,3 +4,6 @@
 
 # the media directory
 /media
+
+# the favicon directory
+/favicon
