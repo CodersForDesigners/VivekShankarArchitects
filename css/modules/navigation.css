@@ -81,7 +81,7 @@
 .navigation .nav-container .nav-list .link.dropdown:before {
 	position: absolute;
 	z-index: 2;
-	content: '\0025BC';
+	content: '\0025BA';
 	right: 30px;
 	top: 50%;
 	-webkit-transform: translate(50%, -50%);
@@ -90,7 +90,7 @@
 }
 
 .navigation .nav-container .nav-list .link.dropdown.active:before {
-	content: '\0025B2';
+	content: '\0025BC';
 }
 
 
