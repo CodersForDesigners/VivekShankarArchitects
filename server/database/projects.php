@@ -79,7 +79,7 @@ require_once __DIR__ . '/../../inc/mailer.php';
 $errors = [ ];
 // Get a list of all the images
 $images = [ ];
-$imageFields = [ 'Featured Image', 'Finished Project', '3D Renders', 'Concept Drawings' ];
+$imageFields = [ 'Featured Image', 'Finished Project', 'Ongoing', '3D Renders', 'Concept Drawings' ];
 foreach ( $projects as $project ) {
 	foreach ( $project as $key => $value ) {
 		if ( ! in_array( $key, $imageFields ) ) continue;

@@ -24,7 +24,7 @@
 	if ( empty( $project[ 'Design Brief' ] ) && empty( $project[ 'Budget' ] ) && empty( $project[ 'Design Intervention' ] ) ) {
 		$factFileIsEmpty = true;
 	}
-	if ( empty( $project[ 'Finished Project' ] ) && empty( $project[ '3D Renders' ] ) && empty( $project[ 'Concept Drawings' ] ) ) {
+	if ( empty( $project[ 'Finished Project' ] ) && empty( $project[ 'Ongoing' ] ) && empty( $project[ '3D Renders' ] ) && empty( $project[ 'Concept Drawings' ] ) ) {
 		$showcaseIsEmpty = true;
 	}
 
@@ -312,6 +312,9 @@ $(document).ready(function(){
 				<?php if ( ! empty( $project[ 'Finished Project' ] ) ) : ?>
 					<div class="tab button-link js_gallery_btn" tabindex="-1" data-link="Finished Project">Finished<span class="hide-for-mobile"> Project</span></div>
 				<?php endif; ?>
+				<?php if ( ! empty( $project[ 'Ongoing' ] ) ) : ?>
+					<div class="tab button-link js_gallery_btn" tabindex="-1" data-link="Ongoing">Ongoing<span class="hide-for-mobile"> Project</span></div>
+				<?php endif; ?>
 				<?php if ( ! empty( $project[ '3D Renders' ] ) ) : ?>
 					<div class="tab button-link js_gallery_btn" tabindex="-1" data-link="3D Renders">3D Renders</div>
 				<?php endif; ?>
@@ -324,6 +327,21 @@ $(document).ready(function(){
 			<?php if ( ! empty( $project[ 'Finished Project' ] ) ) : ?>
 				<div class="showcase-masonry hidden js_showcase_masonry" data-gallery="Finished Project">
 					<?php foreach ( $project[ 'Finished Project' ] as $image ) : ?>
+						<!-- <div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="<?php //echo $baseImageUrl . $image[ 'id' ] . $mimeToFileExtensions[ $image[ 'mimeType' ] ] ?>"></div> -->
+						<?php
+							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
+							$imageURL_S = $baseImageUrl . ',w_400/projects/' . $image[ 'id' ];
+						?>
+						<div class="showcase-item columns small-6 medium-4 xlarge-3 js_showcase_item"><div class="slide js_modal_trigger" data-mod-id="slick-gallery">
+							<!-- <source class="block" srcset="<?php //echo $imageURL_M ?>" media="(min-width: 640px)"> -->
+							<img class="block" src="<?php echo $imageURL_S ?>">
+						</div></div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( ! empty( $project[ 'Ongoing' ] ) ) : ?>
+				<div class="showcase-masonry hidden js_showcase_masonry" data-gallery="Ongoing">
+					<?php foreach ( $project[ 'Ongoing' ] as $image ) : ?>
 						<!-- <div class="showcase-item columns small-6 medium-4 xlarge-3"><img src="<?php //echo $baseImageUrl . $image[ 'id' ] . $mimeToFileExtensions[ $image[ 'mimeType' ] ] ?>"></div> -->
 						<?php
 							$imageURL_M = $baseImageUrl . ',w_800/projects/' . $image[ 'id' ];
