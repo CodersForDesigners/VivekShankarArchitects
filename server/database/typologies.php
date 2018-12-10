@@ -14,6 +14,9 @@ ini_set( "error_reporting", E_ALL );
 // hits the ESC key
 ignore_user_abort( true );
 
+// Set the timezone
+date_default_timezone_set( 'Asia/Kolkata' );
+
 // Do not let this script timeout,
 // because it will take a while
 set_time_limit( 0 );
@@ -58,6 +61,18 @@ flush();
 
 
 
+
+
+/*
+ *
+ * Pull in necessary dependencies
+ *
+ */
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+require_once __DIR__ . '/../../inc/mailer.php';
+
+
 // Prune out empty "Benefit" points
 $typologies = array_map( function ( $typology ) {
 	$typology[ 'Benefits' ] = array_filter( $typology[ 'Benefits' ], function ( $benefit ) {
@@ -88,3 +103,23 @@ DB\seedCollection( $connection, 'typologies__tmp', $typologies );
 DB\removeCollection( $connection, 'typologies' );
 // Rename the "typologies__tmp" collection to "typologies"
 DB\renameCollection( $connection, 'typologies__tmp', 'typologies' );
+
+
+
+
+
+/*
+ *
+ * Log the deployment
+ *
+ */
+file_put_contents( '/tmp/deploy-typologies.log', json_encode( [
+	'status' => 'done',
+	'timestamp' => date( 'Y/m/d H:i:s' )
+] ) );
+Mailer\sendMessage( [
+	'name' => 'Aditya',
+	'email' => 'adityabhat@lazaro.in',
+	'subject' => 'VSA :: Deployment Log',
+	'message' => 'Successfully deployed typologies at ' . date( 'Y/m/d H:i:s' ) . '.'
+] );

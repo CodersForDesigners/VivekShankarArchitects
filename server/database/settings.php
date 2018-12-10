@@ -14,13 +14,12 @@ ini_set( "error_reporting", E_ALL );
 // hits the ESC key
 ignore_user_abort( true );
 
+// Set the timezone
+date_default_timezone_set( 'Asia/Kolkata' );
+
 // Do not let this script timeout,
 // because it will take a while
 set_time_limit( 0 );
-
-require_once __DIR__ . '/../../inc/env.php';
-require_once __DIR__ . '/../../inc/db.php';
-require_once __DIR__ . '/../../inc/db/setup.php';
 
 
 // Set the response body format type
@@ -65,9 +64,12 @@ flush();
  * Pull in necessary dependencies
  *
  */
-// require_once $_SERVER[ 'DOCUMENT_ROOT' ] . '/html/vendor/autoload.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
 
+require_once __DIR__ . '/../../inc/env.php';
+require_once __DIR__ . '/../../inc/db.php';
+require_once __DIR__ . '/../../inc/db/setup.php';
+require_once __DIR__ . '/../../inc/cdn.php';
 require_once __DIR__ . '/../../inc/mailer.php';
 
 
@@ -91,74 +93,30 @@ foreach ( $settings as $setting ) {
 }
 $images = array_values( array_unique( $images, SORT_REGULAR ) );
 
+// Get the IDs of all the images currently on Cloudinary
+$imagePublicIds__PriorToUpload = CDN\getImageIds( 'settings' );
 
-// Get a list of all the image URLs
-$imageURLs = array_map( function ( $image ) {
-	return 'https://drive.google.com/uc?id=' . $image[ 'id' ];
-}, $images );
-// Get a list of all the image file-names that will be created
+// Get a list of all the image file-names that are from the request
 $imageFiles = array_map( function ( $image ) {
 	return 'settings/' . $image[ 'id' ];
 }, $images );
 
-// Set up access to the CDN
-Cloudinary::config( [
-	"cloud_name" => "vsa",
-	"api_key" => "826445639995552",
-	"api_secret" => "Y8_jVPB1z7cQhuZJ1OiLwuMfjlM"
-] );
+// Get a list of all the image file-names that actually need to be created / uploaded; i.e. that aren't on the CDN already
+$imagesToBeCreated = array_diff( $imageFiles, $imagePublicIds__PriorToUpload );
 
-// Upload the images to the CDN
-function uploadToCDN ( $from, $to ) {
-
-	return Cloudinary\Uploader::upload( $from, [
-		// 'folder' => '',
-		'public_id' => $to,
-		'invalidate' => true,
-		// 'async' => true,
-		// 'eager' => [
-		// 	[
-		// 		'if' => 'iw >= 1600',
-		// 		'width' => 1600,
-		// 		// 'crop' => 'scale',
-		// 		'fetch_format' => 'auto'
-		// 	],
-		// 	[
-		// 		'if' => 'iw >= 1200',
-		// 		'width' => 1200,
-		// 		// 'crop' => 'scale',
-		// 		'fetch_format' => 'auto'
-		// 	],
-		// 	[
-		// 		'if' => 'iw >= 800',
-		// 		'width' => 800,
-		// 		// 'crop' => 'scale',
-		// 		'fetch_format' => 'auto'
-		// 	],
-		// 	[
-		// 		'if' => 'iw >= 400',
-		// 		'width' => 400,
-		// 		// 'crop' => 'scale',
-		// 		'fetch_format' => 'auto'
-		// 	]
-		// ],
-		// 'eager_async' => true
-	] );
-
+// Get a list of all the URLs ( on Google ) of the images that are to be uploaded
+$imageURLs = [ ];
+foreach ( $images as $image ) {
+	if ( in_array( 'settings/' . $image[ 'id' ], $imagesToBeCreated ) )
+		$imageURLs[ ] = 'https://drive.google.com/uc?id=' . $image[ 'id' ];
 }
-foreach ( $images as $index => $image ) {
-	// a simple throttling thing-a-ma-bob so the cloudinary can breathe
-	// when fetching images from Google Drive
-	if ( $index % 3 == 0 ) {
-		usleep( 0.5 * 1000000 );
-	}
 
-	$sourcePath = $imageURLs[ $index ];
-	$targetPath = $imageFiles[ $index ];
+// Iterate over every image and upload them; one by one
+foreach ( $imagesToBeCreated as $index => $imagePath ) {
 	try {
-		uploadToCDN( $sourcePath, $targetPath );
-	} catch ( Exception $e ) {
-		$errors[ ] = $sourcePath . ' (' . $images[ $index ][ 'name' ] . '): \n<br>' . $e->getMessage();
+		CDN\uploadImage( $imageURLs[ $index ], $imagePath );
+	} catch ( \Exception $e ) {
+		$errors[ ] = $imagePath . ' : \n<br>' . $e->getMessage();
 	}
 }
 // If there were errors, send out an e-mail to them ( and us )
@@ -180,45 +138,17 @@ if ( ! empty( $errors ) ) {
 	exit;
 }
 
+
 /*
  *
- * Finally, remove the images that are not is use anymore
+ * Finally, remove the images that are not in use anymore
  *
  */
-$imagePublicIds = [ ];
-$cloudinary = new Cloudinary\Api();
-$nextCursor = '';
-
-// You can only fetch the images in small batches, hence we cumulatively build
-// the list of public image IDs
-do {
-
-	// Fetch a batch of images
-	$resources__currentBatch = $cloudinary->resources( [
-		'resource_type' => 'image',
-		'type' => 'upload',
-		'prefix' => 'settings',
-		'max_results' => 500,
-		'next_cursor' => $nextCursor
-	] )->getArrayCopy();
-
-	// // Append the public ids to the cumulative list
-	$imagePublicIds__currentBatch = array_map( function ( $resource ) {
-		return $resource[ 'public_id' ];
-	}, $resources__currentBatch[ 'resources' ] );
-	$imagePublicIds = array_merge( $imagePublicIds, $imagePublicIds__currentBatch );
-
-	// // Store a reference to the next batch of images ( if there are more )
-	$nextCursor = $resources__currentBatch[ 'next_cursor' ] ?? null;
-
-} while ( ! empty( $nextCursor ) );
-
-
-$imagesToBeRemoved = array_diff( $imagePublicIds, $imageFiles );
+$imagesToBeRemoved = array_diff( $imagePublicIds__PriorToUpload, $imageFiles );
 if ( ! empty( $imagesToBeRemoved ) ) {
 	$setsOfImagesToBeRemoved = array_chunk( $imagesToBeRemoved, 91 );
 	foreach ( $setsOfImagesToBeRemoved as $imageSet ) {
-		$cloudinary->delete_resources( $imageSet );
+		CDN\deleteImages( $imageSet );
 	}
 }
 
@@ -226,11 +156,7 @@ if ( ! empty( $imagesToBeRemoved ) ) {
 
 
 
-
-
-
-
-// // Stringifying the array fields
+// Stringifying the array fields
 foreach ( $settings as &$setting ) {
 	foreach ( $setting as $key => $value ) {
 		if ( is_array( $value ) )
@@ -251,3 +177,51 @@ DB\seedCollection( $connection, 'settings__tmp', $settings );
 DB\removeCollection( $connection, 'settings' );
 // Rename the "settings__tmp" collection to "settings"
 DB\renameCollection( $connection, 'settings__tmp', 'settings' );
+
+
+
+
+
+/*
+ *
+ * Log the deployment
+ *
+ */
+file_put_contents( '/tmp/deploy-settings.log', json_encode( [
+	'status' => 'done',
+	'timestamp' => date( 'Y/m/d H:i:s' )
+], JSON_PRETTY_PRINT ) );
+file_put_contents( '/tmp/deploy-settings-images-create.log', json_encode( [
+	'images' => $imagesToBeCreated
+], JSON_PRETTY_PRINT ) );
+file_put_contents( '/tmp/deploy-settings-images-remove.log', json_encode( [
+	'images' => $imagesToBeRemoved
+], JSON_PRETTY_PRINT ) );
+
+// Prepare the mail
+$timestamp = date( 'Y/m/d H:i:s' );
+$imagesAdded = implode( '<br>', array_map( function ( $imageId ) {
+	return 'https://drive.google.com/uc?id=' . $imageId;
+}, $imagesToBeCreated ) );
+$imagesRemoved = implode( '<br>', array_map( function ( $imageId ) {
+	return 'https://drive.google.com/uc?id=' . $imageId;
+}, $imagesToBeRemoved ) );
+
+$message = <<<MARK
+Successfully deployed settings at {$timestamp}.
+<br>
+The following images were added:
+<br>
+{$imagesAdded}
+<br><br><br><br><br>
+The following images were removed:
+<br>
+{$imagesRemoved}
+MARK;
+
+Mailer\sendMessage( [
+	'name' => 'Aditya',
+	'email' => 'adityabhat@lazaro.in',
+	'subject' => 'VSA :: Deployment Log',
+	'message' => $message
+] );
