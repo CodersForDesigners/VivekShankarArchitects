@@ -124,7 +124,7 @@
 				</div>
 				<div class="meta columns small-10 small-offset-1 large-2">
 					<div class="label text-neutral">Est.</div>
-					<div class="p">2002</div>
+					<div class="p">2004</div>
 				</div>
 				<div class="description columns small-10 small-offset-1 medium-7 large-5 large-offset-0">
 					<div class="p">We are an Architecture practice based in Bangalore with over a decade of experience in the industry and have won several awards for our work. Our Principal Architect has worked with the world renowned architect Zaha Hadid. Vivek Shankar Architects strives to keep abreast with the socio-cultural trends that impact living patterns and urban environments.</div>
@@ -166,7 +166,7 @@
 						<div class="excerpt p strong em text-teal hide-for-mobile hidden">Vivek returned to India and setup his practice to exacting global standards.</div>
 					</div>
 					<div class="columns small-10 small-offset-1 large-5">
-						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice by consciously challenging the role of the Architect in the Indian context and the difference his practice can make to a client and the end user. His approach got him design commissions which had a high potential to explore. Vivek Shankar Architects follows a structured systems and process to wards design and executing projects.</div>
+						<div class="description p">With this foundational exposure, Vivek returned to India and setup his practice by consciously challenging the role of the Architect in the Indian context and the difference his practice can make to a client and the end user. His approach got him design commissions which had a high potential to explore. Vivek Shankar Architects follows a structured systems and process towards design and executing projects.</div>
 					</div>
 				</div>
 				<div class="point row">
@@ -231,7 +231,7 @@
 					</div>
 				</div>
 				<div class="columns small-10 small-offset-1 large-4">
-					<div class="p">He started Vivek Shankar Architects in 2002 and has since then designed and delivered landmark projects across various typologies and scales. Vivek Shankar Architects believes in practicing cutting edge design which is enabled by team of skilled designers and engineers equipped with advance designing tools.</div>
+					<div class="p">He started Vivek Shankar Architects in 2004 and has since then designed and delivered landmark projects across various typologies and scales. Vivek Shankar Architects believes in practicing cutting edge design which is enabled by team of skilled designers and engineers equipped with advance designing tools.</div>
 				</div>
 			</div>
 		</div>
