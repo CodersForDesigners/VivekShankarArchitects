@@ -28,6 +28,14 @@
 		$showcaseIsEmpty = true;
 	}
 
+	// Break down the "Consultants" field to a convenient data structure
+	if ( ! empty( $project[ 'Consultants' ] ) ) {
+		$consultants = array_chunk( preg_split( '/\s*(<br>)+\s*/', $project[ 'Consultants' ] ), 2 );
+	}
+	else {
+		$consultants = [ ];
+	}
+
 ?>
 
 <?php
@@ -40,6 +48,7 @@ function viewMarkup () {
 	global $otherProjectsOfTheType;
 	global $showcaseIsEmpty;
 	global $factFileIsEmpty;
+	global $consultants;
 
 ?>
 
@@ -126,30 +135,10 @@ $(document).ready(function(){
 				<?php endif; ?>
 			</div>
 			<div class="meta columns small-5 small-offset-1 medium-3 large-2 large-offset-0">
-				<?php if ( ! empty( $project[ 'Structural Engineer' ] ) ) : ?>
-					<div class="label text-neutral">Structural Engineer</div>
-					<div class="p"><?php echo $project[ 'Structural Engineer' ] ?></div>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $project[ 'M&E Engineer' ] ) ) : ?>
-					<div class="label text-neutral">M&E Engineer</div>
-					<div class="p"><?php echo $project[ 'M&E Engineer' ] ?></div>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $project[ 'Plumbing Consultant' ] ) ) : ?>
-					<div class="label text-neutral">Plumbing Consultant</div>
-					<div class="p"><?php echo $project[ 'Plumbing Consultant' ] ?></div>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $project[ 'Landscape Architect' ] ) ) : ?>
-					<div class="label text-neutral">Landscape Architect</div>
-					<div class="p"><?php echo $project[ 'Landscape Architect' ] ?></div>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $project[ 'Lighting Engineer' ] ) ) : ?>
-					<div class="label text-neutral">Lighting Engineer</div>
-					<div class="p"><?php echo $project[ 'Lighting Engineer' ] ?></div>
-				<?php endif; ?>
+				<?php foreach ( $consultants as $consultant ) : ?>
+					<div class="label text-neutral"><?php echo $consultant[ 0 ] ?></div>
+					<div class="p"><?php echo $consultant[ 1 ] ?></div>
+				<?php endforeach; ?>
 			</div>
 			<?php if ( ! empty( $project[ 'Description' ] ) ) : ?>
 			<div class="description p columns small-10 small-offset-1 medium-7 large-4">
