@@ -37,7 +37,7 @@ function getConnection ( $parameters = [ ] ) {
 	// default values
 	$host = ! empty( $host ) ? $host : 'localhost';
 	$username = ! empty( $username ) ? $username : 'root';
-	$password = ! empty( $password ) ? $password : 'root';
+	$password = ! empty( $password ) ? $password : '';
 	$options = ! empty( $options ) ? $options : [
 		\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
 		\PDO::ATTR_PERSISTENT => true, // what does this do?

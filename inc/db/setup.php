@@ -3,10 +3,20 @@
 require_once __DIR__ . '/../env.php';
 require_once __DIR__ . '/../db.php';
 
+if ( $productionEnv ) {
+	$dbCredentials = require_once __DIR__ . '/../../environment/configuration/database.php';
+	$dbUser = $dbCredentials[ 'user' ];
+	$dbPassword = $dbCredentials[ 'password' ];
+}
+else {
+	$dbUser = 'root';
+	$dbPassword = '';
+}
+
 $connection = DB\getConnection( [
 	'host' => 'localhost',
-	'username' => 'root',
-	'password' => $productionEnv ? '95a9e9d5deeb8046fc4c530080afcdbe5a855d5c5de09056' : ''
+	'username' => $dbUser,
+	'password' => $dbPassword
 ] );
 // "Use" the database
 $connection->exec( file_get_contents( __DIR__ . '/setup.sql' ) );
