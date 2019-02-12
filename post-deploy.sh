@@ -9,10 +9,19 @@ while getopts "p:" opt; do
 	esac
 done
 
-# Establish symbolic links to the `media` and `favicon` directories
-rm media
-ln -s ../media/${PROJECT_DIR} media
-rm favicon
-ln -s ../media/${PROJECT_DIR}/favicon favicon
-rm data
-ln -s ../data/${PROJECT_DIR} data
+# Establish a symbolic link for the environment directory and its sub-folders:
+rm environment
+mkdir -p ../environment/${PROJECT_DIR}
+ln -s ../environment/${PROJECT_DIR} environment
+	# # the data folder
+	rm data
+	mkdir -p environment/data
+	ln -s environment/data data
+	# # the media folder
+	rm media
+	mkdir -p environment/media
+	ln -s environment/media media
+	# # the favicon folder
+	rm favicon
+	mkdir -p environment/media/favicon
+	ln -s environment/media/favicon favicon
